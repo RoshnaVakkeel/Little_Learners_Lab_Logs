@@ -50,13 +50,14 @@ class Post(models.Model):
         To return the total number of likes on a post
         """
         return self.likes.count()
-    
+
+
 class Comment(models.Model):
     """
     Model for Comment
     """
     post = models.ForeignKey(
-        Post, 
+        Post,
         on_delete=models.CASCADE,
         related_name="user_comments",
         blank=True,

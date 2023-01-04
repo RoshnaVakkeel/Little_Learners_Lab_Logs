@@ -19,5 +19,5 @@ from logs.views import get_log_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_log_list, name = 'get_log_list')
+    path('', get_log_list, name='get_log_list')
 ]
