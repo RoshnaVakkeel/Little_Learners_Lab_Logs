@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+/*--------------------------------------------Colors*/
+body {
+    background-color: #c9adb6;
+}
+
+.bg-light {
+    background-color: #702064;
+}
+
+/*--------------------------------------------Navigation Menu*/
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-brand {
+    margin-left: 20px;
+    color: whitesmoke;
+    font-size: x-large;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-nav>li {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*--------------------------------------------Section 1 Hero Image*/
+.w-100 {
+    object-fit: cover;
+    object-position: center;
+    height: 75vh;
+    overflow: hidden;
+}
+
+
+
+h5 {
+    font-weight: 700;
+    color: blue;
+    text-transform: uppercase;
+}
+
+.carousel-caption>p {
+    font-weight: 700;
+    color: blue;
+}
+
+.btn-success {
+    background-color: green;
+}
+
+/*--------------------------------------------Section 2 Collections*/
+.accordion {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/*--------------------------------------------lab logs list*/
+.card {
+    margin: auto;
+}
+
+.card-img-top {
+    width: 70%;
+    margin: auto;
+}
+
+/*--------------------------------------------Sign in Form*/
+.form {
+    width: 40%;
+    margin: auto;
+    padding: 60px;
+}
+
+.bg-footer {
+    background-color: #d03280;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .navbar-brand {
+        margin-left: 10px;
+        font-size: large;
+        font-weight: 600;
+    }
+
+    .w-100 {
+        height: 50vh;
+    }
+
+    .card-info {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .navbar-brand {
+        margin-left: 10px;
+        font-size: medium;
+        font-weight: 600;
+    }
+}
