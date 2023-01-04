@@ -139,3 +139,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloundinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CSRF_TRUSTED_ORIGINS = ['localhost',]
+CSRF_TRUSTED_ORIGINS = ['https://8000-roshnavakke-littlelearn-oi0e72xya76.ws-eu80.gitpod.io/', ]
