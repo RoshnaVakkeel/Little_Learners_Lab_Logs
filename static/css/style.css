@@ -25,7 +25,7 @@ body {
 
 .nav-link {
     color: white;
-    
+
 }
 
 .navbar-nav>li {
@@ -100,6 +100,12 @@ h5 {
 
     .card-info {
         flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #add-logs-form {
+        padding: 0 10px;
     }
 }
 

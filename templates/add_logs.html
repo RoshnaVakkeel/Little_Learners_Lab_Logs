@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}add_logs{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+    <div class="container-fluid d-flex justify-content-center p-2">
+        <!-- Add a lab log form, visible when user signs in and can submit after completion -->
+
+        <div class="form-group">
+            <h1>Add a Lab Log</h1>
+            <form class="w-75" method="POST">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+<!-- If user is not signed in, landing on the create post page -->
+{% else %}
+<div class="d-flex justify-content-center p-3">
+<h3>Access Denied. Please sign in!</h3>
+</div>
+{% endif %}
+
+{% endblock %}
