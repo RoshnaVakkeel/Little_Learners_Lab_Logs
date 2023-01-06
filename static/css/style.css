@@ -87,6 +87,14 @@ h5 {
 }
 
 
+/*--------------------------------------------add_logs page*/
+.form-group{
+    display: block;
+    width: auto;
+    margin: auto;
+}
+
+
 @media only screen and (max-width: 500px) {
     .navbar-brand {
         margin-left: 10px;
@@ -104,9 +112,7 @@ h5 {
 }
 
 @media only screen and (max-width: 800px) {
-    #add-logs-form {
-        padding: 0 10px;
-    }
+
 }
 
 @media only screen and (max-width: 300px) {
