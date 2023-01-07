@@ -64,10 +64,10 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}"> <i class="fa fa-home"
                                 aria-hidden="true"> Home</i></a>
                     </li>
-                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="#"> <i class="fa fa-book" aria-hidden="true"> Lab Logs</i></a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"> My Page</i></a>
                     </li>
@@ -75,9 +75,6 @@
                         <a class="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"> Sign out</i></a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <i class="fa fa-book" aria-hidden="true"> Lab Logs</i></a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-user-plus" aria-hidden="true"> Sign Up</i></a>
                     </li>

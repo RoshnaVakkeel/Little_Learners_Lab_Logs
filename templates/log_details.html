@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- post details page with comment section below -->
+
+<section>
+    <div class="card w-75">
+        <h3 class="card-title mt-3 text-center text-uppercase">{{post.title}} </h3>
+        <p class="text-center">Author: {{post.author}} | {{post.created_on}}</p>
+        <img src="{{post.image.url}} " class="card-img-top p-3 w-50" alt="...">
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h5>Description</h5>
+                    <p>
+                        {{post.description}}
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <h5>Items Required</h5>
+                    <p>
+                        {{post.items_required}}
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <h5>Steps to Perform</h5>
+                    <p>{{post.steps_to_perform}}</p>
+                </li>
+            </ul>
+        </div>
+</section>
+<br>
+
+{% endblock content %}
