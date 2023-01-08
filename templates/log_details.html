@@ -24,12 +24,12 @@
                 <li class="list-group-item">
                     <!-- items_required section entered for the post-->
                     <h5>Items Required</h5>
-                    <p>{{post.items_required}}</p>
+                    <p>{{post.items_required | safe}}</p>
                 </li>
                 <li class="list-group-item">
                     <!-- steps_to_perform section entered for the post-->
                     <h5>Steps to Perform</h5>
-                    <p>{{post.steps_to_perform}}</p>
+                    <p>{{post.steps_to_perform | safe}}</p>
                 </li>
                 <li class="list-group-item">
                     <!-- Number of likes-->

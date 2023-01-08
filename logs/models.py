@@ -15,7 +15,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name="blog_posts",
+        related_name="log_posts",
         blank=True,
         null=True
     )
