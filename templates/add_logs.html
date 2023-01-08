@@ -12,7 +12,9 @@
         <form method="POST">
             {% csrf_token %}
             {{ form.media }}
-            {{ form.as_p }}
+            {{ form.as_p}}
+            {{ post.items_required | safe }}
+            {{ post.steps_to_perform| safe }}
             <button class="btn btn-success mb-3">Submit</button>
 
         </form>
