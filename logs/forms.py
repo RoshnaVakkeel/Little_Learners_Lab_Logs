@@ -24,11 +24,12 @@ class PostForm(forms.ModelForm):
                 'placeholder': 'Add a description about the experiment'}),
             'items_required': SummernoteWidget(attrs={
                 'class': 'form-control',
-                'placeholder': 'Add list of items required to perform the experiment'}),
+                'placeholder': 'Add list of items required'}),
             'steps_to_perform': SummernoteWidget(attrs={
                 'class': 'form-control',
-                'placeholder': 'Please enter step by step procedure of how the experiment was performed'}),
+                'placeholder': 'Please enter step by step procedure'}),
         }
+
 
 class CommentForm(forms.ModelForm):
     ''' Comment form '''
