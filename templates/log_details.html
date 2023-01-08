@@ -6,29 +6,68 @@
 
 <section>
     <div class="card w-75">
-        <h3 class="card-title mt-3 text-center text-uppercase">{{post.title}} </h3>
+        <!-- Title of the post -->
+        <h3 class="card-title mt-3 text-center text-uppercase">
+            {{post.title}}
+        </h3>
+        <!-- Name of the author/creator-->
         <p class="text-center">Author: {{post.author}} | {{post.created_on}}</p>
-        <img src="{{post.image.url}} " class="card-img-top p-3 w-50" alt="...">
+        <!-- Featured image URL-->
+        <img src="{{post.image.url}} " class="card-img-top p-3 w-50">
         <div class="card-body">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
+                    <!-- Description entered for the post-->
                     <h5>Description</h5>
-                    <p>
-                        {{post.description}}
-                    </p>
+                    <p>{{post.description}}</p>
                 </li>
                 <li class="list-group-item">
+                    <!-- items_required section entered for the post-->
                     <h5>Items Required</h5>
-                    <p>
-                        {{post.items_required}}
-                    </p>
+                    <p>{{post.items_required}}</p>
                 </li>
                 <li class="list-group-item">
+                    <!-- steps_to_perform section entered for the post-->
                     <h5>Steps to Perform</h5>
                     <p>{{post.steps_to_perform}}</p>
                 </li>
+                <li class="list-group-item">
+                    <!-- Number of likes-->
+                    <strong class="text-secondary p-3"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                    <!-- Start o for loop to calculate number of comments-->
+                    {% with comments.count as total_comments %}
+                    <strong class="text-secondary p-3"><i class="far fa-comments"></i>
+                        <!-- total_comments variable-->
+                        {{ total_comments }}</strong>
+                    {% endwith %}
+                </li>
             </ul>
         </div>
+</section>
+<br>
+<!-- Comments section-->
+<section>
+    <div class="card w-75">
+        <h5 class="card-header">Comments</h5>
+        <div class="font-weight-bold mx-4">
+            <!-- Start of for loop -->
+            {% for comment in comments %}
+            <p>On
+                <span class=" text-muted font-weight-normal">
+                    <!-- The comment's created date -->
+                    {{ comment.created_on }}
+                </span>
+                <!-- The commenter's name-->
+                {{ comment.name }} wrote:
+                <!-- The body of the comment -->
+                {{ comment.body | linebreaks }}
+            </p>
+            <!-- End of for loop -->
+            {% endfor %}
+        </div>
+    </div>
+    <br>
+
 </section>
 <br>
 

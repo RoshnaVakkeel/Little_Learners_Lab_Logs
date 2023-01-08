@@ -1,7 +1,6 @@
 from django import forms
-from django.forms import ModelForm
 from django_summernote.widgets import SummernoteWidget
-from .models import Post
+from .models import Post, Comment
 
 
 class PostForm(forms.ModelForm):
@@ -30,3 +29,16 @@ class PostForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Please enter step by step procedure of how the experiment was performed'}),
         }
+
+class CommentForm(forms.ModelForm):
+    ''' Comment form '''
+    body = forms.CharField(widget=forms.Textarea(attrs={
+        'class': 'md-textarea form-control',
+        'placeholder': 'Please enter your comment here..',
+        'rows': '6',
+    }))
+
+    class Meta:
+        ''' From comment model  choose which fields to display '''
+        model = Comment
+        fields = ('body', )
