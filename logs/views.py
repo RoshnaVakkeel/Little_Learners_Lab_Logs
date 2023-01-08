@@ -4,12 +4,6 @@ from .models import Post
 from .forms import PostForm
 
 
-class CreatePost(generic.CreateView):
-    model = Post
-    form_class = PostForm
-    template_name = 'add_logs.html'
-
-
 class PostList(generic.ListView):
     ''' Class to show list of posts'''
     model = Post
@@ -33,7 +27,13 @@ class PostDetail(View):
             "log_details.html",
             {
                 "post": post,
-                "comments" : comments,
-                "liked" : liked,
+                "comments": comments,
+                "liked": liked,
             }
         )
+
+
+class CreatePost(generic.CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'add_logs.html'
