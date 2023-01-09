@@ -7,8 +7,18 @@ from .forms import PostForm
 class PostList(generic.ListView):
     ''' Class to show list of posts'''
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
+    paginate_by = 6
+
+
+class AllPosts(generic.ListView):
+    """
+    to get all the lab log posts, and display 6 posts per page
+    """
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('created_on')  # noqa: E501
+    template_name = 'lab_logs.html'
     paginate_by = 6
 
 
