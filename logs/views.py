@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, UploadFileForm
 
 
 class PostList(generic.ListView):
@@ -23,7 +24,7 @@ class AllPosts(generic.ListView):
 
 
 class PostDetail(View):
-    ''' Class to show selcted post in detail view '''
+    ''' Class to show selected post in detail view '''
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -71,7 +72,7 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": True,
                 "liked": liked,
-                "comment_form":CommentForm(),
+                "comment_form": CommentForm(),
             }
         )
 
@@ -80,3 +81,4 @@ class CreatePost(generic.CreateView):
     model = Post
     form_class = PostForm
     template_name = 'add_logs.html'
+    success_message = "Post was created successfully"

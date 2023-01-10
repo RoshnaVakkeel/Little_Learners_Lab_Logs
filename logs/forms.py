@@ -3,6 +3,15 @@ from django_summernote.widgets import SummernoteWidget
 from .models import Post, Comment
 
 
+class UploadFileForm(forms.Form):
+    title = forms.CharField(max_length=100)
+    file = forms.FileField()
+
+    class Meta:
+        model = Post
+        fields = ['image']
+
+
 class PostForm(forms.ModelForm):
     ''' Django form to add lab_log posts '''
     class Meta:
@@ -29,6 +38,7 @@ class PostForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Please enter step by step procedure'}),
         }
+
 
 
 class CommentForm(forms.ModelForm):

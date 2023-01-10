@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
+from django.template.defaultfilters import slugify
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -26,7 +28,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    slug = models.SlugField(null=True, unique=True)
+    slug =  models.SlugField(max_length=100, unique=True, null=True)
     likes = models.ManyToManyField(
         User,
         related_name='post_like',
@@ -51,6 +53,25 @@ class Post(models.Model):
         """
         return self.likes.count()
 
+    def get_absolute_url(self):
+        """
+        copied from
+        https://learndjango.com/tutorials/django-slug-tutorial#slugs
+        so the slug field can be added to the database
+
+        Redirects to log-details page on log post creation
+        """
+        return reverse('lab-logs')
+
+    def save(self, *args, **kwargs):
+        """
+        copied from
+        https://learndjango.com/tutorials/django-slug-tutorial#slugs
+        use slugify to prepopulate the slug field from user input
+        """
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 class Comment(models.Model):
     """

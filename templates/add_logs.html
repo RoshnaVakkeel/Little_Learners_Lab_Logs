@@ -9,20 +9,19 @@
     <h2 class="mt-2">Add a Lab Log Post..</h2>
     <!-- Add a lab log form, visible when user signs in and can submit after completion -->
     <div class="form-group">
-        <form method="POST">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.media }}
             {{ form.as_p}}
             {{ post.items_required | safe }}
             {{ post.steps_to_perform | safe }}
-            <button class="btn btn-success mb-3">Submit</button>
-
+            <button type="submit" class="btn btn-success mb-3">Submit</button>
         </form>
     </div>
 </div>
-</div>
 
-<!-- If user is not signed in, landing on the create post page -->
+
+<!-- If user is not signed in-->
 {% else %}
 <div class="d-flex justify-content-center p-3">
     <h3>Access Denied. Please sign in!</h3>
