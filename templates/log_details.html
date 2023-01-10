@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 
 <!-- post details page with comment section below -->
 
@@ -29,7 +30,7 @@
                 <li class="list-group-item">
                     <!-- steps_to_perform section entered for the post-->
                     <h5>Steps to Perform</h5>
-                    <p >{{post.steps_to_perform | safe}}</p>
+                    <p>{{post.steps_to_perform | safe}}</p>
                 </li>
                 <li class="list-group-item">
                     <!-- Number of likes-->
@@ -47,6 +48,7 @@
 <br>
 <!-- Comments section-->
 <section>
+    {% if comments %}
     <div class="card w-75">
         <h5 class="card-header">Comments</h5>
         <div class="font-weight-bold mx-4">
@@ -66,7 +68,29 @@
             {% endfor %}
         </div>
     </div>
+    {% endif %}
     <br>
+
+    {% if commented %}
+    <div class="alert alert-success" role="alert">
+        Your comment is awaiting approval
+    </div>
+    {% else %}
+    {% if user.is_authenticated %}
+    <div class="card w-75">
+        <h5 class="card-header">Please enter your comments</h5>
+        <div class="card-body">
+            <p> Posting as: {{user.username}} </p>
+            <form method="post">
+                {% csrf_token %}
+                {{ comment_form | crispy}}
+                <br>
+                <button type="submit" class="btn btn-success">Submit</a>
+            </form>
+            {%endif%}
+            {%endif%}
+        </div>
+    </div>
 
 </section>
 <br>

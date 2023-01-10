@@ -38,8 +38,9 @@ class CommentForm(forms.ModelForm):
         'placeholder': 'Please enter your comment here..',
         'rows': '6',
     }))
-
+    
     class Meta:
         ''' From comment model  choose which fields to display '''
         model = Comment
-        fields = ('body', )
+        fields = ('body',)
+ 
