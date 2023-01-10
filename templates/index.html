@@ -24,12 +24,15 @@
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button" class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
+                        <a href="{% url 'add-logs' %}" role="button"
+                            class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
                     </div>
                     {% else %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button" class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
-                        <a href="{% url 'account_login' %}" role="button" class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
+                        <a href="{% url 'add-logs' %}" role="button"
+                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
+                        <a href="{% url 'account_login' %}" role="button"
+                            class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
                     </div>
                     {% endif %}
                 </div>
@@ -42,12 +45,15 @@
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button" class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
+                        <a href="{% url 'add-logs' %}" role="button"
+                            class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
                     </div>
                     {% else %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button" class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
-                        <a href="{% url 'account_login' %}" role="button" class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
+                        <a href="{% url 'add-logs' %}" role="button"
+                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
+                        <a href="{% url 'account_login' %}" role="button"
+                            class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
                     </div>
                     {% endif %}
                 </div>
@@ -61,12 +67,15 @@
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button" class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
+                        <a href="{% url 'add-logs' %}" role="button"
+                            class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
                     </div>
                     {% else %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button" class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
-                        <a href="{% url 'account_login' %}" role="button" class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
+                        <a href="{% url 'add-logs' %}" role="button"
+                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
+                        <a href="{% url 'account_login' %}" role="button"
+                            class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
                     </div>
                     {% endif %}
                 </div>
@@ -100,8 +109,8 @@
             <div class="col-12 mt-2 left">
                 <div class="row">
                     {% for post in post_list %}
-                    <div class="col-md-4">
-                        <div class="card mb-4">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 ">
                             <div class="card-body">
                                 <div class="image-container text-center">
                                     <div class="col-12 col-lg-12">
@@ -111,10 +120,13 @@
                                         <img class="card-img-top img-fluid w-100 " src=" {{ post.image.url }}">
                                         {% endif %}
                                     </div>
+
                                     <div>
                                         <p class="author">Submitted by: {{ post.author }}</p>
                                     </div>
+                                    
                                 </div>
+
                                 <a href="{% url 'log-details' post.slug %}" class="post-link">
                                     <h2 class="card-title">{{  post.title }}</h2>
                                 </a>

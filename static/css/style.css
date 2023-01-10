@@ -70,6 +70,13 @@ h5 {
     margin: auto;
 }
 
+.card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
 /*--------------------------------------------Sign in Form*/
 .form {
     width: 40%;
