@@ -1,7 +1,21 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3 class="text-center text-white">Log details</h3>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 
 {% block content %}
-{% load crispy_forms_tags %}
 
 <!-- post details page with comment section below -->
 
@@ -44,7 +58,19 @@
                 </li>
             </ul>
         </div>
+
+       
+        {% if user.id == post.author.id  %}
+        <div class="d-grid gap-2">
+            <a href="{% url 'edit-logs' post.slug  %}" role="button" class="btn btn-primary mx-auto mb-3">Edit</a>
+        </div>
+        {% endif %}
+        <hr>
+        {{ post.body|safe }}
+    </div>
 </section>
+
+
 <br>
 <!-- Comments section-->
 <section>
@@ -95,5 +121,4 @@
 </section>
 <br>
 
-
-{% endblock content %}
+{%endblock content%}

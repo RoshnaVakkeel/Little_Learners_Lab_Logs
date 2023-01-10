@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
-from .forms import PostForm, CommentForm, UploadFileForm
+from .forms import PostForm, CommentForm, UploadFileForm, EditForm
 
 
 class PostList(generic.ListView):
@@ -77,8 +79,17 @@ class PostDetail(View):
         )
 
 
-class CreatePost(generic.CreateView):
+class CreatePost(SuccessMessageMixin, generic.CreateView):
+    ''' Class to create/add lab log posts'''
     model = Post
     form_class = PostForm
     template_name = 'add_logs.html'
     success_message = "Post was created successfully"
+
+
+class EditPost(SuccessMessageMixin, generic.UpdateView):
+    ''' Class to edit/update lab log posts '''
+    model = Post
+    form_class = EditForm
+    template_name = 'edit_logs.html'
+    success_message = "Post was edited successfully"

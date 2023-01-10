@@ -39,7 +39,28 @@ class PostForm(forms.ModelForm):
                 'placeholder': 'Please enter step by step procedure'}),
         }
 
+class EditForm(forms.ModelForm):
+    ''' Django form that controls what fields can be edited '''
+    class Meta:
+        ''' Get edit form model and choose which fields to display '''
+        model = Post
+        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)
 
+        widgets = {
+            'title': forms.TextInput(attrs={
+                'class': 'form-control'}),
+            'author': forms.TextInput(attrs={
+                'class': 'form-control',
+                'value': '',
+                'id': 'author_field',
+                'type': 'hidden'}),
+            'description': forms.TextInput(attrs={
+                'class': 'form-control',}),
+            'items_required': SummernoteWidget(attrs={
+                'class': 'form-control',}),
+            'steps_to_perform': SummernoteWidget(attrs={
+                'class': 'form-control',}),
+        }
 
 class CommentForm(forms.ModelForm):
     ''' Comment form '''
