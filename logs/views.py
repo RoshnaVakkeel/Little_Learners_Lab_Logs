@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
 from .forms import PostForm, CommentForm, UploadFileForm, EditForm
 
@@ -78,6 +79,21 @@ class PostDetail(View):
                 "comment_form": CommentForm(),
             }
         )
+
+
+class SharedPostsByUsers(LoginRequiredMixin, generic.ListView):
+    """
+    display all the posts (6 posts per page) added by currently
+    logged in user
+    """
+    model = Post
+    author = Post.author
+    login_url = 'account_login'
+    template_name = 'my_page.html'
+    paginate_by = 6
+
+    def get_queryset(self, *args, **kwargs):
+        return Post.objects.filter(author=self.request.user, status=1).order_by('-created_on')  # noqa: E501
 
 
 @login_required()

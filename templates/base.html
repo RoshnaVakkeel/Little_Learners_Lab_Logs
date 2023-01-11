@@ -61,7 +61,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarText">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"> <i class="fa fa-home"
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}"> <i class="fa fa-home"
                                 aria-hidden="true"> Home</i></a>
                     </li>
                     <li class="nav-item">
@@ -69,7 +69,7 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"> {{user.username}}'s   page</i></a>
+                        <a class="nav-link" href="{% url 'my-page' %}"><i class="fa fa-user" aria-hidden="true"> {{user.username}}'s   page</i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa fa-sign-out" aria-hidden="true"> Sign out</i></a>

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3 class="text-center text-white"> {{user.username}}'s Page</h3>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h3 class="text-center text-dark"> {{user.username}}'s Page</h3>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <!-- page lab log posts section -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Lab Log Entries Columns -->
+            <div class="col-12 mt-2 left">
+                <div class="row">
+                    <!-- if the user have added post-->
+                    {% if post_list|length > 0 %}
+                    <!-- loops through the posts have been posted by the logged in user -->
+                    {% for post in post_list %}
+                    <div class="col-md-4 my-4 ">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="image-container text-center">
+                                    <div class="col-12 col-lg-12">
+                                        {% if "placeholder" in post.image.url %}
+                                        <img class="card-img-top img-fluid w-100 " src="...">
+                                        {% else %}
+                                        <img class="card-img-top img-fluid w-100 " src=" {{ post.image.url }}">
+                                        {% endif %}
+                                    </div>
+                                    <div>
+                                        <p class="author">Submitted by: {{ post.author }}</p>
+                                    </div>
+                                </div>
+                                <a href="{% url 'log-details' post.slug %}" class="post-link">
+                                    <h2 class="card-title">{{  post.title }}</h2>
+                                </a>
+                                <p class="card-text">{{ post.description }}</p>
+                                <hr />
+                                <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                    {{ post.number_of_likes }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+                <!-- if the user have NOT shared any post, the share button below will display -->
+                {% else %}
+                <div class="container text-center mt-4">
+                    <div class="text-dark">
+                        <p>It looks like that you haven't posted any lab logs yet. Click on the button below
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <a href="{% url 'add-logs' %}" role="button" type="submit" class="btn btn-success btn-block btn-m gradient-custom-4 text-white">
+                            Create Now!
+                        </a>
+                    </div>
+                </div>
+    
+</section>
+<br>
+
+            {% endif %}
+
+{%endblock content%}
