@@ -60,7 +60,6 @@ class PostDetail(View):
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
@@ -109,7 +108,7 @@ def CreatePost(request):
 
 @login_required
 def EditPost(request, slug):
-
+    """ Edit a post to the lab log post """
     post = get_object_or_404(Post, slug=slug)
     if request.user.id == post.author.id:
         if request.method == 'POST':
@@ -138,3 +137,15 @@ def EditPost(request, slug):
     }
 
     return render(request, template, context)
+
+
+class PostLike(View):
+    """ To like a lab log post """
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('log-details', args=[slug]))
