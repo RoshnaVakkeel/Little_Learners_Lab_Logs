@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.utils.text import slugify
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
 from .forms import PostForm, CommentForm, UploadFileForm, EditForm
@@ -10,7 +12,7 @@ from .forms import PostForm, CommentForm, UploadFileForm, EditForm
 class PostList(generic.ListView):
     ''' Class to show list of posts'''
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Post.objects.filter(status=1).order_by('created_on')
     template_name = 'index.html'
     paginate_by = 6
 
@@ -41,9 +43,9 @@ class PostDetail(View):
             {
                 "post": post,
                 "comments": comments,
-                "commented":False,
+                "commented": False,
                 "liked": liked,
-                "comment_form":CommentForm(),
+                "comment_form": CommentForm(),
             }
         )
 
@@ -60,7 +62,7 @@ class PostDetail(View):
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
-            comment  = comment_form.save(commit=False)
+            comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
         else:
@@ -79,17 +81,60 @@ class PostDetail(View):
         )
 
 
-class CreatePost(SuccessMessageMixin, generic.CreateView):
-    ''' Class to create/add lab log posts'''
-    model = Post
-    form_class = PostForm
-    template_name = 'add_logs.html'
-    success_message = "Post was created successfully"
+@login_required()
+def CreatePost(request):
+    """ Add a post to the lab log post """
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.slug = slugify(post.title)
+            form.save()
+            messages.success(request, 'The post is for review.')
+            return redirect(reverse('lab-logs'))
+        else:
+            messages.error(request, 'Failed to Create a post. \
+                           Please ensure the form is valid.')
+    else:
+        form = PostForm()
+
+    template = 'add_logs.html',
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
 
 
-class EditPost(SuccessMessageMixin, generic.UpdateView):
-    ''' Class to edit/update lab log posts '''
-    model = Post
-    form_class = EditForm
-    template_name = 'edit_logs.html'
-    success_message = "Post was edited successfully"
+@login_required
+def EditPost(request, slug):
+
+    post = get_object_or_404(Post, slug=slug)
+    if request.user.id == post.author.id:
+        if request.method == 'POST':
+            form = PostForm(request.POST, request.FILES, instance=post)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.slug = slugify(post.title)
+                post.status = 1
+                form.save()
+                messages.success(request, 'Update successful!')
+                return redirect(reverse('lab-logs'))
+            else:
+                messages.error(request, 'Failed to update post. \
+                    Please ensure the form is valid.')
+        else:
+            form = PostForm(instance=post)
+    else:
+        messages.error(request, 'Sorry. \
+                    You are not authorised to perform that operaiton.')
+
+    template = 'edit_logs.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)

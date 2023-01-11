@@ -28,7 +28,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    slug =  models.SlugField(max_length=100, unique=True, null=True)
+    slug = models.SlugField(max_length=100, unique=True, null=True)
     likes = models.ManyToManyField(
         User,
         related_name='post_like',
@@ -72,6 +72,7 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+
 
 class Comment(models.Model):
     """

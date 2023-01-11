@@ -39,6 +39,7 @@ class PostForm(forms.ModelForm):
                 'placeholder': 'Please enter step by step procedure'}),
         }
 
+
 class EditForm(forms.ModelForm):
     ''' Django form that controls what fields can be edited '''
     class Meta:
@@ -55,12 +56,13 @@ class EditForm(forms.ModelForm):
                 'id': 'author_field',
                 'type': 'hidden'}),
             'description': forms.TextInput(attrs={
-                'class': 'form-control',}),
+                'class': 'form-control', }),
             'items_required': SummernoteWidget(attrs={
-                'class': 'form-control',}),
+                'class': 'form-control', }),
             'steps_to_perform': SummernoteWidget(attrs={
-                'class': 'form-control',}),
+                'class': 'form-control', }),
         }
+
 
 class CommentForm(forms.ModelForm):
     ''' Comment form '''
@@ -69,9 +71,9 @@ class CommentForm(forms.ModelForm):
         'placeholder': 'Please enter your comment here..',
         'rows': '6',
     }))
-    
+
+
     class Meta:
-        ''' From comment model  choose which fields to display '''
+        # From comment model  choose which fields to display
         model = Comment
         fields = ('body',)
- 

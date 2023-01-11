@@ -12,7 +12,7 @@
       <div class="col-12 col-md-9 col-xl-5">
         <div class="card my-4 p-4" style="border-radius: 15px;">
           <div class="card-body p-4 mx-auto text-center">
-            <p style="font-size: large;">{% trans 'Are you sure you want to sign out?' %}</p>
+            <p style="font-size: large;"> Dear <strong>{{user.username}}</strong> <br><br>{% trans 'Are you sure you want to sign out?' %}</p>
             <br>
             <form method="post" action="{% url 'account_logout' %}">
               {% csrf_token %}
