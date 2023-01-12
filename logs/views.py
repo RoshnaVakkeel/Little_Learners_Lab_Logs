@@ -106,7 +106,7 @@ def CreatePost(request):
             post.author = request.user
             post.slug = slugify(post.title)
             form.save()
-            messages.success(request, 'The post is for review.')
+            messages.success(request, 'The post is being reviewed')
             return redirect(reverse('lab-logs'))
         else:
             messages.error(request, 'Failed to Create a post. \
@@ -136,7 +136,7 @@ def EditPost(request, slug):
                 post.status = 1
                 form.save()
                 messages.success(request, 'Update successful!')
-                return redirect(reverse('lab-logs'))
+                return redirect(reverse('my-page'))
             else:
                 messages.error(request, 'Failed to update post. \
                     Please ensure the form is valid.')
@@ -155,6 +155,19 @@ def EditPost(request, slug):
     return render(request, template, context)
 
 
+@login_required
+def DeletePost(request, slug):
+    """ Delete a post to the lab log post """
+    post = get_object_or_404(Post, slug=slug)
+    if request.user.id == post.author.id:
+        post.delete()
+        messages.success(request, 'Post has been deleted!')
+        return redirect(reverse('my-page'))
+    else:
+        messages.error(request, 'Sorry. \
+            You are not authorised to perform that operation.')
+            
+
 class PostLike(View):
     """ To like a lab log post """
     def post(self, request, slug, *args, **kwargs):
@@ -165,3 +178,19 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('log-details', args=[slug]))
+
+
+def PostSearch(request):
+    """ Return a list of posts from a search term in the nav """
+    if request.method == "POST":
+        searched = request.POST['searched']
+        words = Post.objects.filter(name__contains=searched)
+
+        return render(request, 
+        'search.html',
+        {'searched':searched,
+        'words': words
+        })
+
+    else:
+        return render(request, 'search.html',{})

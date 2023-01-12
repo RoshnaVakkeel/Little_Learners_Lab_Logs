@@ -83,15 +83,18 @@
 
 
         {% if user.id == post.author.id  %}
-        <div class="d-grid gap-2">
-            <a href="{% url 'edit-logs' post.slug  %}" role="button" class="btn btn-primary mx-auto mb-3">Edit</a>
+        <div class="d-flex justify-content-center">
+            <a href="{% url 'edit-logs' post.slug  %}" role="button" class="btn btn-info btn-block mx-2 btn-m gradient-custom-4 text-dark"><strong>Edit</strong> </a>
+            <form method="POST" action="{% url 'delete-logs' post.slug  %}">
+                {% csrf_token %}
+            <a href="{% url 'delete-logs' post.slug  %}" role="button" class="btn btn-secondary btn-block mx-2 btn-m gradient-custom-4 text-dark" onClick="deleteFunction()"><strong>Delete</strong></a>
+                </form>
         </div>
         {% endif %}
         <hr>
         {{ post.body|safe }}
     </div>
 </section>
-
 
 <br>
 <!-- Comments section-->

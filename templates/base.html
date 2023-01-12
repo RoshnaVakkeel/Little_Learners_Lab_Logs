@@ -43,9 +43,10 @@
         <nav class="navbar d-flex navbar-light" style="background-color: #c9adb6">
             <div class="container-fluid">
                 <a class="navbar-brand"></a>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"
+                <form class="d-flex" method="POST" action="search">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"
                             aria-hidden="true"></i></button>
                 </form>
             </div>
@@ -147,6 +148,14 @@
             alert.close();
         }, 2000);
     </script>
+
+<script>
+    function deleteFunction(e) {
+        if(!confirm("Are you sure you want to delete?")){
+            e.preventDefault();
+        }            
+    }
+</script>
 
     <!-- Bootstrap js  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
