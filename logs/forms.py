@@ -77,5 +77,3 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
-class PostSearchForm(forms.Form):
-    q = forms.CharField()

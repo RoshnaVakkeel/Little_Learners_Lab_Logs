@@ -6,6 +6,8 @@ from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
+from django.views.generic import ListView
 from .models import Post
 from .forms import PostForm, CommentForm, UploadFileForm, EditForm
 
@@ -20,7 +22,7 @@ class PostList(generic.ListView):
 
 class AllPosts(generic.ListView):
     """
-    to get all the lab log posts, and display 6 posts per page
+    to get all the lab log posts, and display 12 posts per page
     """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('created_on')  # noqa: E501
@@ -166,7 +168,7 @@ def DeletePost(request, slug):
     else:
         messages.error(request, 'Sorry. \
             You are not authorised to perform that operation.')
-            
+
 
 class PostLike(View):
     """ To like a lab log post """
@@ -181,16 +183,12 @@ class PostLike(View):
 
 
 def PostSearch(request):
-    """ Return a list of posts from a search term in the nav """
-    if request.method == "POST":
-        searched = request.POST['searched']
-        words = Post.objects.filter(name__contains=searched)
+    q = request.GET['q']
 
-        return render(request, 
-        'search.html',
-        {'searched':searched,
-        'words': words
-        })
+    if 'q' in request.GET:
+        results = Post.objects.filter(Q(title__icontains=q)).filter(status=1)
 
-    else:
-        return render(request, 'search.html',{})
+    return render(request, 'search.html', {
+        'q': q,
+        'results': results
+    })

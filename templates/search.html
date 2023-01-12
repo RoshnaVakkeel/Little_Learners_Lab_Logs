@@ -4,18 +4,18 @@
 
 {% block content %}
 
-<center>
-{% if searched %}
-    <h3>You searched for {{searched}}</h3>
-    <br>
-    {% for post in posts %}
-    {{words}} 
+<div>
+    {% if q %}
+
+    {% for post in results %}
+        <ul>
+            <li>Post Title: {{ post.title }}</li>
+            <li>Description {{ post.description }}</li>
+            <li>Author: {{post.author }}</li>
+        </ul>
     {% endfor %}
+    {% endif %}
+</div>
 
-{% else %}
-    <h3>You searched for something that doesn't exist</h3>
-{% endif %}
-
-</center>
 
 {% endblock %}

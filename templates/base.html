@@ -43,11 +43,12 @@
         <nav class="navbar d-flex navbar-light" style="background-color: #c9adb6">
             <div class="container-fluid">
                 <a class="navbar-brand"></a>
-                <form class="d-flex" method="POST" action="search">
-                    {% csrf_token %}
-                    <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"
-                            aria-hidden="true"></i></button>
+                    <form class="d-flex" action="{% url 'search' %}" method="get">
+                        <input name="q" class="form-control me-2" type="search" type="text" placeholder="Search..." name="search" aria-label="Search">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </form>
+
                 </form>
             </div>
         </nav>
