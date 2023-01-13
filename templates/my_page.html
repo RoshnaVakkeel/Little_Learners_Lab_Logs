@@ -1,17 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
-
-{% block header %}
-<div class="container">
-    <div class="row">
-        <div class="col-8 offset-2">
-            <h3 class="text-center text-white"> {{user.username}}'s Page</h3>
-            <hr>
-        </div>
-    </div>
-</div>
-{% endblock %}
+{% block title %}{{user.username}}'s Page{% endblock %}
 
 {% block content %}
 

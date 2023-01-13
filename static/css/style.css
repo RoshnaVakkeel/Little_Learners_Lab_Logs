@@ -17,7 +17,7 @@ body {
 .navbar-brand {
     margin-left: 20px;
     color: whitesmoke;
-    font-size: x-large;
+    font-size: large;
     font-style: italic;
     font-weight: 700;
     text-transform: uppercase;
@@ -25,12 +25,6 @@ body {
 
 .nav-link {
     color: white;
-
-}
-
-.navbar-nav>li {
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 /*--------------------------------------------Section 1 Hero Image*/
@@ -41,25 +35,6 @@ body {
     overflow: hidden;
 }
 
-
-
-h5 {
-    font-weight: 700;
-    color: blue;
-    text-transform: uppercase;
-}
-
-.carousel-caption>p {
-    font-weight: 700;
-    color: blue;
-}
-
-.btn-success {
-    background-color: green;
-}
-
-/*--------------------------------------------Section 2 Collections*/
-
 /*--------------------------------------------lab logs list*/
 .card {
     margin: auto;
@@ -69,8 +44,6 @@ h5 {
     width: 70%;
     margin: auto;
 }
-
-
 
 /*--------------------------------------------Sign in Form*/
 .form {
@@ -83,16 +56,12 @@ h5 {
     background-color: #d03280;
 }
 
-
 /*--------------------------------------------add_logs page*/
-.form-group{
+.form-group {
     display: block;
     width: auto;
     margin: auto;
 }
-
-
-
 
 @media only screen and (max-width: 500px) {
     .navbar-brand {
@@ -110,9 +79,7 @@ h5 {
     }
 }
 
-@media only screen and (max-width: 800px) {
-
-}
+@media only screen and (max-width: 800px) {}
 
 @media only screen and (max-width: 300px) {
     .navbar-brand {
