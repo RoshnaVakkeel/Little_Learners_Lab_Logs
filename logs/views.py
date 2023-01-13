@@ -79,14 +79,14 @@ class PostDetail(View):
 
 class SharedPostsByUsers(LoginRequiredMixin, generic.ListView):
     """
-    display all the posts (6 posts per page) added by currently
+    display all the posts (12 posts per page) added by currently
     logged in user
     """
     model = Post
     author = Post.author
     login_url = 'account_login'
     template_name = 'my_page.html'
-    paginate_by = 6
+    paginate_by = 12
 
     def get_queryset(self, *args, **kwargs):
         return Post.objects.filter(author=self.request.user, status=1).order_by('-created_on')  # noqa: E501

@@ -2,20 +2,36 @@
 {% load static %}
 {% block title %}Search Results{% endblock %}
 
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3 class="text-center text-white">Search Results</h3>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
 
-<div>
-    {% if q %}
+{% if q %}
 
-    {% for post in results %}
-        <ul>
-            <li>Post Title: {{ post.title }}</li>
-            <li>Description {{ post.description }}</li>
-            <li>Author: {{post.author }}</li>
-        </ul>
-    {% endfor %}
-    {% endif %}
+{% for post in results %}
+<div class="card mb-4 w-75">
+
+    <div class="card-header">
+        <a href="{% url 'log-details' post.slug %}" class="post-link">
+            <h4 class="card-title">{{  post.title }}</h4>
+        </a>
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">Submitted by: {{post.author}} on {{post.created_on}} </h6>
+      <p class="card-text">{{ post.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
 </div>
-
 
 {% endblock %}
