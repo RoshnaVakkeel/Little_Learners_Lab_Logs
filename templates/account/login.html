@@ -9,37 +9,39 @@
 {% block content %}
 
 
-<section class="vh-80">
-  <div class="mask d-flex align-items-center h-80">
-      <div class="container h-100">
-          <div class="row d-flex justify-content-center align-items-center h-50">
-              <div class="col-12 col-md-9 col-xl-5">
-                  <div class="card" style="border-radius: 15px;">
-                      <div class="card-body p-4 mx-auto">
-                          <h2 class="text-center mb-3"> {% trans "Sign In" %}</h2>
-                          <p class="text-center mb-3">
-                              If you have not created an account yet, <br> then please <a href= "{{ signup_url }}"> Sign up </a> first.
-                          </p>
-                          <div class="form-control" >
-                            <form class="login" method="POST" action="{% url 'account_login' %}">
-                              {% csrf_token %}
-                              {{ form | crispy}}
-                              {% if redirect_field_value %}
-                              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                              {% endif %}
-                              
-                              <div class="d-flex justify-content-center">
-                                <button class="primaryAction btn-success" type="submit">{% trans "Sign In" %}</button>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-<br>
+<div class="vh-80">
+    <div class="mask d-flex align-items-center h-80">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-9 col-xl-5">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-4 mx-auto">
+                            <h2 class="text-center mb-3"> {% trans "Sign In" %}</h2>
+                            <p class="text-center mb-3">
+                                If you have not created an account yet, <br> then please <a href="{{ signup_url }}">
+                                    Sign up </a> first.
+                            </p>
+                            <div class="form-control">
+                                <form class="login" method="POST" action="{% url 'account_login' %}">
+                                    {% csrf_token %}
+                                    {{ form | crispy}}
+                                    {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+                                    {% endif %}
+                                    <div class="d-flex justify-content-center">
+                                        <button class="primaryAction btn-success"
+                                            type="submit">{% trans "Sign In" %}</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <br>
 
 
-{% endblock %}
+    {% endblock %}

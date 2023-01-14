@@ -9,7 +9,7 @@
 
 <!-- post details page with comment section below -->
 
-<section>
+<div>
     <div class="card w-75">
         <!-- Title of the post -->
         <h3 class="card-title mt-3 text-center text-uppercase">
@@ -18,7 +18,7 @@
         <!-- Name of the author/creator-->
         <p class="text-center">Author: {{post.author}} | {{post.created_on}}</p>
         <!-- Featured image URL-->
-        <img src="{{post.image.url}} " class="card-img-top p-3 w-50">
+        <img src="{{post.image.url}} " class="card-img-top p-3 w-50" alt="image uploaded by the user">
         <div class="card-body">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -74,21 +74,24 @@
 
         {% if user.id == post.author.id  %}
         <div class="d-flex justify-content-center">
-            <a href="{% url 'edit-logs' post.slug  %}" role="button" class="btn btn-info btn-block mx-2 btn-m gradient-custom-4 text-dark"><strong>Edit</strong> </a>
+            <a href="{% url 'edit-logs' post.slug  %}" role="button"
+                class="btn btn-info btn-block mx-2 btn-m gradient-custom-4 text-dark"><strong>Edit</strong> </a>
             <form method="POST" action="{% url 'delete-logs' post.slug  %}">
                 {% csrf_token %}
-            <a href="{% url 'delete-logs' post.slug  %}" role="button" class="btn btn-secondary btn-block mx-2 btn-m gradient-custom-4 text-dark" onClick="deleteFunction()"><strong>Delete</strong></a>
-                </form>
+                <a href="{% url 'delete-logs' post.slug  %}" role="button"
+                    class="btn btn-secondary btn-block mx-2 btn-m gradient-custom-4 text-dark"
+                    onClick="deleteFunction()"><strong>Delete</strong></a>
+            </form>
         </div>
         {% endif %}
         <hr>
         {{ post.body|safe }}
     </div>
-</section>
+</div>
 
 <br>
 <!-- Comments section-->
-<section>
+<div>
     {% if comments %}
     <div class="card w-75">
         <h5 class="card-header">Comments</h5>
@@ -132,8 +135,7 @@
             {%endif%}
         </div>
     </div>
+</div>
+    <br>
 
-</section>
-<br>
-
-{%endblock content%}
+    {%endblock content%}

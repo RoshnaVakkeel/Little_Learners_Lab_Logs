@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<section>
+<div>
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <!-- page lab log posts section -->
+    <!-- page lab log posts div -->
     <div class="container-fluid">
         <div class="row">
             <!-- Lab Log Entries Columns -->
@@ -30,9 +30,9 @@
                                 <div class="image-container text-center">
                                     <div class="col-12 col-lg-12">
                                         {% if "placeholder" in post.image.url %}
-                                        <img class="card-img-top img-fluid w-100 " src="...">
+                                        <img class="card-img-top img-fluid w-100 " src="..." alt="image uploaded by the user">
                                         {% else %}
-                                        <img class="card-img-top img-fluid w-100 " src=" {{ post.image.url }}">
+                                        <img class="card-img-top img-fluid w-100 " src=" {{ post.image.url }}" alt="image uploaded by the user">
                                         {% endif %}
                                     </div>
                                     <div>
@@ -43,7 +43,7 @@
                                     <h2 class="card-title">{{  post.title }}</h2>
                                 </a>
                                 <p class="card-text">{{ post.description }}</p>
-                                <hr />
+                                <hr>
                                 <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                     {{ post.number_of_likes }}</p>
                             </div>
@@ -72,23 +72,24 @@
         </nav>
         {% endif %}
     </div>
-                <!-- if the user have NOT shared any post, the share button below will display -->
-                {% else %}
-                <div class="container text-center mt-4">
-                    <div class="text-dark">
-                        <p>It looks like that you haven't posted any lab logs yet. Click on the button below
-                        </p>
-                    </div>
-                    <div class="mt-4">
-                        <a href="{% url 'add-logs' %}" role="button" type="submit" class="btn btn-success btn-block btn-m gradient-custom-4 text-white">
-                            Create Now!
-                        </a>
-                    </div>
-                </div>
-    
-</section>
+    <!-- if the user have NOT shared any post, the share button below will display -->
+    {% else %}
+    <div class="container text-center mt-4">
+        <div class="text-dark">
+            <p>It looks like that you haven't posted any lab logs yet. Click on the button below
+            </p>
+        </div>
+        <div class="mt-4">
+            <a href="{% url 'add-logs' %}" role="button" type="submit"
+                class="btn btn-success btn-block btn-m gradient-custom-4 text-white">
+                Create Now!
+            </a>
+        </div>
+    </div>
+
+</div>
 <br>
 
-            {% endif %}
+{% endif %}
 
 {%endblock content%}
