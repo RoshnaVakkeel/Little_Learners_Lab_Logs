@@ -15,7 +15,7 @@ from .forms import PostForm, CommentForm, UploadFileForm, EditForm
 class PostList(generic.ListView):
     ''' Class to show list of posts'''
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
 
