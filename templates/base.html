@@ -45,20 +45,21 @@
 <body>
     <div>
         <nav class="navbar d-flex navbar-light" style="background-color: #c9adb6">
-            <div class="container-fluid">
-                <a class="navbar-brand"></a>
-                <form class="d-flex" action="{% url 'search' %}" method="get">
-                    <input name="q" class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+            <div class="container-fluid justify-content-end">
+                <form class="d-flex " action="{% url 'search' %}" method="get">
+                    <input name="q" class="form-control me-2" type="search" value="search" placeholder="Search..."
+                        aria-label="Search">
                     {% csrf_token %}
-                    <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"
-                            aria-hidden="true"></i></button>
+                    <button class="btn btn-outline-dark" type="submit" data-mdb-ripple-color="dark">
+                        Search 
+                    </button>
                 </form>
             </div>
         </nav>
 
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d03280;">
-            <a class="navbar-brand" href="{% url 'home' %}"><i class="fa fa-pencil" aria-hidden="true"></i> Little
-                Learner's Lab Logs
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #851050;">
+            <a class="navbar-brand text-white" href="{% url 'home' %}"><i class="fa fa-pencil" aria-hidden="true"></i>
+                Little Learner's Lab Logs
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,22 +100,22 @@
         </nav>
     </div>
 
-
-    <main class="flex-shrink-0 main-bg">
-        <!-- display any alerts that have been raised -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                        {{ message | safe }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    {% endfor %}
+    <!-- display any alerts that have been raised -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+                {% endfor %}
             </div>
         </div>
+    </div>
 
+
+    <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!-- Content goes here -->
         {% endblock content %}
@@ -123,36 +124,30 @@
 
     <!-- Footer -->
     <footer class="bg-footer text-center text-white">
-        <!-- Grid container -->
-        <div class="container p-4">
+        <div class="text-center p-3" style="background-color: #851050;">
             <!-- Section: Social media -->
-
             <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/roshna-vakkeel/!"
-                target="_blank" role="button"><i class="fab fa-linkedin-in"></i></a>
-
+            <a class="link-info social-links me-3" href="https://www.linkedin.com/in/roshna-vakkeel/!" target="_blank"
+                aria-label="link to github my linkedin profile"><i class="fab fa-linkedin-in"></i></a>
             <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1"
-                href="https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs" target="_blank" role="button"><i
-                    class="fab fa-github"></i></a>
-        </div>
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <a class="link-info social-links me-3" href="https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs"
+                aria-label="link to github project page" target="_blank"><i class="fab fa-github"></i></a>
+            <hr>
+            <!-- Copyright -->
             <small>Copyright@2023 <a class="text-white" href="{% url 'home' %}">Little Learner's Lab logs</a>
                 <br>
                 For Educational Purposes only!</small>
-
         </div>
-
     </footer>
 
     <!-- Alert message settings-->
     <script>
         setTimeout(function () {
-            let messages = document.getElementById('msg');
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
+            try {
+                let messages = document.getElementById('msg');
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            } catch (e) {}
         }, 2000);
     </script>
 
