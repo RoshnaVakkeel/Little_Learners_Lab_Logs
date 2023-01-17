@@ -20,13 +20,14 @@
                 <img src="https://images.pexels.com/photos/7269707/pexels-photo-7269707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="hero-img d-block w-100" alt="kid building with building blocks">
                 <div class="carousel-caption d-md-block">
-                    <h3 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Create!</h3>
-                    <p class="fw-bolder h4 text-dark bg-light"><a href="#about">Learn More</a> and click a button below <i
-                            class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
+                    <h4 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Create!</h4>
+                    <p class="fw-bolder h5 text-dark bg-light "><a href="#about">Learn More</a>, check our <a
+                            href="#latest-posts">Latest Entries</a> and start out by clicking a button below
+                        <i class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button"
+                        <a href="{% url 'my-page' %}" role="button"
                             class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
                     </div>
                     {% else %}
@@ -43,13 +44,13 @@
                 <img src="https://images.pexels.com/photos/7105846/pexels-photo-7105846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="d-block w-100" alt="kid smiling holding a toy rocket">
                 <div class="carousel-caption d-md-block">
-                    <h3 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Have Fun!</h3>
-                    <p class="fw-bolder h4 text-dark bg-light"><a href="#about">Learn More</a> and click a button below <i
-                        class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
+                    <h4 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Have Fun!</h4>
+                    <p class="fw-bolder h5 text-dark bg-light"><a href="#about">Learn More</a> and click a button below
+                        <i class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button"
+                        <a href="{% url 'my-page' %}" role="button"
                             class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
                     </div>
                     {% else %}
@@ -67,13 +68,13 @@
                 <img src="https://images.pexels.com/photos/4434754/pexels-photo-4434754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="d-block w-100" alt="kid referring to spectrum of colors">
                 <div class="carousel-caption d-md-block">
-                    <h3 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Learn!</h3>
-                    <p class="fw-bolder h4 text-dark bg-light"><a href="#about">Learn More</a> and click a button below <i
-                        class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
+                    <h4 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Learn!</h4>
+                    <p class="fw-bolder h5 text-dark bg-light"><a href="#about">Learn More</a> and click a button below
+                        <i class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
-                        <a href="{% url 'add-logs' %}" role="button"
+                        <a href="{% url 'my-page' %}" role="button"
                             class="btn btn-success btn-block btn-m gradient-custom-4 text-white"> Get Started! </a>
                     </div>
                     {% else %}
@@ -100,105 +101,155 @@
     </div>
 </div>
 <br>
-<div class="container px-5">
-    <div class="row row-cols-1 row-cols-lg-2 gx-5 align-items-center">
-        <div class="col text-dark text-center">
-            <h2 class="display-6 fw-bolder mb-4 pb-3 border-bottom" id="about">About</h2>
-            <p> For all the active little ones who are on a constant lookout for fun activities, Little Learner's Lab Logs is the creative corner where fun and learning comes together. It's a place that brings out a little scientist in you. Kids can visit the site explore, read and even create their own lab logs and become a little Einsteins of the future. The aim of these lab logs is to guide them to transform the backyard into their very own science lab.                
-            </p>
-            <p>Not only young kids, if you relate to these people who think...</p>
-            <blockquote class="blockquote text-right">
-                <p class="mb-3">I am looking for a quick source of good educational and fun activities for kids to keep them busy.</p>
-                <footer class="blockquote-footer">- A busy mother</footer>
-            </blockquote>
-            <blockquote class="blockquote text-right">
-                <p class="mb-3">I am passionate about creating small experiments for my students to feel motivated to study science and think outside the limit of textbooks.</p>
-                <footer class="blockquote-footer">- A passionate teacher</footer>
-            </blockquote>
-            <blockquote class="blockquote text-right">
-                <p class="mb-3">As a part of summer project, I wish to develop my own science based activities that clarifies different scientific concepts and write procedures like a scientist.</p>
-                <footer class="blockquote-footer">- An enthusiastic highschool student</footer>
-            </blockquote>
-            <p> It's a place for you too. Come and have great time with these awesome and simple science experiments. <br> HAVE FUN WHILE YOU LEARN! </p>
-        </div>
-        <div class="col img-container">
-            <!-- Image taken from: https://www.pexels.com/photo/mother-helping-her-daughter-with-homework-4260477/-->
-            <img src="https://images.pexels.com/photos/4260477/pexels-photo-4260477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 %}"
-                class="about-img" class="w-75" alt="Bass tutor playing his guitar">
-        </div>
+<div>
+    <div>
+        <h2 class="display-6 fw-bolder mb-4 pb-3 border-bottom w-75 text-center mx-auto" id="about"> About </h2>
     </div>
 </div>
+<div class="text-center">
+    <h3>Are you one of these people?</h3>
+</div>
+
+<div class="container-fluid">
+    <div class="row d-flex flex-row p-3">
+        <div class="mx-auto">
+            <blockquote class="blockquote text-center">
+                <p class="mb-3"><i>"I am looking for new intersting fun activities and want to look like a
+                        scientist"</i>
+                </p>
+                <footer class="blockquote-footer">- A curious little kid</footer>
+            </blockquote>
+        </div>
+        <div class="mx-auto">
+            <blockquote class="blockquote text-center">
+                <p class="mb-3"><i>"I am looking for a quick source of good fun activities for kids to keep them busy,
+                        through which I wish they learn too"</i></p>
+                <footer class="blockquote-footer">- A busy mother</footer>
+            </blockquote>
+        </div>
+        <div class="mx-auto">
+            <blockquote class="blockquote text-center">
+                <p class="mb-3"><i>"I am passionate about creating simple experiments for my students so that to feel
+                        motivated
+                        to learn new concepts science and can think outside the limit of textbooks"</i></p>
+                <footer class="blockquote-footer">- A passionate teacher</footer>
+            </blockquote>
+        </div>
+        <div class="mx-auto">
+            <blockquote class="blockquote text-center">
+                <p class="mb-3"><i>As a part of summer project, I wish to develop my own science based activities
+                        that clarifies different scientific concepts and write procedures like a scientist</i></p>
+                <footer class="blockquote-footer">- An enthusiastic highschool student</footer>
+            </blockquote>
+        </div>
+        <h4 class="text-center"><u>Welcome to Little Learner's Lab Logs!!!</u></h4>
+        <h5 class="text-center">Join us and take little steps towards becoming a future Einsteins!!</h5>
+        <p> For all the curious active little young minds and students, who are on a constant lookout for fun activities
+            and small projects, Little Learner's Lab Logs is a creative corner where fun and learning comes together.
+            This site aims to guide them to transform the backyard into their very own science lab. Here one can
+            explore, read and even create their own lab logs. It's a site that brings out the little curious scientist
+            hidden within us.
+        </p>
+        <br>
+        <h5 class="text-center">No frustrations.. Explore, Engage and Experience Fun!!</h5>
+        <p> For all the parents, who wish to entertain, engage and educate their little ones at the same time with some
+            fun activities. The aim of this site is to detail simple small experiments that can intrigue the kids, with
+            the items readily available at home, so that they do not have to spend extra time from their busy schedules.
+        </p>
+        <br>
+        <h5 class="text-center">Motivate.. Teach real Scientific Methodology!!</h5>
+        <p> For all the passionate teachers, who would like to conduct small workshops for children or motivate students
+            so that they to become more intuitive about the scientific concepts around them, this site is for you too.
+            Here not only students can read and get info on steps to perform the experiment, but also teacher can train
+            them the proper method of entering the experimental details. They can create log posts so that their keen
+            observations and skills enhance.
+        </p>
+        <br>
+        <h3 class="text-center">Getting Started.. Your Guide</h3>
+        <h5 class="text-center">Bringing out the <i>Explorer</i> in you..</h5>
+        <p> You can access the latest posts right here at this <a href="{% url 'home' %}">Home page</a> and all our
+            collections in the <a href="{% url 'lab-logs' %}">Lab Log Posts</a> page. To help you guide through the
+            posts, you may check the number of likes the post has recieved. You can click on the titles of the enlisted
+            posts to read details of the experiment.
+        </p>
+        <h5 class="text-center">Bringing out the <i>Creator</i> in you..</h5>
+        <p> To become a creator, you have to <a href="{% url 'account_signup' %}">Sign Up</a> and then using the
+            username and password <a href="{% url 'account_login' %}">Sign In</a>. Upon signing-in, you can see your <a
+                href="{% url 'my-page' %}">personal page</a>. If you are not signed-in, you will be asked to sign in
+            first. You can create posts in your personal page. If you are the author of the posts, you may be able to
+            edit and delete the posts you create. Also, you may enter comments and like the posts.
+            <br>
+            So Sign Up and unleash the creator within you!!
+        </p>
+    </div>
+</div>
+
+<!-- page lab log posts section -->
 <br>
 <div>
     <div>
-        <h2 class="display-6 fw-bolder mb-4 pb-3 border-bottom w-75 text-center mx-auto"> Latest Entries </h2>
-    </div>
-    <br>
-
-    <!-- page lab log posts section -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Lab Log Entries Columns -->
-            <div class="col-12 mt-2 left">
-                <div class="row">
-                    {% for post in post_list %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 ">
-                            <div class="card-body">
-                                <div class="image-container text-center">
-                                    <div class="col-12 col-lg-12">
-                                        {% if "placeholder" in post.image.url %}
-                                        <img class="img-fluid w-100" src="..." alt="image uploaded by the user">
-                                        {% else %}
-                                        <img class="img-fluid w-100 " src=" {{ post.image.url }}"
-                                            alt="image uploaded by the user">
-                                        {% endif %}
-                                    </div>
-
-                                    <div>
-                                        <p class="author">Submitted by: {{ post.author }}</p>
-                                    </div>
-
-                                </div>
-
-                                <a href="{% url 'log-details' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{  post.title }}</h2>
-                                </a>
-                                <p class="card-text">{{ post.description }}</p>
-                                <hr>
-                                <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                    {{ post.number_of_likes }}
-                                </p>
-
-
-
-                            </div>
-                        </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:3 %}
-                </div>
-                <div class="row">
-                    {% endif %}
-                    {% endfor %}
-
-                </div>
-            </div>
-        </div>
-        {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                {% endif %}
-                {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-                {% endif %}
-            </ul>
-        </nav>
-        {% endif %}
+        <h2 class="display-6 fw-bolder mb-4 pb-3 border-bottom w-75 text-center mx-auto" id="latest-posts"> Latest
+            Entries </h2>
     </div>
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Lab Log Entries Columns -->
+        <div class="col-12 mt-2 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 ">
+                        <div class="card-body">
+                            <div class="image-container text-center">
+                                <div class="col-12 col-lg-12">
+                                    {% if "placeholder" in post.image.url %}
+                                    <img class="img-fluid w-100" src="..." alt="image uploaded by the user">
+                                    {% else %}
+                                    <img class="img-fluid w-100 " src=" {{ post.image.url }}"
+                                        alt="image uploaded by the user">
+                                    {% endif %}
+                                </div>
 
+                                <div>
+                                    <p class="author">Submitted by: {{ post.author }}</p>
+                                </div>
+
+                            </div>
+
+                            <a href="{% url 'log-details' post.slug %}" class="post-link">
+                                <h2 class="card-title">{{  post.title }}</h2>
+                            </a>
+                            <p class="card-text">{{ post.description }}</p>
+                            <hr>
+                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                {{ post.number_of_likes }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
 
 {%endblock%}

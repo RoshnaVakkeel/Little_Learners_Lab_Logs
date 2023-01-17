@@ -5,13 +5,31 @@
 
 {% block content %}
 
+<br>
 <div>
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
-                <h3 class="text-center text-dark"> {{user.username}}'s Page</h3>
+                <h3 class="text-center text-dark" id="user-page"> {{user.username}}'s Page</h3>
                 <hr>
             </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-4">
+        <div class="text-dark">
+            <p>What brings you here today. Would you like to add a lab log post?
+            </p>
+        </div>
+        <div class="mt-4 mb-5">
+            <a href="{% url 'add-logs' %}" role="button" type="submit"
+                class="btn btn-success btn-block btn-m gradient-custom-4 text-white">
+                Create Now!
+            </a>
+        </div>
+        <div class="text-dark">
+            <h4>Have a look at what you have posted so far..</h4>
+            <hr>
         </div>
     </div>
     <!-- page lab log posts div -->
@@ -72,21 +90,14 @@
         </nav>
         {% endif %}
     </div>
-    <!-- if the user have NOT shared any post, the share button below will display -->
+    <!-- if the user have NOT shared any post, the Create New button below will display -->
     {% else %}
     <div class="container text-center mt-4">
         <div class="text-dark">
-            <p>It looks like that you haven't posted any lab logs yet. Click on the button below
+            <p>It looks like that you haven't posted any lab logs yet.
             </p>
         </div>
-        <div class="mt-4">
-            <a href="{% url 'add-logs' %}" role="button" type="submit"
-                class="btn btn-success btn-block btn-m gradient-custom-4 text-white">
-                Create Now!
-            </a>
-        </div>
     </div>
-
 </div>
 <br>
 
