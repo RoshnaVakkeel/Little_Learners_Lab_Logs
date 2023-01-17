@@ -32,8 +32,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['little-learners-lab-logs.herokuapp.com', 'localhost', '8000-roshnavakke-littlelearn-oi0e72xya76.ws-eu82.gitpod.io' ]
-
+ALLOWED_HOSTS = ['little-learners-lab-logs.herokuapp.com', 'localhost']
 
 # Application definition
 
