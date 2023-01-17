@@ -3,6 +3,31 @@
 /*--------------------------------------------Colors*/
 body {
     background-color: #c9adb6;
+    font-size: 100%;
+}
+
+h1 {
+    font-size: 5.9vw;
+}
+
+h2 {
+    font-size: 3.0vh;
+}
+
+h3 {
+    font-size: 2.8vh;
+}
+
+h4 {
+    font-size: 2.5vh;
+}
+
+h5 {
+    font-size: 2vh;
+}
+
+p {
+    font-size: 4vmin;
 }
 
 .bg-light {
@@ -86,4 +111,6 @@ body {
         font-size: medium;
         font-weight: 600;
     }
+
+
 }

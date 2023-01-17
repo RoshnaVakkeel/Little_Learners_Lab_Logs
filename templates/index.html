@@ -20,10 +20,8 @@
                 <img src="https://images.pexels.com/photos/7269707/pexels-photo-7269707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="hero-img d-block w-100" alt="kid building with building blocks">
                 <div class="carousel-caption d-md-block">
-                    <h4 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Create!</h4>
-                    <p class="fw-bolder h5 text-dark bg-light "><a href="#about">Learn More</a>, check our <a
-                            href="#latest-posts">Latest Entries</a> and start out by clicking a button below
-                        <i class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
+                    <h3 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Create!</h3>
+                    <h6 class="fw-bolder text-dark bg-light"><a href="#about">Learn More</a> and start by clicking a button below <i class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</h6>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
@@ -44,9 +42,8 @@
                 <img src="https://images.pexels.com/photos/7105846/pexels-photo-7105846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="d-block w-100" alt="kid smiling holding a toy rocket">
                 <div class="carousel-caption d-md-block">
-                    <h4 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Have Fun!</h4>
-                    <p class="fw-bolder h5 text-dark bg-light"><a href="#about">Learn More</a> and click a button below
-                        <i class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
+                    <h3 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Have Fun!</h3>
+                    <h6 class="fw-bolder text-dark bg-light w-75 mx-auto">Check out our <a href="#guide">Getting Started</a> guide and click a button below <i class="fa fa-hand-o-down" aria-hidden="true"></i></h6>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
@@ -68,9 +65,8 @@
                 <img src="https://images.pexels.com/photos/4434754/pexels-photo-4434754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="d-block w-100" alt="kid referring to spectrum of colors">
                 <div class="carousel-caption d-md-block">
-                    <h4 class="display-6 fw-bolder text-dark bg-light w-50 mx-auto">Let's Learn!</h4>
-                    <p class="fw-bolder h5 text-dark bg-light"><a href="#about">Learn More</a> and click a button below
-                        <i class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</p>
+                    <h3 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Learn!</h3>
+                    <h6 class="fw-bolder text-dark bg-light w-75 mx-auto"> Learn about our<a href="#latest-posts"> Latest Entries</a> and click a button below <i class="fa fa-hand-o-down" aria-hidden="true"></i> </h6>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
@@ -114,31 +110,29 @@
     <div class="row d-flex flex-row p-3">
         <div class="mx-auto">
             <blockquote class="blockquote text-center">
-                <p class="mb-3"><i>"I am looking for new intersting fun activities and want to look like a
-                        scientist"</i>
+                <p class="mb-3"><i>"I am looking for new interesting fun activities and want to look like
+                        Einstein performing them.."</i>
                 </p>
-                <footer class="blockquote-footer">- A curious little kid</footer>
+                <footer class="blockquote-footer"><p>- Some curious little kid</p></footer>
             </blockquote>
         </div>
         <div class="mx-auto">
             <blockquote class="blockquote text-center">
-                <p class="mb-3"><i>"I am looking for a quick source of good fun activities for kids to keep them busy,
-                        through which I wish they learn too"</i></p>
-                <footer class="blockquote-footer">- A busy mother</footer>
+                <p class="mb-3"><i>"We are looking for a quick source of good fun activities for our kids to keep them not only engaged, but also they get to learn something new.. "</i></p>
+                <footer class="blockquote-footer">- Some busy parents somewhere</footer>
             </blockquote>
         </div>
         <div class="mx-auto">
             <blockquote class="blockquote text-center">
-                <p class="mb-3"><i>"I am passionate about creating simple experiments for my students so that to feel
-                        motivated
-                        to learn new concepts science and can think outside the limit of textbooks"</i></p>
+                <p class="mb-3"><i>"I am passionate about creating simple experiments for my students so that they feel
+                        motivated to understand new scientific concepts and learn to think outside the limit of their textbooks.."</i></p>
                 <footer class="blockquote-footer">- A passionate teacher</footer>
             </blockquote>
         </div>
         <div class="mx-auto">
             <blockquote class="blockquote text-center">
                 <p class="mb-3"><i>As a part of summer project, I wish to develop my own science based activities
-                        that clarifies different scientific concepts and write procedures like a scientist</i></p>
+                        that clarifies different scientific concepts and I wish to log the procedures like a scientist..</i></p>
                 <footer class="blockquote-footer">- An enthusiastic highschool student</footer>
             </blockquote>
         </div>
@@ -165,7 +159,7 @@
             observations and skills enhance.
         </p>
         <br>
-        <h3 class="text-center">Getting Started.. Your Guide</h3>
+        <h3 class="text-center" id="guide">Getting Started.. Your Guide</h3>
         <h5 class="text-center">Bringing out the <i>Explorer</i> in you..</h5>
         <p> You can access the latest posts right here at this <a href="{% url 'home' %}">Home page</a> and all our
             collections in the <a href="{% url 'lab-logs' %}">Lab Log Posts</a> page. To help you guide through the
@@ -177,9 +171,9 @@
             username and password <a href="{% url 'account_login' %}">Sign In</a>. Upon signing-in, you can see your <a
                 href="{% url 'my-page' %}">personal page</a>. If you are not signed-in, you will be asked to sign in
             first. You can create posts in your personal page. If you are the author of the posts, you may be able to
-            edit and delete the posts you create. Also, you may enter comments and like the posts.
+            edit and delete the posts you create. Also, you may enter comments and like the posts. And yes, don't access the Admin link, it is for the admin who will ensure only good content reaches you.</a>
             <br>
-            So Sign Up and unleash the creator within you!!
+            <strong>So Sign Up/Sign In and unleash the creator within you!!</strong>
         </p>
     </div>
 </div>
