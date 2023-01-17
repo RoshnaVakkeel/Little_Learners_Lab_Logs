@@ -20,8 +20,8 @@
                 <img src="https://images.pexels.com/photos/7269707/pexels-photo-7269707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="hero-img d-block w-100" alt="kid building with building blocks">
                 <div class="carousel-caption d-md-block">
-                    <h3 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Create!</h3>
-                    <h6 class="fw-bolder text-dark bg-light"><a href="#about">Learn More</a> and start by clicking a button below <i class="fa fa-hand-o-down" aria-hidden="true"></i> to be a Little Learner</h6>
+                    <h5 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Create!</h5>
+                    <p class="fw-bolder text-dark bg-light"><a href="#about">Learn More</a> and click<i class="fa fa-hand-o-down" aria-hidden="true"></i> </p>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
@@ -31,7 +31,7 @@
                     {% else %}
                     <div class="d-flex justify-content-center">
                         <a href="{% url 'account_signup' %}" role="button"
-                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
+                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Sign Up </a>
                         <a href="{% url 'account_login' %}" role="button"
                             class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
                     </div>
@@ -42,8 +42,8 @@
                 <img src="https://images.pexels.com/photos/7105846/pexels-photo-7105846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="d-block w-100" alt="kid smiling holding a toy rocket">
                 <div class="carousel-caption d-md-block">
-                    <h3 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Have Fun!</h3>
-                    <h6 class="fw-bolder text-dark bg-light w-75 mx-auto">Check out our <a href="#guide">Getting Started</a> guide and click a button below <i class="fa fa-hand-o-down" aria-hidden="true"></i></h6>
+                    <h5 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Have Fun!</h5>
+                    <p class="fw-bolder text-dark bg-light w-75 mx-auto"><a href="#guide">Get Started</a> and click <i class="fa fa-hand-o-down" aria-hidden="true"></i></p>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
@@ -53,7 +53,7 @@
                     {% else %}
                     <div class="d-flex justify-content-center">
                         <a href="{% url 'account_signup' %}" role="button"
-                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
+                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Sign Up </a>
                         <a href="{% url 'account_login' %}" role="button"
                             class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
                     </div>
@@ -65,8 +65,8 @@
                 <img src="https://images.pexels.com/photos/4434754/pexels-photo-4434754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     class="d-block w-100" alt="kid referring to spectrum of colors">
                 <div class="carousel-caption d-md-block">
-                    <h3 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Learn!</h3>
-                    <h6 class="fw-bolder text-dark bg-light w-75 mx-auto"> Learn about our<a href="#latest-posts"> Latest Entries</a> and click a button below <i class="fa fa-hand-o-down" aria-hidden="true"></i> </h6>
+                    <h5 class="fw-bolder text-dark bg-light w-50 mx-auto">Let's Learn!</h5>
+                    <p class="fw-bolder text-dark bg-light w-75 mx-auto"> Check out<a href="#latest-posts"> Latest Entries</a> and click <i class="fa fa-hand-o-down" aria-hidden="true"></i> </p>
                     <br>
                     {% if user.is_authenticated %}
                     <div class="d-flex justify-content-center">
@@ -76,7 +76,7 @@
                     {% else %}
                     <div class="d-flex justify-content-center">
                         <a href="{% url 'account_signup' %}" role="button"
-                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Register </a>
+                            class="btn btn-success btn-block mx-2 btn-m gradient-custom-4 text-white"> Sign Up </a>
                         <a href="{% url 'account_login' %}" role="button"
                             class="btn btn-success btn-block  mx-2 btn-m gradient-custom-4 text-white"> Sign In </a>
                     </div>
@@ -103,7 +103,7 @@
     </div>
 </div>
 <div class="text-center">
-    <h3>Are you one of these people?</h3>
+    <h5>Are you one of these people?</h5>
 </div>
 
 <div class="container-fluid">
@@ -119,21 +119,21 @@
         <div class="mx-auto">
             <blockquote class="blockquote text-center">
                 <p class="mb-3"><i>"We are looking for a quick source of good fun activities for our kids to keep them not only engaged, but also they get to learn something new.. "</i></p>
-                <footer class="blockquote-footer">- Some busy parents somewhere</footer>
+                <footer class="blockquote-footer"><p>- Some busy parents somewhere</p></footer>
             </blockquote>
         </div>
         <div class="mx-auto">
             <blockquote class="blockquote text-center">
                 <p class="mb-3"><i>"I am passionate about creating simple experiments for my students so that they feel
                         motivated to understand new scientific concepts and learn to think outside the limit of their textbooks.."</i></p>
-                <footer class="blockquote-footer">- A passionate teacher</footer>
+                <footer class="blockquote-footer"><p>- A passionate teacher</p></footer>
             </blockquote>
         </div>
         <div class="mx-auto">
             <blockquote class="blockquote text-center">
                 <p class="mb-3"><i>As a part of summer project, I wish to develop my own science based activities
                         that clarifies different scientific concepts and I wish to log the procedures like a scientist..</i></p>
-                <footer class="blockquote-footer">- An enthusiastic highschool student</footer>
+                <footer class="blockquote-footer"><p>- An enthusiastic highschool student</p></footer>
             </blockquote>
         </div>
         <h4 class="text-center"><u>Welcome to Little Learner's Lab Logs!!!</u></h4>

@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['little-learners-lab-logs.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['little-learners-lab-logs.herokuapp.com', 'localhost', '8000-roshnavakke-littlelearn-oi0e72xya76.ws-eu82.gitpod.io' ]
 
 
 # Application definition
