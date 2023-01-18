@@ -63,26 +63,6 @@ p {
     overflow: hidden;
 }
 
-/*--------------------------------------------lab logs list*/
-.card {
-    margin: auto;
-}
-
-.card-img-top {
-    margin: auto;
-}
-
-/*--------------------------------------------Sign in Form*/
-.form {
-    width: 40%;
-    margin: auto;
-    padding: 60px;
-}
-
-.bg-footer {
-    background-color: #d03280;
-}
-
 /*--------------------------------------------add_logs page*/
 .form-group {
     display: block;

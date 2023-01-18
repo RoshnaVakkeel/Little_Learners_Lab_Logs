@@ -76,4 +76,3 @@ class CommentForm(forms.ModelForm):
         # From comment model  choose which fields to display
         model = Comment
         fields = ('body',)
-
