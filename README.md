@@ -70,12 +70,14 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 ## Site Goals
 - Little Learner's Lab Logs is a website mainly meant for curious kids of all ages, where they can explore, create activity logs and also post fun science experiments that could even be performed at home. 
 - It is also an useful site for busy parents, who wish that their children to learn new scientific concepts through simple fun experiments. 
-- It is also a place for those passionate teachers who want to encourage their students to be motivated to learn science and be intuitive about the scientific concepts around them. All users who sign up and sign in, can access all the features of the website and can create, edit, and delete their posts.
+- It is also a place for those passionate teachers who want to encourage their students to be motivated to learn science and be intuitive about the scientific concepts around them. 
+- All users who sign up and sign in, can access all the features of the website and can create, edit, and delete their posts.
 
 ## User Personas 
 
 # Agile Methodology
 All functionality and development of this project will be managed through GitHub issues and projects. The initial conception was done using google sheets. 
+The link can be found [here](docs/agile/epics_and_user_stories.xlsx).
 
 ## Epics and User Stories
 
