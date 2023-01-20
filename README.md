@@ -10,13 +10,13 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 	- [Site Goals](#site-goals)
 	- [User Personas](#user-personas)
 	- [Scope](#scope)
-	- [Agile Methodology](<#agile-methodology>)
-    	- [Epics and User Stories](<#epics-and-user-stories>)
-        	- [Website UI](<#website-ui>)
-        	- [Registration and Account Management](<#registration-and-account-management>)
-			- [Lab Log Post Management](<#lab-log-post-management>)
-			- [Comment and Like Management](<#comment-and-like-management>)
-        - [Acceptance Criteria](<#acceptance-criteria>)
+- [Agile Methodology](<#agile-methodology>)
+    - [Epics and User Stories](<#epics-and-user-stories>)
+        - [Website UI](<#website-ui>)
+        - [Registration and Account Management](<#registration-and-account-management>)
+		- [Lab Log Post Management](<#lab-log-post-management>)
+		- [Comment and Like Management](<#comment-and-like-management>)
+    - [Acceptance Criteria](<#acceptance-criteria>)
 	- [Tasks](<#tasks>)
 	- [User Story Management](<#user-story-management>)
 - [Features](<#features>)
@@ -51,6 +51,8 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 - [Technologies](<#technologies>)
 	- [Languages Used](<#languages-used>)
 	- [Frameworks, Libraries and Programs](<#frameworks-libraries-and-programs>)
+- [Production](#production)
+	- [Django](<#django>)
 - [Testing](<#testing>)
 	- [Testing Technologies](<#testing-technologies>)
 		- [Automated Testing](<#automated-testing>)
@@ -58,7 +60,6 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 			- [Validation](<#validation>)
 - [Bugs and Issues](<#bugs-and-issues>)
 - [Deployment](<#deployment>)
-	- [Django](<#django>)
 	- [Heroku](<#heroku>)
 - [Credits and Resources](<#credits-and-resources>)
 	- [Code](<#code>)
@@ -103,14 +104,11 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 	7. Ability to add/edit and remove posts in user's personal page
 
 
-## Website UI
-
 ## Agile Methodology
-All functionality and development of this project will be managed through GitHub issues and projects. The initial conception was done using google sheets. 
-The link can be found [here](docs/agile/epics_and_user_stories.xlsx).
+Throughout this project, an agile approach was taken in order to develop the website  Each activity was broken down into  manageable actions from initially creating 4 Epics, which were then broken down into smaller User Stories. Each of the user stories then had different acceptance criteria. The status, comments and details of each Epic along with the associated User Stories can be found in the kanban board linked [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1). This made the overall project much more manageable to build. 
 
 ## Epics and User Stories
-4 Epics were created which were further developed into 15 User Stories. The status, comments and details of each Epic along with the associated User Stories can be found in the kanban board linked [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1).
+4 Epics were created which were further developed into 15 User Stories. The initial conception was done using google sheets. The link can be found [here](docs/agile/epics_and_user_stories.xlsx).
 
 ### Website UI
 [Epic 01: Little_Learner's_Lab_Logs website UI #1](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/1)
@@ -180,3 +178,57 @@ Related User Stories:
 2. [USER STORY US 14: Site Owners Approval of Comments #18](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/18): As a site owner and admin I can review and then approve or disapprove comments so that unsuitable comment can be filtered out as children also would be site users.
 3. [USER STORY US 15: Add or Remove Likes on a Post#19](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/19): As a signed-in site user I can add like to the lab log posts I liked so that I can guide other users to select simple experiments that may be more interesting.
 
+## Acceptance Criteria
+For all the User Stories, Acceptance Criteria was also mentioned. The purpose of this was to provide a reference point for the developmental steps. I made sure to cross-check that all the required steps intended was implemented. It also helped with Testing to make sure that all the necessary aspects and features were covered. The acceptance criteria is described on the column next to the user stories (column H) [here](docs/agile/epics_and_user_stories.xlsx).
+
+## Tasks
+The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project.
+The tasks during the development phase were carried out in this order.
+
+
+## Production
+### Django Installation and Set Up
+This website is built on the Django framework.To set up a Django project and install the necessary dependencies, these steps were followed:
+
+Within your development environment, 
+1. install Django using the command:
+~~~
+pip3 install django gunicorn
+~~~
+This installs Django (the framework) and gunicorn (which is a WSGI HTTP server that will be used by the site).
+
+2. Then install the libraries `psycopg2` and `dj_database_url==0.5.0 psycopg2` using the command line:
+~~~
+pip3 install dj_database_url==0.5.0 psycopg2
+~~~
+These libraries are needed for connecting to the database.
+
+3. As this site uses Cloudinary to store files, this needs to be installed with:
+~~~
+pip3 install dj3-cloudinary-storage
+~~~
+This allows the site to use Cloudinary for storing and serving files
+
+4. Once all the dependencies are installed, generate a requirements.txt document for them by using:
+~~~
+pip3 freeze --local > requirements.txt
+~~~
+This will store the dependencies of the project in a file called requirements.txt
+
+5. Next, start a new Django project using the command:
+~~~
+django-admin startproject <your-project-name> .
+~~~
+(don't leave off the dot at the end as this determines where the project is created).
+
+6. Migrations need to be run to set the database up, this can be done with:
+~~~
+python3 manage.py migrate
+~~~
+
+7. Finally, you can commit and push your changes to GitHub using :
+~~~
+git add .
+git commit -m "initial commit
+git push
+~~~
