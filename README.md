@@ -77,6 +77,32 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 
 ## User Personas 
 
+## Scope
+
+- An attractive and intuitive UX experience: 
+	1. Website title focus kids as primany users
+	2. Hero-image with information on the site's purpose
+	3. Responsve design
+	4. A clear and straightforward layout
+	5. Footer fixed at the bottom with links to social media
+
+- An easy navigation for the user through all the pages and features
+	1. Navigation Menu with easy access to all links.
+	2. Easy Sign Up/ Sign In/ Sign Out functionality visible.
+	3. Content guiding users how to start using the websites features
+	4. Description of features that would suite different users' needs 
+	5. Hero image guidance to sign up/sign in
+
+- Lab Log posts features
+	1. Latest entries feature on the landing page
+	2. Exclusive page for all the posts
+	3. On a click they can view post details
+	4. Ability to be able to search for posts
+	5. Ability to comment on/like posts
+	6. Create, Edit and Delete Posts
+	7. Ability to add/edit and remove posts in user's personal page
+
+
 ## Website UI
 
 ## Agile Methodology
@@ -84,8 +110,9 @@ All functionality and development of this project will be managed through GitHub
 The link can be found [here](docs/agile/epics_and_user_stories.xlsx).
 
 ## Epics and User Stories
-4 Epics were created which were further developed into 15 User Stories. The details of each Epic along with the associated User Stories can be found in the kanban board linked [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1).
+4 Epics were created which were further developed into 15 User Stories. The status, comments and details of each Epic along with the associated User Stories can be found in the kanban board linked [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1).
 
+### Website UI
 [Epic 01: Little_Learner's_Lab_Logs website UI #1](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/1)
 Epic Goals for End User:
 1. An intuitive User Interface with easy to use navigation
