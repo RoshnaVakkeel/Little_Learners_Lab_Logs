@@ -9,11 +9,13 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 - [User Experience (UX)](#user-experience-ux)
 	- [Site Goals](#site-goals)
 	- [User Personas](#user-personas)
+	- [Scope](#scope)
 	- [Agile Methodology](<#agile-methodology>)
     	- [Epics and User Stories](<#epics-and-user-stories>)
         	- [Website UI](<#website-ui>)
         	- [Registration and Account Management](<#registration-and-account-management>)
 			- [Lab Log Post Management](<#lab-log-post-management>)
+			- [Comment and Like Management](<#comment-and-like-management>)
         - [Acceptance Criteria](<#acceptance-criteria>)
 	- [Tasks](<#tasks>)
 	- [User Story Management](<#user-story-management>)
@@ -75,17 +77,79 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 
 ## User Personas 
 
-# Agile Methodology
+## Website UI
+
+## Agile Methodology
 All functionality and development of this project will be managed through GitHub issues and projects. The initial conception was done using google sheets. 
 The link can be found [here](docs/agile/epics_and_user_stories.xlsx).
 
 ## Epics and User Stories
+4 Epics were created which were further developed into 15 User Stories. The details of each Epic along with the associated User Stories can be found in the kanban board linked [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1).
 
-### Website UI
 [Epic 01: Little_Learner's_Lab_Logs website UI #1](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/1)
+Epic Goals for End User:
+1. An intuitive User Interface with easy to use navigation
+2. A means of viewing the full list o blogs including likes
+3. functionality to allow users to register, sign in and sign out
+4. Upon signing in, the user should be able to like, comment on the blog posts
 
+Related User Stories:
+1. [USER STORY US01: Intuitive User Interface #2](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/2):
+	As a Site user I can see a well defined landing page so that I can easily understand the purpose and main features of the website.
+2. [USER STORY US02: Site pagination#3](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/3):
+	As a Site user I can view a well paginated website so that navigate easily to different features offered.
+3. [USER STORY US03: Log Posts Display#4](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/4):
+	As a Site user I can see the collection of log posts at a glance so that I can find the lab log posts of my choice.
+4. [USER STORY US04: User Registration/Sign Up Link#5](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/5):
+	As a Site user I can easily see a registration button and sign up option so that I can register to access all create, edit and delete functions offered by the website.
 
 ### Registration and Account Management
-[EPIC 02: Registration and Account Management #6](https://github.com/users/RoshnaVakkeel/projects/2?pane=issue&itemId=17286387)
+[EPIC 02: Registration and Account Management #6](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/6)
+Epic Goals for End User:
 
-### 
+1. Easy registration of an account
+2. Easy Sign Up, Sign in and Sign Out
+3. Confirmation upon signing in 
+4. Upon signing in, the user should be able to like, comment on the lab log post posts
+5. Easy access to Create, Read, Update and Delete (CRUD) features upon signing in
+6. Visibility of personalized lab log post posts and comments
+
+Related User Stories:
+1. [USER STORY US05: Account Creation#7](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/7):
+As a Site user I can create an account by registering my details so that I can comment, like, create and edit lab log posts
+2. [USER STORY US06: Account Confirmation #8](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/8):
+As a Site user I can I get a message upon signing up so that I can know that my account registration was successful.
+3. [USER STORY US07: Sign In and Sign Out Features #9](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/9): As a registered Site user I can easily Sign in or Sign Out so that I can access my personal posts and comments.
+4. [USER STORY US 08: User Personal Page Features#10](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/10):
+As a registered Site user I can see my personal page so that I can create my own lab log post posts and edit or delete them.
+
+
+### Lab Log Post Management
+[EPIC 03: Lab Log Post Management#11](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/11)
+
+Epic Goals for End User:
+
+1. Create lab log posts. 
+2. View their created lab log posts
+3. Update/Edit personalized lab log posts
+4. Delete lab log posts
+
+Related User Stories:
+1. [USER STORY US09: Add Lab Log Posts#12](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/12): As a signed-in Site user I can create a lab log post so that I can share my ideas and experiments
+2. [USER STORY US 10: View/Read Lab Log Posts #13](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/13): As a signed-in Site user who created a lab log post I can read my post with my name among other posts on homepage so that I can share my posts with others.
+3. [USER STORY US 11: Edit Lab Log Posts #14](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/14):As a signed-in site user I can edit and update a lab log post I created so that I can make additions, edit, correct the entries I made in the post.
+4. [USER STORY US 12: Delete Lab Log Posts#15](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/15): As a signed-in site user I can choose to delete a lab log post I created so that I publish only the posts of my choice.
+
+
+### Comments and Like Management
+[EPIC 04: Comments/Likes Management #16](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/16)
+
+Epic Goals for End User:
+1. Add and see Comments 
+2. Add/remove Likes
+
+Related User Stories:
+1. [USER STORY US 13: Post Comments #17 ](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/17): As a signed-in site user I can add a comment on any lab log posts so that I can express my opinion about a topic of my choice.
+2. [USER STORY US 14: Site Owners Approval of Comments #18](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/18): As a site owner and admin I can review and then approve or disapprove comments so that unsuitable comment can be filtered out as children also would be site users.
+3. [USER STORY US 15: Add or Remove Likes on a Post#19](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/19): As a signed-in site user I can add like to the lab log posts I liked so that I can guide other users to select simple experiments that may be more interesting.
+
