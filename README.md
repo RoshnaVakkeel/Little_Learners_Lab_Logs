@@ -188,12 +188,13 @@ The tasks during the development phase were carried out in this order.
 
 ## Production
 ### Django Installation and Set Up
-This website is built on the Django framework.To set up a Django project and install the necessary dependencies, these steps were followed:
+This website is built on the Django framework. To set up a Django project, the necessary dependencies were installed. This project uses the old versions as mentioned in CI's Django wakthrough project "I think therefore I blog"
+This needs these steps to be followed:
 
-Within your development environment, 
+Within the development environment, 
 1. install Django using the command:
 ~~~
-pip3 install django gunicorn
+pip3 install 'django<4' gunicorn
 ~~~
 This installs Django (the framework) and gunicorn (which is a WSGI HTTP server that will be used by the site).
 
@@ -217,9 +218,14 @@ This will store the dependencies of the project in a file called requirements.tx
 
 5. Next, start a new Django project using the command:
 ~~~
-django-admin startproject <your-project-name> .
+django-admin startproject <project-name> .
 ~~~
 (don't leave off the dot at the end as this determines where the project is created).
+
+In my case, it was:
+~~~
+django-admin startproject little-learners-lab-logs .
+~~~
 
 6. Migrations need to be run to set the database up, this can be done with:
 ~~~
@@ -232,3 +238,5 @@ git add .
 git commit -m "initial commit
 git push
 ~~~
+
+
