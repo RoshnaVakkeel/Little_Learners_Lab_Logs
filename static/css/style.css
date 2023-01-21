@@ -56,11 +56,10 @@ p {
 }
 
 /*--------------------------------------------Section 1 Hero Image*/
-.w-100 {
-    object-fit: cover;
-    object-position: center;
-    height: 75vh;
-    overflow: hidden;
+
+
+.carousel-inner{
+    height: 100%;
 }
 
 /*--------------------------------------------add_logs page*/
