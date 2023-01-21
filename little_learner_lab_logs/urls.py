@@ -22,3 +22,5 @@ urlpatterns = [
     path('', include('logs.urls'), name='logs_urls'),
     path('accounts/', include('allauth.urls')),
 ]
+
+handler404 = 'little_learner_lab_logs.views.handler404'

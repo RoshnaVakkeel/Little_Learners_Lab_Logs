@@ -14,12 +14,15 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="container-fluid vh-100">
+<div>
+    <h3 class="display-6 fw-bolder mb-4 pb-3 border-bottom text-center p-3 w-75 mx-auto">
+        <i><strong>Search Results</strong></i>
+    </h3>
+</div>
 {% if q %}
-
 {% for post in results %}
-<div class="card mb-4 w-75">
-
+<div class="card mb-4 mx-auto w-75">
     <div class="card-header">
         <a href="{% url 'log-details' post.slug %}" class="post-link">
             <h4 class="card-title">{{  post.title }}</h4>
@@ -30,8 +33,16 @@
       <p class="card-text">{{ post.description }}</p>
     </div>
   </div>
-  {% endfor %}
+
+  {% empty %}
+  <div class="container text-center mt-4">
+    <div class="text-dark">
+        <p class="fw-bold">There was no matching results found. <br> Please try another keyword..
+        </p>
+    </div>
+</div>
+{% endfor %}
   {% endif %}
 </div>
-
+</div>
 {% endblock %}
