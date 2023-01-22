@@ -151,17 +151,20 @@ def EditPost(request, slug):
     return render(request, template, context)
 
 
-@login_required
-def DeletePost(request, slug):
-    """ Delete a post to the lab log post """
-    post = get_object_or_404(Post, slug=slug)
-    if request.user.id == post.author.id:
-        post.delete()
-        messages.success(request, 'Post has been deleted!')
-        return redirect(reverse('my-page'))
-    else:
-        messages.error(request, 'Sorry. \
-            You are not authorised to perform that operation.')
+class DeletePost(generic.DeleteView):
+    ''' Class to allow posts to be deleted '''
+    model = Post
+    template_name = 'delete_logs.html'
+    success_url =  '/'
+    success_message = "Post was deleted successfully"
+    '''
+    Display delete message once a post is deleted
+    on the homepage blog post list. Solution implemented using
+    Stack Overflow answer and amended to work with my project
+    '''
+    def delete(self, request, *args, **kwargs):
+        messages.warning(self.request, self.success_message)
+        return super(DeletePost, self).delete(request, *args, **kwargs)
 
 
 class PostLike(View):

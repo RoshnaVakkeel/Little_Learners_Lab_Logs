@@ -57,10 +57,13 @@ p {
 
 /*--------------------------------------------Section 1 Hero Image*/
 
-
-.carousel-inner{
-    height: 100%;
+.w-100 {
+    object-fit: cover;
+    object-position: center;
+    height: 75vh;
+    overflow: hidden;
 }
+
 
 /*--------------------------------------------add_logs page*/
 .form-group {

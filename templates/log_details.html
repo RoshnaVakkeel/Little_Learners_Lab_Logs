@@ -76,12 +76,8 @@
         <div class="d-flex justify-content-center">
             <a href="{% url 'edit-logs' post.slug  %}" role="button"
                 class="btn btn-info btn-block mx-2 btn-m gradient-custom-4 text-dark"><strong>Edit</strong> </a>
-            <form method="POST" action="{% url 'delete-logs' post.slug  %}">
-                {% csrf_token %}
-                <a href="{% url 'delete-logs' post.slug  %}" role="button"
-                    class="btn btn-secondary btn-block mx-2 btn-m gradient-custom-4 text-dark"
-                    onClick="deleteFunction()"><strong>Delete</strong></a>
-            </form>
+            <a href="{% url 'delete-logs' post.slug  %}" role="button"
+                    class="btn btn-secondary btn-block mx-2 btn-m gradient-custom-4 text-dark"><strong>Delete</strong></a>
         </div>
         {% endif %}
         <hr>
