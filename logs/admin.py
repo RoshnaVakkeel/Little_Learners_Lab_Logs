@@ -10,7 +10,7 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('items_required', 'steps_to_perform')
     list_filter = ('created_on', 'status')
-    search_fields = ['title', 'items_required',]
+    search_fields = ['title', 'items_required', ]
 
 
 # Comments display on admin site
