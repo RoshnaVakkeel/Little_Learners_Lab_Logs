@@ -86,7 +86,7 @@ ROOT_URLCONF = 'little_learner_lab_logs.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR], 
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,16 +121,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa: E501
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa: E501
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa: E501
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa: E501
     },
 ]
 
@@ -157,7 +157,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  # noqa: E501
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -167,7 +167,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CSRF_TRUSTED_ORIGINS = ['localhost',]
-CSRF_TRUSTED_ORIGINS = ['https://8000-roshnavakke-littlelearn-oi0e72xya76.ws-eu80.gitpod.io/', ]
+CSRF_TRUSTED_ORIGINS = ['https://8000-roshnavakke-littlelearn-oi0e72xya76.ws-eu80.gitpod.io/', ]  # noqa: E501
 
 SUMMERNOTE_CONFIG = {
 
@@ -181,7 +181,7 @@ SUMMERNOTE_CONFIG = {
         'lang': None,
 
         # Toolbar customization
-        # Customization using the link: https://summernote.org/deep-dive/#custom-toolbar-popover
+        # Customization using the link: https://summernote.org/deep-dive/#custom-toolbar-popover  # noqa: E501
         'toolbar': [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],

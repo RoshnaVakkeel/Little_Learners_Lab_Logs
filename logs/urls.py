@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import CreatePost, PostDetail, AllPosts, EditPost, PostLike, SharedPostsByUsers, DeletePost, PostSearch
+from .views import PostDetail, AllPosts, PostLike, SharedPostsByUsers, DeletePost  # noqa: E501
 
 
 urlpatterns = [

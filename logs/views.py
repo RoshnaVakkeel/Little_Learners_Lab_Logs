@@ -72,8 +72,8 @@ class PostDetail(View):
             else:
                 comment_form = CommentForm()
 
-            # User HttpResponseRedirect here instead of render to ensure comment
-            # is not re-submitted on page re-load
+            # User HttpResponseRedirect here instead of render to ensure
+            # comment is not re-submitted on page re-load
             return HttpResponseRedirect(reverse('log-details', args=[slug]))
 
 

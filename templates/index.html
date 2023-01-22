@@ -229,7 +229,7 @@
                                     {% if "placeholder" in post.image.url %}
                                     <img class="img-fluid w-100" src="..." alt="image uploaded by the user">
                                     {% else %}
-                                    <img class="img-fluid w-100 " src=" {{ post.image.url }}"
+                                    <img class="img-fluid w-100 " src="{{ post.image.url }}"
                                         alt="image uploaded by the user">
                                     {% endif %}
                                 </div>

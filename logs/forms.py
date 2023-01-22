@@ -17,7 +17,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         '''Get post model and choose which fields to display '''
         model = Post
-        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)
+        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)  # noqa: E501
 
         widgets = {
             'title': forms.TextInput(attrs={
@@ -45,7 +45,7 @@ class EditForm(forms.ModelForm):
     class Meta:
         ''' Get edit form model and choose which fields to display '''
         model = Post
-        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)
+        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)  # noqa: E501
 
         widgets = {
             'title': forms.TextInput(attrs={
