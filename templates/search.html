@@ -15,34 +15,33 @@
 
 {% block content %}
 <div class="container-fluid vh-100">
-<div>
-    <h3 class="display-6 fw-bolder mb-4 pb-3 border-bottom text-center p-3 w-75 mx-auto">
-        <i><strong>Search Results</strong></i>
-    </h3>
-</div>
-{% if q %}
-{% for post in results %}
-<div class="card mb-4 mx-auto w-75">
-    <div class="card-header">
-        <a href="{% url 'log-details' post.slug %}" class="post-link">
-            <h4 class="card-title">{{  post.title }}</h4>
-        </a>
+    <div>
+        <h3 class="display-6 fw-bolder mb-4 pb-3 border-bottom text-center p-3 w-75 mx-auto">
+            <i><strong>Search Results</strong></i>
+        </h3>
     </div>
-    <div class="card-body">
-      <h6 class="card-title">Submitted by: {{post.author}} on {{post.created_on}} </h6>
-      <p class="card-text">{{ post.description }}</p>
+    {% if q %}
+    {% for post in results %}
+    <div class="card mb-4 mx-auto w-75">
+        <div class="card-header">
+            <a href="{% url 'log-details' post.slug %}" class="post-link">
+                <h4 class="card-title">{{  post.title }}</h4>
+            </a>
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">Submitted by: {{post.author}} on {{post.created_on}} </h6>
+            <p class="card-text">{{ post.description }}</p>
+        </div>
     </div>
-  </div>
 
-  {% empty %}
-  <div class="container text-center mt-4">
-    <div class="text-dark">
-        <p class="fw-bold">There was no matching results found. <br> Please try another keyword..
-        </p>
+    {% empty %}
+    <div class="container text-center mt-4">
+        <div class="text-dark">
+            <p class="fw-bold">There was no matching results found. <br> Please try another keyword..
+            </p>
+        </div>
     </div>
-</div>
-{% endfor %}
-  {% endif %}
-</div>
+    {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}

@@ -5,7 +5,7 @@ The main inspiration behind creating this website is a little curious learner, m
 With this idea, I created "Little Learner's Lab Logs" which started for a little learner and after its creation, I see that it appeals to all the little scientists hidden within us. The user of this website could be a little kid referring to these logs for fun or a student who wishes to learn and create logs of their own. Not to mention it's a great place for parents, who can help their kids learn new concepts along with having fun. And for teachers, this could be a site where their students can enter their observations and understand the scientific methodology better. <br>
 The aim is to collect simple fun-filled small experiments for the Learners created by the Learners. 
 
-## Contents
+## [Contents](#contents)
 - [User Experience (UX)](#user-experience-ux)
 	- [Site Goals](#site-goals)
 	- [User Personas](#user-personas)
@@ -239,9 +239,50 @@ git commit -m "initial commit
 git push
 ~~~
 
+[Back to top ⇧](#contents)
 
 ## Testing
+The testing is broken into categories: manual and validation. Details can be found below.
 
-### Manual Testing
+### Testing Technologies 
+The website was manually tested the website on 3 different browsers: Chrome, Firefox and Edge. In all the browsers the website unctions very well. Only exception is Firefox Mozilla, where the Corousel wasn't functioning properly. It is addressed in the Issues section.
+In addition, I also tested it on my own mobile with Safari search engine, and had a number of friends and family test it on their own devices. There are a number of accounts and lab log entries that already exist in the database which were created by diferent users. Their feedbacks were taken into account and improvements were made in the website.
 
+This testing consisted of checking:
+
+- The website functioned as expected
+- Working of all the links
+- Submission of forms
+- JavaScript functioning
+- Comments and posts addition
+- Editing and delete functions
+
+#### Manual Testing
+
+#### Validation
+I used the following validation tools
+
+- HTML using [W3C HTML validator](https://validator.w3.org/)
+- CSS using [Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/)
+- Site performance via [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+- Accessibility via [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
+- Python via [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/)
+
+Results obtained are as follows:
+
+##### HTML Validation 
 All the Django templates html files hava been validated by manually copying the source of the rendered pages and then validating using the W3C Validator (link shown above). Each test result shows the source url. The results can be seen [here](docs/validation/w3c_validation_results_html.pdf).
+
+##### CSS Validation 
+[Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/) was used for validating the CSS stylesheet. CSS file was tested by manually copying the CSS codes into the manual input option. The result can be seen [here](docs/validation/w3c_validation_CSS.png).
+
+##### Lighthouse Test
+[Lighthouse](https://developers.google.com/web/tools/lighthouse) tool was used for analysing the performance, accessibility, best practices and SEO of the website. The results are summarised [here](docs/validation/lighthouse_report.pdf).
+
+##### WAVE Accessibility Test
+[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) was used to check web accessibility. Only the certain contrast errors were reported. It was due to link contrast with the background. I used primary link color blue in hero-image caption for better guidance for the user, so that they identify that it is a link rather than using black color as suggested by the tool. This error was deliberately ignored. No other errors were reported. The results can be found [here](docs/validation/wave_accessibility_test.pdf). 
+
+##### PEP8 Python Linter Test
+- [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) was used to check that the Python code meets PEP8 standards. All the errors were also checked periodically before git push to the repository. The tests results can be seen [here](docs/validation/pep8_validation.pdf). 
+
+[Back to top ⇧](#contents)
