@@ -155,7 +155,7 @@ class DeletePost(generic.DeleteView):
     ''' Class to allow posts to be deleted '''
     model = Post
     template_name = 'delete_logs.html'
-    success_url =  '/'
+    success_url = '/'
     success_message = "Post was deleted successfully"
     '''
     Display delete message once a post is deleted

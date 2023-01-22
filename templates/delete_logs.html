@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 {% block title %} Delete Logs {% endblock %}
 
@@ -10,15 +9,17 @@
 <!-- delete post page -->
 <div class="container mt-5 mb-5">
     <div class="row">
-        <div class="col-md-8 offset-md-2 text-center text-white">
-            <h3 class="mb-5">Delete "{{ post.title }}" </h3>
-            <form method="post" action="{% url 'delete-logs' post.slug %}">
-                {% csrf_token %}
-                <p>Are you sure you want to delete "{{ post.title }}"?</p>
-                <a href="{% url 'delete-logs' post.slug %}">
-                    <button class="btn btn-lg btn-warning delete-btn mt-5">Delete</button>
-                </a>
-            </form>
+        <div class="card mb-4 mx-auto w-75">
+            <div class="col-md-8 offset-md-2 text-center text-dark">
+                <h3 class="mt-3 mb-5">Delete "{{ post.title }}" </h3>
+                <form method="post" action="{% url 'delete-logs' post.slug %}">
+                    {% csrf_token %}
+                    <p>Are you sure you want to delete "{{ post.title }}"?</p>
+                    <a href="{% url 'delete-logs' post.slug %}">
+                        <button class="btn btn-lg btn-danger delete-btn mt-5 mb-3">Delete</button>
+                    </a>
+                </form>
+            </div>
         </div>
     </div>
 </div>
