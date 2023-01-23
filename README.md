@@ -77,15 +77,17 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 - All users who sign up and sign in, can access all the features of the website and can create, edit, and delete their posts.
 
 ## User Personas 
+As mentioned in Site Goals, the users expected to be visiting this website regularly are going to be kids, students, parents and teachers. I created 4 fictional characters which represents the target users. The user personas with their needs, goals and frustrations are enlisted, which helped me design this website with a point of view of distinct users.
+The link to User Personas can be found [here](docs/agile/user_personas.pdf).
 
 ## Scope
-
 - An attractive and intuitive UX experience: 
 	1. Website title focus kids as primany users
 	2. Hero-image with information on the site's purpose
 	3. Responsve design
 	4. A clear and straightforward layout
 	5. Footer fixed at the bottom with links to social media
+	6. The user knows which page they are on by the name that appears on the head of each webpage.
 
 - An easy navigation for the user through all the pages and features
 	1. Navigation Menu with easy access to all links.
@@ -102,7 +104,6 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 	5. Ability to comment on/like posts
 	6. Create, Edit and Delete Posts
 	7. Ability to add/edit and remove posts in user's personal page
-
 
 ## Agile Methodology
 Throughout this project, an agile approach was taken in order to develop the website  Each activity was broken down into  manageable actions from initially creating 4 Epics, which were then broken down into smaller User Stories. Each of the user stories then had different acceptance criteria. The status, comments and details of each Epic along with the associated User Stories can be found in the kanban board linked [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1). This made the overall project much more manageable to build. 
@@ -185,8 +186,86 @@ For all the User Stories, Acceptance Criteria was also mentioned. The purpose of
 The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project.
 The tasks during the development phase were carried out in this order.
 
+## Features
+
+### Home Page
+Homepage provides the user with some quick information on how to start using the site and make use of all its features.  It helps them decide if they would like to continue to read the posts or create them. Users do not need to be registered to view a post. 
+
+Homepage or the Landing page has these key features: 
+
+Visible at first glimpse:
+1. Search input field and button
+2. Navigation Menu
+3. Hero-image
+![Homepage](docs/features/home_landing.png)
+
+Upon scrolling down (Links to navigate to these sections can be found on the hero-image caption):
+1. About Section
+2. Getting Started
+3. Latest Entries
+
+End of the page:
+1. Back to Top Button
+2. Footer
+
+Details to each section has been provided below in detail.
+
+#### Search Button 
+On the top right corner, a search input field is provided along with a button to submit. User can search any query using keywords and a new search page will appear containing Search Results. Click [here](docs/features/search_result.png) to see it.
+
+#### Navbar
+The responsive navigation bar is featured on all pages. The purpose of this feature is to allow users to navigate all pages easily across all devices without having to use a back button to get to the next page. It has active links to different pages. For mobile view, the navbar transforms to a burger menu. 
+
+Navbar features two types of views/ navigation menu items depending on if the user is logged in or logged out. 
+
+If the user is not signed in or is signed out. The navbar will prompt to Sign Up, Sign In or log in as Admin. The navigation menu will appear as shown below. 
+![here](docs/features/navbar_signed_out.png)
+<br>
+If the user is signed in (username Rose is provided as an example here). The navigation menu will appear as shown below. The navbar will in this case feature "User's" Page and Sign Out options.
+![here](docs/features/navbar_signed_in.png)
+
+This feature is introduced for better user guidance. 
+
+### Hero-image
+The Hero-image is introduced in a Carousel that enables a slideshow for cycling through elements. As the theme cannot be depicted in just a picture, my idea was to give three pictures with three captions. Th captions would also prompt the user to sign in or sign up. Besides that, it will also contain links to different sections within th homepage such as About and Getting Started for user guidance, and to Latest Entries section to draw user's attention to the different posts. The pictures with different links can be found ![here](docs/features/hero_image.png).
+
+
+### About
+About section asks the users questions about which kind of user persona they associate with and helps them understand the ways they can make use of the different features of the website. It also presents a welcome note for the users. Check it out ![here](docs/features/about.png).
+
+		- [Getting Started](<#getting-started>)
+		- [Latest Entries](<#latest-entries>)
+		- [Footer](<#footer>)
+	- [Lab Logs](<#lab-logs>)
+		- [All Collections](<#all-collections>)
+		- [Post Details](<#post-details>)
+	- [My Page](<#my-page>)
+		- [Add Logs](<#add-logs>)
+		- [Edit Logs](<#edit-logs>)
+		- [Delete Logs](<#edit-logs>)
+	- [Sign Up](<#sign-out>)
+	- [Sign In](<#sign-in>)
+	- [Sign Out](<#sign-out>)
+	- [Admin](<#admin>)
+	- [General](<#general>)
+		- [Security](<#security>)
+		- [User Experience](<#user-experience>)
+
 ## Design
 ### Colours
+- The colour scheme has considered based on easy accessibility for all. 
+- Complimentarity was key feature in color selection, to give it a pleasant feel for all age groups.
+- The colors have been consistently maintained throughout the website.
+
+The palette was generated with inspiration from palettes provided by [Lilybug Graphic Design -Colour Wall](https://www.lilybugdesign.co.nz/colour-wall)
+
+The chosen palette of colors was generated from the graphic: ![Tropical palette](docs/features/tropical-palette.jpg)
+
+The colours were modified using [Colorswall](https://colorswall.com/palette/227413). 
+The colors were generated referring to the Tropical palette in colorswall palette Generator. The generated palette:
+![llll Palette](docs/features/llll_palette.png)
+
+These were the colors for the body (scented frill - #c9adb6) and (variant of deep pink - #851050) was chosen for navbra and footer.
 
 ### Typography
 - Fonts were imported using Google Fonts. Roboto was used throughout with a backup of sans-serif. It was chosen for easy readability for users. 
