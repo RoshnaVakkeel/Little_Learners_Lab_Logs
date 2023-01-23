@@ -47,7 +47,7 @@
                             <a href="{% url 'log-details' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{  post.title }}</h2>
                             </a>
-                            <p class="card-text">{{ post.description }}</p>
+                            <p class="card-text description-text">{{ post.description }}</p>
                             <hr>
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>

@@ -63,7 +63,7 @@ p {
     color: white;
 }
 
-/*--------------------------------------------Section 1 Hero Image*/
+/*--------------------------------------------Hero Image Section*/
 
 .w-100 {
     object-fit: cover;
@@ -72,6 +72,13 @@ p {
     overflow: hidden;
 }
 
+/*--------------------------------------------Latest Entries Section*/
+.description-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
 
 /*--------------------------------------------add_logs page*/
 .form-group {

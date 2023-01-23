@@ -186,6 +186,8 @@ For all the User Stories, Acceptance Criteria was also mentioned. The purpose of
 The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project.
 The tasks during the development phase were carried out in this order.
 
+[Back to top ⇧](#contents)
+
 ## Features
 
 ### Home Page
@@ -197,16 +199,14 @@ Visible at first glimpse:
 1. Search input field and button
 2. Navigation Menu
 3. Hero-image
+
 ![Homepage](docs/features/home_landing.png)
 
-Upon scrolling down (Links to navigate to these sections can be found on the hero-image caption):
+Upon scrolling down:
 1. About Section
 2. Getting Started
 3. Latest Entries
-
-End of the page:
-1. Back to Top Button
-2. Footer
+4. Footer
 
 Details to each section has been provided below in detail.
 
@@ -219,23 +219,40 @@ The responsive navigation bar is featured on all pages. The purpose of this feat
 Navbar features two types of views/ navigation menu items depending on if the user is logged in or logged out. 
 
 If the user is not signed in or is signed out. The navbar will prompt to Sign Up, Sign In or log in as Admin. The navigation menu will appear as shown below. 
+
 ![here](docs/features/navbar_signed_out.png)
 <br>
 If the user is signed in (username Rose is provided as an example here). The navigation menu will appear as shown below. The navbar will in this case feature "User's" Page and Sign Out options.
+
 ![here](docs/features/navbar_signed_in.png)
 
 This feature is introduced for better user guidance. 
 
 ### Hero-image
-The Hero-image is introduced in a Carousel that enables a slideshow for cycling through elements. As the theme cannot be depicted in just a picture, my idea was to give three pictures with three captions. Th captions would also prompt the user to sign in or sign up. Besides that, it will also contain links to different sections within th homepage such as About and Getting Started for user guidance, and to Latest Entries section to draw user's attention to the different posts. The pictures with different links can be found ![here](docs/features/hero_image.png).
+The Hero-image is introduced in a Carousel that enables a slideshow for cycling through elements. As the theme cannot be depicted in just a picture, my idea was to give three pictures with three captions. Th captions would also prompt the user to sign in or sign up. Besides that, it will also contain links to different sections within th homepage such as About and Getting Started for user guidance, and to Latest Entries section to draw user's attention to the different posts. The pictures with different links can be found [here](docs/features/hero_image.png). 
 
+Upon clicking on "Learn More" link: The "About" section of Homepage will be loaded.
+Upon clicking on "Get Started" link: The "Getting Started.. Your Guide" section of Homepage will be loaded.
+Upon clicking on "Latest Entries" link: The "Latest Entries" section of Homepage will be loaded.
 
 ### About
-About section asks the users questions about which kind of user persona they associate with and helps them understand the ways they can make use of the different features of the website. It also presents a welcome note for the users. Check it out ![here](docs/features/about.png).
+About section asks the users questions about which kind of user persona they associate with and helps them understand the ways they can make use of the different features of the website. It also presents a welcome note for the users. Check it out [here](docs/features/about.png).
 
-		- [Getting Started](<#getting-started>)
-		- [Latest Entries](<#latest-entries>)
-		- [Footer](<#footer>)
+### Getting Started
+This section describes how each user can use the functionalities available in the website. The user esp. a student or a kid would need guidance on how website features can be accessed. The links are provided at each step, which can directly open the links as the respective pages. The section can be seen [here](docs/features/getting_started.png).
+
+### Latest Entries
+The lab log posts is paginated in a way that only the latest 3 posts are displayed on Home page. This has been implemented to improve the user experience and not overwhelm the user with the whole list.
+I wanted that the user gets to see the glimpse of the lab logs posts that exist in the website, which have been posted and approved the most recently. It is set in descending order by the date of creation, meaning the latest will be the first post visible. It shows the lab log post title (clicking on which, the post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the post received. The section can be seen [here](docs/features/getting_started.png).
+
+### Footer
+Each page has the same footer at the bottom containing Copyright information, link to homepage and a note that this website is meant for Educational purposes only.
+The footer section includes links to my social media site [Linkedin](https://www.linkedin.com/in/roshna-vakkeel/) and my [GitHub](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs) page which opens up in a new tab to allow easy navigation for the user. 
+
+![Footer](docs/features/footer.png)
+
+[Back to top ⇧](#contents)
+
 	- [Lab Logs](<#lab-logs>)
 		- [All Collections](<#all-collections>)
 		- [Post Details](<#post-details>)
@@ -251,21 +268,19 @@ About section asks the users questions about which kind of user persona they ass
 		- [Security](<#security>)
 		- [User Experience](<#user-experience>)
 
+[Back to top ⇧](#contents)
+
 ## Design
 ### Colours
 - The colour scheme has considered based on easy accessibility for all. 
 - Complimentarity was key feature in color selection, to give it a pleasant feel for all age groups.
 - The colors have been consistently maintained throughout the website.
 
-The palette was generated with inspiration from palettes provided by [Lilybug Graphic Design -Colour Wall](https://www.lilybugdesign.co.nz/colour-wall)
+The palette was generated with inspiration from palettes provided by [Lilybug Graphic Design -Colour Wall](https://www.lilybugdesign.co.nz/colour-wall). The chosen palette of colors was generated from the graphic: [Tropical palette](docs/features/tropical-palette.jpg). The colours were modified using [Colorswall](https://colorswall.com/palette/227413). 
+The colors were generated referring to the Tropical palette in colorswall palette Generator. The generated palette was:![Color Palette](docs/features/color_palette.png)
+<br>
+These were the colors for the body (scented frill - #c9adb6) and (variant of deep pink - #851050) was chosen for navbar and footer.
 
-The chosen palette of colors was generated from the graphic: ![Tropical palette](docs/features/tropical-palette.jpg)
-
-The colours were modified using [Colorswall](https://colorswall.com/palette/227413). 
-The colors were generated referring to the Tropical palette in colorswall palette Generator. The generated palette:
-![llll Palette](docs/features/llll_palette.png)
-
-These were the colors for the body (scented frill - #c9adb6) and (variant of deep pink - #851050) was chosen for navbra and footer.
 
 ### Typography
 - Fonts were imported using Google Fonts. Roboto was used throughout with a backup of sans-serif. It was chosen for easy readability for users. 
@@ -288,9 +303,39 @@ The wireframes can be found in these links:<br>
 Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment are shown here. 
 ![Entity Relationship Diagram](docs/wireframes/database_schema.png)
 
-- [Technologies](<#technologies>)
-	- [Languages Used](<#languages-used>)
-	- [Frameworks, Libraries and Programs](<#frameworks-libraries-and-programs>)
+[Back to top ⇧](#contents)
+
+## Technologies
+### Languages Used]
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### Frameworks, Libraries and Programs
+
+**Frameworks**
+-   [Django](https://www.djangoproject.com/) was used as the framework for the back-end logic of the project. Django enables rapid and secure development.
+-   [Bootstrap](https://getbootstrap.com/) was used to render layout and responsiveness of the website.
+
+**Programs**
+-   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+-   [GitHub:](https://github.com/) is used as the respository for the project code after being pushed from Git. In addition, for this project GitHub was used for the agile development aspect through the use of User Stories (GitHub Issues) and tracking them on a Kanban board.
+-	[Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to inspect page elements, debug, troubleshoot and test features and adjust property values. Using the Lighthouse extension installed in Chrome Browser, the performance report was generated.
+-   [Smartdraw](https://cloud.smartdraw.com/) was used to create the Entity Relationship diagrams for the data model
+-   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
+-   [Google Fonts:](https://fonts.google.com/) used for the Roboto font
+-   [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
+-   [Gunicorn](https://gunicorn.org/) was used as the Web Server to run Django on Heroku
+-   [psycopg2](https://pypi.org/project/psycopg2/) database adapter used to support the connection to the postgres db
+-   [Cloudinary](https://cloudinary.com/) used to store the images used by the application
+-   [Summernote](https://pypi.org/project/django-summernote/) used to provide WYSIWYG editing on the "Add Logs" page in order to add items_required and steps_to_perform input fields in the form.
+-   [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html) used for account registration and authentication
+-   [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to simplify form rendering
+
+**Libraries**
+-   [dj_database_url](https://pypi.org/project/dj-database-url/) library used to allow database urls to connect to the postgres db
+-   [jquery library](https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js) used to fade out alert messages
 
 ## Production
 ### Django Installation and Set Up
@@ -392,3 +437,4 @@ All the Django templates html files hava been validated by manually copying the 
 - [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) was used to check that the Python code meets PEP8 standards. All the errors were also checked periodically before git push to the repository. The tests results can be seen [here](docs/validation/pep8_validation.pdf). 
 
 [Back to top ⇧](#contents)
+
