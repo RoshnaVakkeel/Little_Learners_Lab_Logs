@@ -185,6 +185,33 @@ For all the User Stories, Acceptance Criteria was also mentioned. The purpose of
 The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project.
 The tasks during the development phase were carried out in this order.
 
+## Design
+### Colours
+
+### Typography
+- Fonts were imported using Google Fonts. Roboto was used throughout with a backup of sans-serif. It was chosen for easy readability for users. 
+- UTF-8 Symbols 
+
+### Imagery
+The imagery on the website has been seleced according to young users. The images chosen depict children engaged in different activities. The pictures selected are with range of colors. Usually experiments are meant to be colorful. The carousel was chosen to show hero-image because one picture cannot represent the whole theme of the website.
+All images were taken from [Pexels](https://www.pexels.com/).
+
+### Wireframes
+The wireframes were generated at the start of the project suing Balsamiq. After referring to different bootstrap templates, pages were divided into the different relevant sections. 
+The finished website closely fololows wireframes as the designs were adapted during development but overall structure was kept constant. For eg. an additional 'About' section was introduced in order to guide the user. A search field and button was also introduced. 
+
+The wireframes can be found in these links:<br>
+[Wieframes for Desktop](docs/wireframes/PP4_project_wireframe_desktop.pdf)<br>
+[Wieframes for Tablet](docs/wireframes/PP4_project_wireframe_tablet.pdf)<br>
+[Wieframes for Mobile](docs/wireframes/PP4_project_wireframe_mobile.pdf)
+
+### Database Schema
+Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment are shown here. 
+![Entity Relationship Diagram](docs/wireframes/database_schema.png)
+
+- [Technologies](<#technologies>)
+	- [Languages Used](<#languages-used>)
+	- [Frameworks, Libraries and Programs](<#frameworks-libraries-and-programs>)
 
 ## Production
 ### Django Installation and Set Up
