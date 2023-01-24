@@ -29,7 +29,7 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 		- [Latest Entries](<#latest-entries>)
 		- [Footer](<#footer>)
 	- [Lab Logs](<#lab-logs>)
-	- [Post Details](<#post-details>)
+	- [Log Details](<#log-details>)
 	- [My Page](<#my-page>)
 		- [Add Logs](<#add-logs>)
 		- [Edit Logs](<#edit-logs>)
@@ -80,10 +80,10 @@ The link to User Personas can be found [here](docs/agile/user_personas.pdf).
 - An attractive and intuitive UX experience: 
 	1. Website title focus kids as primany users
 	2. Hero-image with information on the site's purpose
-	3. Responsve design
+	3. Responsive design
 	4. A clear and straightforward layout
 	5. Footer fixed at the bottom with links to social media
-	6. The user knows which page they are on by the name that appears on the head of each webpage.
+	6. The user knows which page they are on by the name that appears on the head of each webpage and also using the slug information on the address bar. 
 
 - An easy navigation for the user through all the pages and features
 	1. Navigation Menu with easy access to all links.
@@ -91,17 +91,17 @@ The link to User Personas can be found [here](docs/agile/user_personas.pdf).
 	3. Content guiding users how to start using the websites features
 	4. Description of features that would suite different users' needs 
 	5. Hero image guidance to sign up/sign in
-	6. Search field for the user to get to the post by searching a keyword
+	6. Search field for the user to get to the log post by searching a keyword
 	7. Back to Top button to facilitae user to go to top in homepage as it is rather long
 
 - Lab Log posts features
 	1. Latest entries feature on the landing page
-	2. Exclusive page for all the posts
-	3. On a click they can view post details
-	4. Ability to be able to search for posts
-	5. Ability to comment on/like posts
-	6. Create, Edit and Delete Posts
-	7. Ability to add/edit and remove posts in user's personal page
+	2. Exclusive page for all the log posts
+	3. On a click they can view log post details
+	4. Ability to be able to search for log posts
+	5. Ability to comment on/like log posts
+	6. Create, Edit and Delete log posts
+	7. Ability to add/edit and remove log posts in user's personal page
 
 ## Agile Methodology
 Throughout this project, an agile approach was taken in order to develop the website  Each activity was broken down into  manageable actions from initially creating 4 Epics, which were then broken down into smaller User Stories. Each of the user stories then had different acceptance criteria. The status, comments and details of each Epic along with the associated User Stories can be found in the kanban board linked [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1). This made the overall project much more manageable to build. 
@@ -115,7 +115,7 @@ Epic Goals for End User:
 1. An intuitive User Interface with easy to use navigation
 2. A means of viewing the full list o blogs including likes
 3. functionality to allow users to register, sign in and sign out
-4. Upon signing in, the user should be able to like, comment on the blog posts
+4. Upon signing in, the user should be able to like, comment on the log posts
 
 Related User Stories:
 1. [USER STORY US01: Intuitive User Interface #2](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/2):
@@ -136,16 +136,16 @@ Epic Goals for End User:
 3. Confirmation upon signing in 
 4. Upon signing in, the user should be able to like, comment on the lab log post posts
 5. Easy access to Create, Read, Update and Delete (CRUD) features upon signing in
-6. Visibility of personalized lab log post posts and comments
+6. Visibility of personalized lab log posts and comments
 
 Related User Stories:
 1. [USER STORY US05: Account Creation#7](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/7):
 As a Site user I can create an account by registering my details so that I can comment, like, create and edit lab log posts
 2. [USER STORY US06: Account Confirmation #8](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/8):
 As a Site user I can I get a message upon signing up so that I can know that my account registration was successful.
-3. [USER STORY US07: Sign In and Sign Out Features #9](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/9): As a registered Site user I can easily Sign in or Sign Out so that I can access my personal posts and comments.
+3. [USER STORY US07: Sign In and Sign Out Features #9](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/9): As a registered Site user I can easily Sign in or Sign Out so that I can access my personal log posts and comments.
 4. [USER STORY US 08: User Personal Page Features#10](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/10):
-As a registered Site user I can see my personal page so that I can create my own lab log post posts and edit or delete them.
+As a registered Site user I can see my personal page so that I can create my own lab log posts and edit or delete them.
 
 
 ### Lab Log Post Management
@@ -160,9 +160,9 @@ Epic Goals for End User:
 
 Related User Stories:
 1. [USER STORY US09: Add Lab Log Posts#12](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/12): As a signed-in Site user I can create a lab log post so that I can share my ideas and experiments
-2. [USER STORY US 10: View/Read Lab Log Posts #13](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/13): As a signed-in Site user who created a lab log post I can read my post with my name among other posts on homepage so that I can share my posts with others.
-3. [USER STORY US 11: Edit Lab Log Posts #14](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/14):As a signed-in site user I can edit and update a lab log post I created so that I can make additions, edit, correct the entries I made in the post.
-4. [USER STORY US 12: Delete Lab Log Posts#15](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/15): As a signed-in site user I can choose to delete a lab log post I created so that I publish only the posts of my choice.
+2. [USER STORY US 10: View/Read Lab Log Posts #13](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/13): As a signed-in Site user who created a lab log post I can read my post with my name among other log posts on homepage so that I can share my log posts with others.
+3. [USER STORY US 11: Edit Lab Log Posts #14](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/14):As a signed-in site user I can edit and update a lab log post I created so that I can make additions, edit, correct the entries I made in the log post.
+4. [USER STORY US 12: Delete Lab Log Posts#15](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/15): As a signed-in site user I can choose to delete a lab log post I created so that I publish only the log posts of my choice.
 
 
 ### Comments and Like Management
@@ -189,7 +189,7 @@ The tasks during the development phase were carried out in this order.
 # Features
 
 ## Home Page
-Homepage provides the user with some quick information on how to start using the site and make use of all its features.  It helps them decide if they would like to continue to read the posts or create them. Users do not need to be registered to view a post. 
+Homepage provides the user with some quick information on how to start using the site and make use of all its features.  It helps them decide if they would like to continue to read the log posts or create them. Users do not need to be registered to view a log post. 
 
 Homepage or the Landing page has these key features: 
 
@@ -233,7 +233,7 @@ If the user is signed in (username Rose is provided as an example here). The nav
 
 ### Hero-image
 - The Hero-image is introduced in a Carousel that enables a slideshow for cycling through elements. As the theme cannot be depicted in just a picture, my idea was to give three pictures with three captions. The captions would also prompt the user to sign in or sign up. 
-- Besides that, it will also contain links to different sections within the homepage such as About and Getting Started for user guidance, and to Latest Entries section to draw user's attention to the different posts. 
+- Besides that, it will also contain links to different sections within the homepage such as About and Getting Started for user guidance, and to Latest Entries section to draw user's attention to the different log posts. 
 - It will appear diffently to signed-in and signed-out users.
 
 **User is not signed-in or is signed-out**
@@ -257,10 +257,10 @@ This section describes how each user can use the functionalities available in th
 The section can be seen [here](docs/features/getting_started.png).
 
 ### Latest Entries
-- The lab log posts is paginated in a way that only the latest 3 posts are displayed on Home page. 
+- The lab log posts is paginated in a way that only the latest 3 log posts are displayed on Home page. 
 - This has been implemented so as not to overwhelm the user with the whole list.
 - It is set in descending order by the date of creation, meaning the latest will be the first post visible.
-- It shows the lab log post title (clicking on which, the post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the post received. 
+- It shows the lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the log post received. 
 The section can be seen [here](docs/features/latest_entries.png).
 
 ### Footer
@@ -273,40 +273,40 @@ The section can be seen [here](docs/features/latest_entries.png).
 
 ## Lab Logs
 
-- This page enlists all the posts added so far to the website. 
-- The oldest post will be visible on top. The lab log posts is paginated in a way that 12 posts are displayed. Further post can be accessed by clicking next button that would appear as more than 12 posts will created. 
+- This page enlists all the log posts added so far to the website. 
+- The oldest post will be visible on top. The lab log posts is paginated in a way that 12 posts are displayed. Further post can be accessed by clicking next button that would appear as more than 12 log posts will created. 
 - This page will look similar to both signed-in and signed-out users. 
 - The purpose is to show the whole collections and give users the choice whether to sign in or not.
-- Each post has a title followed by the authors name and date it was submitted. It shows the image, lab log post title (clicking on which, the post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the post received. 
+- Each log post has a title followed by the authors name and date it was submitted. It shows the image, lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the log  post received. 
 The section can be seen [here](docs/features/lab_logs.png).
 
-### Post Details
-- When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected post. Here the user is shown a full description of the post, its full description, items required, steps to perform. 
-- This page will be show also the number of likes and all the comments the post has received irrespective of the user being signed-in or signed-out. 
+### Log Details
+- When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected log post. Here the user is shown a full description of the log post, its full description, items required, steps to perform. 
+- This page will be show also the number of likes and all the comments the log post has received irrespective of the user being signed-in or signed-out. 
 - But the Edit and Delete button and comments input boxes will be visible to different users differently. 
 The features that would be accessible to the user is described below:
 
-**Post Details for the User who is not signed in**
-- They can read the post
+**Log Details for the User who is not signed in**
+- They can read the log post
 - They can read the comments, cannot post them
 - They can see the likes, cannot like them
-The way post detail page  will appear to the user can be seen [here](docs/features/post_detail_not_signed_in.png)
+The way log post detail page  will appear to the user can be seen [here](docs/features/post_detail_not_signed_in.png)
 
-**Post Details for the User who is signed in**
-- They can read the post
+**Log Details for the User who is signed in**
+- They can read the log post
 - They can read the comments
 - They can post comments
 - They can see the likes, and like them
-In an example here, Elizabeth is signed in but the author is learner. The way post detail page  will appear to her can be seen [here](docs/features/post_detail_signed_in_not_author.png)
+In an example here, Elizabeth is signed in but the author is learner. The way log post detail page  will appear to her can be seen [here](docs/features/post_detail_signed_in_not_author.png)
 
-**Post Details for the User who is signed in and is the author of the log post**
-- They can read the post
+**Log Details for the User who is signed in and is the author of the log post**
+- They can read the log post
 - They can read the comments
 - They can post comments
 - They can see the likes, and like them
-- They can see an edit buttoon and can edit their own post
-- They can see an delete buttoon and can delete their own post
-If the author is learner and learner is signed in. The way post detail page  will appear to them can be seen [here](docs/features/post_detail_signed_in_author.png)
+- They can see an edit buttoon and can edit their own log post
+- They can see an delete buttoon and can delete their own log post
+If the author is learner and learner is signed in. The way log post detail page  will appear to them can be seen [here](docs/features/post_detail_signed_in_author.png)
 
 ## My Page
 - This page will be only visible to signed-in users.
@@ -316,7 +316,7 @@ It will appear as shown [here](docs/features/my_page_no_posts.png)
 If they click "Create Now" button, they will be taken to "Add Logs" page.
 
 ### Add Logs
-- If the user is signed-in, they can create a post. 
+- If the user is signed-in, they can create a lab log post. 
 - If they click "Create Now" button in user's personal page, they will be taken to "Add Logs" page.
 - The input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor), image upload button and a Submit button.
 - User will be prompted to fill each input field. 
@@ -324,7 +324,7 @@ If they click "Create Now" button, they will be taken to "Add Logs" page.
 The page appears as shown [here](docs/features/add_logs.png)
 
 ### Edit Logs
-- If the user is signed-in and is a author to the post, they only can edit the post. 
+- If the user is signed-in and is a author to the log post, they only can edit it. 
 - If they click Edit button visible in "Log Details" page, they will be taken to "Edit Logs" page.
 - The filled input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor).
 - Image upload button will read "Change Image" and after making changes the can click "Update" button.
@@ -333,15 +333,15 @@ The page appears as shown [here](docs/features/add_logs.png)
 The page appears as shown [here](docs/features/edit_logs.png)
 
 ### Delete Logs
-- If the user is signed-in and is a author to the post, they only can delete the post. 
+- If the user is signed-in and is a author of the log post, they only can delete it. 
 - If they click "Delete" button visible in "Log Details" page, they will be taken to "Delete Logs" page.
 - They will be asked if they are sure to proceed.
-- Upon clicking Update, user will be prompted by an alert message that the post is successfully deleted.
+- Upon clicking Update, user will be prompted by an alert message that the log post is successfully deleted.
 
 The page appears as shown [here](docs/features/delete_logs.png)
 
 ## Security
-In order to properly interact with the website, the user needs to have an account and sign in. This ensures security of their posts and gives them rights to create, modify and delete them.
+In order to properly interact with the website, the user needs to have an account and sign in. This ensures security of their log posts and gives them rights to create, modify and delete them.
 
 ### Sign Up
 - User is asked to enter username and password to sign up.
@@ -380,13 +380,13 @@ The page appears as shown [here](docs/features/admin_landing_page.png)
 
 **Admin Post Management**
 
-Upon selecting "Post" option, the list of posts along with its stutus will be displayed. Admin can select the post and can edit or delete its data.
+Upon selecting "Post" option, the list of log posts along with its stutus will be displayed. Admin can select the post and can edit or delete its data.
 The page appears as shown [here](docs/features/admin_posts_page.png)
 
-When the admin selects a user's post, the page opens with all its details and entries that can be modified by the admin. 
+When the admin selects a user's log post, the page opens with all its details and entries that can be modified by the admin. 
 - When the lab log post is submitted by the user, by default its status is set to draft. 
 - Upon admin approval, when status is set to published, the post becomes visible in the website.
-The selected post in admin site appears as shown [here](docs/features/admin_posts_management.png)
+The selected log post in admin site appears as shown [here](docs/features/admin_posts_management.png)
 
 **Admin Comment Management**
 
@@ -396,7 +396,7 @@ The page appears as shown [here](docs/features/admin_comments_page.png)
 When the admin selects a user's comments, the page opens with all its details that can be modified by the admin. 
 - When the lab comment is submitted by the user, it gets published immediately. 
 - Upon admin disapproval, the comment can be easily removed or deleted.
-The selected post in admin site appears as shown [here](docs/features/admin_comment_management.png)
+The selected log post in admin site appears as shown [here](docs/features/admin_comment_management.png)
 
 
 [Back to top ⇧](#contents)
@@ -539,7 +539,7 @@ This testing consisted of checking:
 - Working of all the links
 - Submission of forms
 - JavaScript functioning
-- Comments and posts addition
+- Comments and log posts addition
 - Editing and delete functions
 
 #### Manual Testing
@@ -724,7 +724,7 @@ These steps will mean that `DEBUG` will be set to True whilst in the development
 - The basic set up of the website was done by strictly following the steps as described in Code Institue Full Stack Frameworks module - Django walkthrough project "I Think Therefore I Blog".
 - Search Button function - [Django Search Using QuerySet and Q() objects](https://python.plainenglish.io/django-search-using-queryset-and-q-objects-299d8e4a7f3b)
 - Adding Database forms to "Add Logs" page was learnt from [How To Add Database Forms To A Web Page](https://www.youtube.com/watch?v=CVEKe39VFu8)
-- To restrict the log posts description to two lines in "Latest Entries" section and posts on "Log Posts" page -[Line Clamp CSS for posts](https://css-tricks.com/almanac/properties/l/line-clamp/)
+- To restrict the log posts description to two lines in "Latest Entries" section and log posts on "Lab Logs" page -[Line Clamp CSS for posts](https://css-tricks.com/almanac/properties/l/line-clamp/)
 
 ### Learning Resources
 - Creation of GitHub projects to track issues - [Creating a project Resource](https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/creating-a-project)
