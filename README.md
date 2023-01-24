@@ -29,19 +29,16 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 		- [Latest Entries](<#latest-entries>)
 		- [Footer](<#footer>)
 	- [Lab Logs](<#lab-logs>)
-		- [All Collections](<#all-collections>)
-		- [Post Details](<#post-details>)
+	- [Post Details](<#post-details>)
 	- [My Page](<#my-page>)
 		- [Add Logs](<#add-logs>)
 		- [Edit Logs](<#edit-logs>)
-		- [Delete Logs](<#edit-logs>)
-	- [Sign Up](<#sign-out>)
-	- [Sign In](<#sign-in>)
-	- [Sign Out](<#sign-out>)
+		- [Delete Logs](<#delete-logs>)
+	- [Security](<#security>)
+		- [Sign Up](<#sign-up>)
+		- [Sign In](<#sign-in>)
+		- [Sign Out](<#sign-out>)
 	- [Admin](<#admin>)
-	- [General](<#general>)
-		- [Security](<#security>)
-		- [User Experience](<#user-experience>)
 - [Design](<#design>)
 	- [Colours](<#colours>)
 	- [Typography](<#typography>)
@@ -211,44 +208,64 @@ Upon scrolling down:
 
 Details to each section has been provided below in detail.
 
-#### Search Button 
-On the top right corner, a search input field is provided along with a button to submit. User can search any query using keywords and a new search page will appear containing Search Results. Click [here](docs/features/search_result.png) to see it.
+### Search Button 
+- On the top right corner, a search input field is provided along with a button to submit. 
+- Any user can search any query using keywords and a new search page will appear containing Search Results. 
+Click [here](docs/features/search_result.png) to see it.
 
-#### Navbar
-The responsive navigation bar is featured on all pages. The purpose of this feature is to allow users to navigate all pages easily across all devices without having to use a back button to get to the next page. It has active links to different pages. For mobile view, the navbar transforms to a burger menu. 
+### Navbar
+- The responsive navigation bar is featured on all pages. 
+- The purpose of this feature is to allow users to navigate all pages easily across all devices without having to use a back button to get to the next page. 
+- It has active links to different pages. For mobile view, the navbar transforms to a burger menu. 
+- Navbar features two types of views/ navigation menu items depending on if the user is logged in or logged out. 
+- This feature is introduced for better user guidance. 
 
-Navbar features two types of views/ navigation menu items depending on if the user is logged in or logged out. 
-
-If the user is not signed in or is signed out. The navbar will prompt to Sign Up, Sign In or log in as Admin. The navigation menu will appear as shown below. 
+**User is not signed-in or is signed-out**
+The navbar will prompt to Sign Up, Sign In or log in as Admin. The navigation menu will appear as shown below. 
 
 ![here](docs/features/navbar_signed_out.png)
 <br>
+
+**User is signed-in**
 If the user is signed in (username Rose is provided as an example here). The navigation menu will appear as shown below. The navbar will in this case feature "User's" Page and Sign Out options.
 
 ![here](docs/features/navbar_signed_in.png)
 
-This feature is introduced for better user guidance. 
-
 ### Hero-image
-The Hero-image is introduced in a Carousel that enables a slideshow for cycling through elements. As the theme cannot be depicted in just a picture, my idea was to give three pictures with three captions. Th captions would also prompt the user to sign in or sign up. Besides that, it will also contain links to different sections within th homepage such as About and Getting Started for user guidance, and to Latest Entries section to draw user's attention to the different posts. The pictures with different links can be found [here](docs/features/hero_image.png). 
+- The Hero-image is introduced in a Carousel that enables a slideshow for cycling through elements. As the theme cannot be depicted in just a picture, my idea was to give three pictures with three captions. The captions would also prompt the user to sign in or sign up. 
+- Besides that, it will also contain links to different sections within the homepage such as About and Getting Started for user guidance, and to Latest Entries section to draw user's attention to the different posts. 
+- It will appear diffently to signed-in and signed-out users.
 
-Upon clicking on "Learn More" link: The "About" section of Homepage will be loaded.
-Upon clicking on "Get Started" link: The "Getting Started.. Your Guide" section of Homepage will be loaded.
-Upon clicking on "Latest Entries" link: The "Latest Entries" section of Homepage will be loaded.
+**User is not signed-in or is signed-out**
+- User can see Sign In or Sign Up button.
+- Upon clicking on "Learn More" link: The "About" section of Homepage will be loaded.
+- Upon clicking on "Get Started" link: The "Getting Started.. Your Guide" section of Homepage will be loaded.
+- Upon clicking on "Latest Entries" link: The "Latest Entries" section of Homepage will be loaded.
+The pictures with different links can be found [here](docs/features/hero_image.png). 
+
+**User is signed-in**
+- Instead of Sign In or Sign Up button, user can see "Get Started" button on all three images, clicking which, the user will be taken to User's personal page.
+The pictures with different links can be found [here](docs/features/hero_image_signed_in.png). 
+
 
 ### About
-About section asks the users questions about which kind of user persona they associate with and helps them understand the ways they can make use of the different features of the website. It also presents a welcome note for the users. Check it out [here](docs/features/about.png).
+About section asks the users questions about which kind of user persona they associate with and helps them understand the ways they can make use of the different features of the website. It also presents a welcome note for the users. 
+Check it out [here](docs/features/about.png).
 
 ### Getting Started
-This section describes how each user can use the functionalities available in the website. The user esp. a student or a kid would need guidance on how website features can be accessed. The links are provided at each step, which can directly open the links as the respective pages. The section can be seen [here](docs/features/getting_started.png).
+This section describes how each user can use the functionalities available in the website. The user esp. a student or a kid would need guidance on how website features can be accessed. The links are provided at each step, which can directly open the links as the respective pages. 
+The section can be seen [here](docs/features/getting_started.png).
 
 ### Latest Entries
-The lab log posts is paginated in a way that only the latest 3 posts are displayed on Home page. This has been implemented to improve the user experience and not overwhelm the user with the whole list.
-I wanted that the user gets to see the glimpse of the lab logs posts that exist in the website, which have been posted and approved the most recently. It is set in descending order by the date of creation, meaning the latest will be the first post visible. It shows the lab log post title (clicking on which, the post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the post received. The section can be seen [here](docs/features/getting_started.png).
+- The lab log posts is paginated in a way that only the latest 3 posts are displayed on Home page. 
+- This has been implemented so as not to overwhelm the user with the whole list.
+- It is set in descending order by the date of creation, meaning the latest will be the first post visible.
+- It shows the lab log post title (clicking on which, the post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the post received. 
+The section can be seen [here](docs/features/latest_entries.png).
 
 ### Footer
-Each page has the same footer at the bottom containing Copyright information, link to homepage and a note that this website is meant for Educational purposes only.
-The footer section includes links to my social media site [Linkedin](https://www.linkedin.com/in/roshna-vakkeel/) and my [GitHub](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs) page which opens up in a new tab to allow easy navigation for the user. 
+- Each page has the same footer at the bottom containing Copyright information, link to homepage and a note that this website is meant for Educational purposes only.
+- The footer section includes links to my social media site [Linkedin](https://www.linkedin.com/in/roshna-vakkeel/) and my [GitHub](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs) page which opens up in a new tab to allow easy navigation for the user. 
 
 ![Footer](docs/features/footer.png)
 
@@ -256,35 +273,101 @@ The footer section includes links to my social media site [Linkedin](https://www
 
 ## Lab Logs
 
-### All Collections
-This page enlists all the posts added so far to the website. The oldest post will be visible on top. The lab log posts is paginated in a way that 12 posts are displayed. Further post can be accessed by clicking next button that would appear as more than 12 posts will created. This page will look similar to both signed-in and signed-out users. The purpose is to show the whole collections and give users the choice whether to sign in or not.
-Each post has a title followed by a submitted by field. It shows the image, lab log post title (clicking on which, the post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the post received. The section can be seen [here](docs/features/lab_logs.png).
+- This page enlists all the posts added so far to the website. 
+- The oldest post will be visible on top. The lab log posts is paginated in a way that 12 posts are displayed. Further post can be accessed by clicking next button that would appear as more than 12 posts will created. 
+- This page will look similar to both signed-in and signed-out users. 
+- The purpose is to show the whole collections and give users the choice whether to sign in or not.
+- Each post has a title followed by the authors name and date it was submitted. It shows the image, lab log post title (clicking on which, the post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the post received. 
+The section can be seen [here](docs/features/lab_logs.png).
 
 ### Post Details
-When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected post.  Here the user is shown a full description of the post, its full description, items required, steps to perform. This page will be show also the number of likes and all the comments the post has received irrespective of the user being signed-in or signed-out. But the Edit and Delete button and comments input boxes will be visible to different users differently.
+- When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected post. Here the user is shown a full description of the post, its full description, items required, steps to perform. 
+- This page will be show also the number of likes and all the comments the post has received irrespective of the user being signed-in or signed-out. 
+- But the Edit and Delete button and comments input boxes will be visible to different users differently. 
+The features that would be accessible to the user is described below:
 
 **Post Details for the User who is not signed in**
-- They can read the post.
+- They can read the post
+- They can read the comments, cannot post them
+- They can see the likes, cannot like them
+The way post detail page  will appear to the user can be seen [here](docs/features/post_detail_not_signed_in.png)
 
 **Post Details for the User who is signed in**
+- They can read the post
+- They can read the comments
+- They can post comments
+- They can see the likes, and like them
+In an example here, Elizabeth is signed in but the author is learner. The way post detail page  will appear to her can be seen [here](docs/features/post_detail_signed_in_not_author.png)
 
 **Post Details for the User who is signed in and is the author of the log post**
-
-
-
-There are also Edit and Delete buttons for signed in users, which have been put at the top of the page to ensure the user doesn't miss them. The main content is then added using the WYSIWYG editor Summernote which provides basic styling and image uploads. At the bottom of the blog post, there is a section for users to leave comments and talk to each other as well as a like/unlike option. The purpose of the blog layout is to make it as easy as possible for a user to read the content, digest it and then contribute to it in the form of comments and likes.
+- They can read the post
+- They can read the comments
+- They can post comments
+- They can see the likes, and like them
+- They can see an edit buttoon and can edit their own post
+- They can see an delete buttoon and can delete their own post
+If the author is learner and learner is signed in. The way post detail page  will appear to them can be seen [here](docs/features/post_detail_signed_in_author.png)
 
 ## My Page
-		- [Add Logs](<#add-logs>)
-		- [Edit Logs](<#edit-logs>)
-		- [Delete Logs](<#edit-logs>)
-	- [Sign Up](<#sign-out>)
-	- [Sign In](<#sign-in>)
-	- [Sign Out](<#sign-out>)
-	- [Admin](<#admin>)
-	- [General](<#general>)
-		- [Security](<#security>)
-		- [User Experience](<#user-experience>)
+- This page will be only visible to signed-in users.
+- If the user had no posted anything earlier, user will be shown that there are no posts and they can create. 
+It will appear as shown [here](docs/features/my_page_no_posts.png)
+
+If they click "Create Now" button, they will be taken to "Add Logs" page.
+
+### Add Logs
+- If the user is signed-in, they can create a post. 
+- If they click "Create Now" button in user's personal page, they will be taken to "Add Logs" page.
+- The input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor), image upload button and a Submit button.
+- User will be prompted to fill each input field. 
+- Upon submission, user will be prompted by an alert message that the post is being reviewed.
+The page appears as shown [here](docs/features/add_logs.png)
+
+### Edit Logs
+- If the user is signed-in and is a author to the post, they only can edit the post. 
+- If they click Edit button visible in "Log Details" page, they will be taken to "Edit Logs" page.
+- The filled input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor).
+- Image upload button will read "Change Image" and after making changes the can click "Update" button.
+- Upon clicking Update, user will be prompted by an alert message "Update Successful".
+- They can see their old input or write-up to compare the new edit and the old inputs.
+The page appears as shown [here](docs/features/edit_logs.png)
+
+### Delete Logs
+- If the user is signed-in and is a author to the post, they only can delete the post. 
+- If they click "Delete" button visible in "Log Details" page, they will be taken to "Delete Logs" page.
+- They will be asked if they are sure to proceed.
+- Upon clicking Update, user will be prompted by an alert message that the post is successfully deleted.
+
+The page appears as shown [here](docs/features/delete_logs.png)
+
+## Security
+In order to properly interact with the website, the user needs to have an account and sign in. This ensures security of their posts and gives them rights to create, modify and delete them.
+
+### Sign Up
+- User is asked to enter username and password to sign up.
+- Email is kept optional as kids can access it without email id.
+- User will be guided by validation messages if the username exists or password is too small.
+- This was created by modifying Django inbuilt templates
+![Sign Up page](docs/features/sign_up.png)
+
+### Sign In
+- User can enter username and password and sign in.
+- User will be guided by validation messages if the username or password is not correct.
+- This was created by modifying Django inbuilt templates
+![Sign In page](docs/features/sign_in.png)
+
+### Sign Out
+- If the user is signed-in, then only they can see this nav-item in navbar.
+- User will be taken to the Sign Out page
+- This was created by modifying Django inbuilt templates
+![Sign Out page](docs/features/sign_out.png)
+
+
+
+## Admin
+		- For the Testimonial form, users are asked if they want to confirm the submission. This is because the information is not editable until after it gets approved, so acts as a barrier against accidental clicks, this was done by overriding the form's submission method and attaching a JavaScript function
+- Other forms do not require the submission to be confirmed as the information is easily editable after submission so I decided to avoid having the user having to complete an additional click
+- All delete buttons require the user to confirm the deletion, this is to protect against accidental deletions
 
 [Back to top ⇧](#contents)
 
