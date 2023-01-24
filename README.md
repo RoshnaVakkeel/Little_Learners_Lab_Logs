@@ -39,6 +39,7 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 		- [Sign In](<#sign-in>)
 		- [Sign Out](<#sign-out>)
 	- [Admin](<#admin>)
+	- [Alert Messages](<#alert-messages>)
 - [Design](<#design>)
 	- [Colours](<#colours>)
 	- [Typography](<#typography>)
@@ -83,7 +84,8 @@ The link to User Personas can be found [here](docs/agile/user_personas.pdf).
 	3. Responsive design
 	4. A clear and straightforward layout
 	5. Footer fixed at the bottom with links to social media
-	6. The user knows which page they are on by the name that appears on the head of each webpage and also using the slug information on the address bar. 
+	6. The user knows which page they are on by the name that appears on the head of each webpage and also using the slug information on the address bar
+	7. Implement alert messages to provide users with more feedback after they take certain actions
 
 - An easy navigation for the user through all the pages and features
 	1. Navigation Menu with easy access to all links.
@@ -310,6 +312,7 @@ If the author is learner and learner is signed in. The way log post detail page 
 
 ## My Page
 - This page will be only visible to signed-in users.
+- Navbar will show this page with their username on it. For eg. For user: learner, it will appear as Learner's Page.
 - If the user had no posted anything earlier, user will be shown that there are no posts and they can create. 
 It will appear as shown [here](docs/features/my_page_no_posts.png)
 
@@ -359,9 +362,10 @@ In order to properly interact with the website, the user needs to have an accoun
 ![Sign In page](docs/features/sign_in.png)
 
 ### Sign Out
-- If the user is signed-in, then only they can see this nav-item in navbar.
+- If the user is signed-in, then only they can see this nav-item in navbar
 - User will be taken to the Sign Out page
 - This was created by modifying Django inbuilt templates
+- When the user signs out, they are redirected to homepage
 
 ![Sign Out page](docs/features/sign_out.png)
 
@@ -397,6 +401,15 @@ When the admin selects a user's comments, the page opens with all its details th
 - When the lab comment is submitted by the user, it gets published immediately. 
 - Upon admin disapproval, the comment can be easily removed or deleted.
 The selected log post in admin site appears as shown [here](docs/features/admin_comment_management.png)
+
+## Alert Messages
+- Alert messages have been implemented to provide users with more feedback after they take certain actions. 
+- This helps users know their desired actions have occurred.
+- It stays active for 2 seconds and fades away automatically. This was done for good user experience.
+The examples are as depicted in the picture: 
+
+[Alert Messages](docs/features/alert_messages.png)
+
 
 
 [Back to top ⇧](#contents)
