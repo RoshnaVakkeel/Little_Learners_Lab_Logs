@@ -94,6 +94,8 @@ The link to User Personas can be found [here](docs/agile/user_personas.pdf).
 	3. Content guiding users how to start using the websites features
 	4. Description of features that would suite different users' needs 
 	5. Hero image guidance to sign up/sign in
+	6. Search field for the user to get to the post by searching a keyword
+	7. Back to Top button to facilitae user to go to top in homepage as it is rather long
 
 - Lab Log posts features
 	1. Latest entries feature on the landing page
@@ -187,9 +189,9 @@ The tasks during the development phase were carried out in this order.
 
 [Back to top ⇧](#contents)
 
-## Features
+# Features
 
-### Home Page
+## Home Page
 Homepage provides the user with some quick information on how to start using the site and make use of all its features.  It helps them decide if they would like to continue to read the posts or create them. Users do not need to be registered to view a post. 
 
 Homepage or the Landing page has these key features: 
@@ -252,10 +254,27 @@ The footer section includes links to my social media site [Linkedin](https://www
 
 [Back to top ⇧](#contents)
 
-	- [Lab Logs](<#lab-logs>)
-		- [All Collections](<#all-collections>)
-		- [Post Details](<#post-details>)
-	- [My Page](<#my-page>)
+## Lab Logs
+
+### All Collections
+This page enlists all the posts added so far to the website. The oldest post will be visible on top. The lab log posts is paginated in a way that 12 posts are displayed. Further post can be accessed by clicking next button that would appear as more than 12 posts will created. This page will look similar to both signed-in and signed-out users. The purpose is to show the whole collections and give users the choice whether to sign in or not.
+Each post has a title followed by a submitted by field. It shows the image, lab log post title (clicking on which, the post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the post received. The section can be seen [here](docs/features/lab_logs.png).
+
+### Post Details
+When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected post.  Here the user is shown a full description of the post, its full description, items required, steps to perform. This page will be show also the number of likes and all the comments the post has received irrespective of the user being signed-in or signed-out. But the Edit and Delete button and comments input boxes will be visible to different users differently.
+
+**Post Details for the User who is not signed in**
+- They can read the post.
+
+**Post Details for the User who is signed in**
+
+**Post Details for the User who is signed in and is the author of the log post**
+
+
+
+There are also Edit and Delete buttons for signed in users, which have been put at the top of the page to ensure the user doesn't miss them. The main content is then added using the WYSIWYG editor Summernote which provides basic styling and image uploads. At the bottom of the blog post, there is a section for users to leave comments and talk to each other as well as a like/unlike option. The purpose of the blog layout is to make it as easy as possible for a user to read the content, digest it and then contribute to it in the form of comments and likes.
+
+## My Page
 		- [Add Logs](<#add-logs>)
 		- [Edit Logs](<#edit-logs>)
 		- [Delete Logs](<#edit-logs>)
@@ -443,6 +462,7 @@ All the Django templates html files hava been validated by manually copying the 
 - [Issues and Fixes](<#issues-and-fixes>)
 
 
+
 [Back to top ⇧](#contents)
 
 
@@ -591,7 +611,7 @@ These steps will mean that `DEBUG` will be set to True whilst in the development
 - The basic set up of the website was done by strictly following the steps as described in Code Institue Full Stack Frameworks module - Django walkthrough project "I Think Therefore I Blog".
 - Search Button function - [Django Search Using QuerySet and Q() objects](https://python.plainenglish.io/django-search-using-queryset-and-q-objects-299d8e4a7f3b)
 - Adding Database forms to "Add Logs" page was learnt from [How To Add Database Forms To A Web Page](https://www.youtube.com/watch?v=CVEKe39VFu8)
-- 
+- To restrict the log posts description to two lines in "Latest Entries" section and posts on "Log Posts" page -[Line Clamp CSS for posts](https://css-tricks.com/almanac/properties/l/line-clamp/)
 
 ### Learning Resources
 - Creation of GitHub projects to track issues - [Creating a project Resource](https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/creating-a-project)
