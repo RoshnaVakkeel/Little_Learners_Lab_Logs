@@ -52,6 +52,7 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 - [Production](#production)
 	- [Django](<#django>)
 - [Testing](<#testing>)
+	- [User Story Testing](<#user-story-testing>)
 	- [Testing Technologies](<#testing-technologies>)
 		- [Manual Testing](<#manual-testing>)
 			- [Validation](<#validation>)
@@ -185,6 +186,15 @@ For all the User Stories, Acceptance Criteria was also mentioned. The purpose of
 ## Tasks
 The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project.
 The tasks during the development phase were carried out in this order.
+
+
+## User Story Management
+To manage the User Stories for the project, Github Project was created with Kanban board, which can be seen [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1).
+
+- User stories were clubbed under Epics to divide the project into main categories.
+- Each of the stories was added to the project using User Story templates, and then were allocated to the relevant column. 
+- All the User stories were initially entered in the 'To Do' column, then during development story they were moved into the 'In Progress' column, and then finally they get moved into 'Done' once the development completes.
+The progress can be seen [here](docs/agile/agile_kanban_progress.pdf).
 
 [Back to top ⇧](#contents)
 
@@ -408,9 +418,7 @@ The selected log post in admin site appears as shown [here](docs/features/admin_
 - It stays active for 2 seconds and fades away automatically. This was done for good user experience.
 The examples are as depicted in the picture: 
 
-[Alert Messages](docs/features/alert_messages.png)
-
-
+![Alert Messages](docs/features/alert_messages.png)
 
 [Back to top ⇧](#contents)
 
@@ -540,22 +548,29 @@ git push
 [Back to top ⇧](#contents)
 
 ## Testing
-The testing is broken into categories: manual and validation. Details can be found below.
+
+### User Story Testing
+ - All the User Stories in the [User Experience (UX)](#user-experience-ux) enlisted had different Acceptance Criteria. 
+ - Acceptance Criteria mentions the key features that needed to design and create the user experience as expected. 
+ - User stories were matched with the features and were cross-checked whether all the features as per the mentioned criteria exists in the website.
+ This excel document shows the list of Acceptance Criteria and the matching features:
+        
+    ![User Story Testing](docs/validation/user_story_testing.xlsx)
 
 ### Testing Technologies 
+The testing is broken into categories: manual and validation. Details can be found below.
+
+### Manual Testing
 The website was manually tested the website on 3 different browsers: Chrome, Firefox and Edge. In all the browsers the website unctions very well. Only exception is Firefox Mozilla, where the Corousel wasn't functioning properly. It is addressed in the Issues section.
 In addition, I also tested it on my own mobile with Safari search engine, and had a number of friends and family test it on their own devices. There are a number of accounts and lab log entries that already exist in the database which were created by diferent users. Their feedbacks were taken into account and improvements were made in the website.
 
 This testing consisted of checking:
-
 - The website functioned as expected
 - Working of all the links
 - Submission of forms
 - JavaScript functioning
 - Comments and log posts addition
 - Editing and delete functions
-
-#### Manual Testing
 
 #### Validation
 I used the following validation tools
