@@ -348,26 +348,56 @@ In order to properly interact with the website, the user needs to have an accoun
 - Email is kept optional as kids can access it without email id.
 - User will be guided by validation messages if the username exists or password is too small.
 - This was created by modifying Django inbuilt templates
+
 ![Sign Up page](docs/features/sign_up.png)
 
 ### Sign In
 - User can enter username and password and sign in.
 - User will be guided by validation messages if the username or password is not correct.
-- This was created by modifying Django inbuilt templates
+- This was created by modifying Django inbuilt templates.
+
 ![Sign In page](docs/features/sign_in.png)
 
 ### Sign Out
 - If the user is signed-in, then only they can see this nav-item in navbar.
 - User will be taken to the Sign Out page
 - This was created by modifying Django inbuilt templates
+
 ![Sign Out page](docs/features/sign_out.png)
 
 
-
 ## Admin
-		- For the Testimonial form, users are asked if they want to confirm the submission. This is because the information is not editable until after it gets approved, so acts as a barrier against accidental clicks, this was done by overriding the form's submission method and attaching a JavaScript function
-- Other forms do not require the submission to be confirmed as the information is easily editable after submission so I decided to avoid having the user having to complete an additional click
-- All delete buttons require the user to confirm the deletion, this is to protect against accidental deletions
+- If the signed in user adds contents to the "Add Logs" form and submits it, users will be prompted by a message "Your post is being reviewed". This is because the information will not be published until after it gets approved by the admin. 
+- Admin accesses the project via logging into Django admin with a superuser id and password.
+- A superuser "learner" was created for this project to manage the backend admin section. 
+- Admin can access all the functionalities such as create, read, update and delete information like users, posts and comments.
+- Admin account's link is provided in the navigation bar, when no user is signed in. 
+- Upon clicking "Admin" menu item Django admin log in page opens.
+The page appears as shown [here](docs/features/admin_login.png)
+
+Upon logging in using superuser id and password, the admin site opens. Admin can access all the features and manage the entries made such as user, posts and comments. 
+The page appears as shown [here](docs/features/admin_landing_page.png)
+
+**Admin Post Management**
+
+Upon selecting "Post" option, the list of posts along with its stutus will be displayed. Admin can select the post and can edit or delete its data.
+The page appears as shown [here](docs/features/admin_posts_page.png)
+
+When the admin selects a user's post, the page opens with all its details and entries that can be modified by the admin. 
+- When the lab log post is submitted by the user, by default its status is set to draft. 
+- Upon admin approval, when status is set to published, the post becomes visible in the website.
+The selected post in admin site appears as shown [here](docs/features/admin_posts_management.png)
+
+**Admin Comment Management**
+
+Upon selecting "Comment" option, the list of comments will be displayed. Admin can select a comment and can edit or delete its write up.
+The page appears as shown [here](docs/features/admin_comments_page.png)
+
+When the admin selects a user's comments, the page opens with all its details that can be modified by the admin. 
+- When the lab comment is submitted by the user, it gets published immediately. 
+- Upon admin disapproval, the comment can be easily removed or deleted.
+The selected post in admin site appears as shown [here](docs/features/admin_comment_management.png)
+
 
 [Back to top ⇧](#contents)
 
