@@ -287,7 +287,11 @@ Visible at first glimpse:
 2. Navigation Menu
 3. Hero-image
 
+The appearance of the homepage on a desktop is shown below
 ![Homepage](docs/features/home_landing.png)
+
+The homepage with responsive features on a mobile device is shown 
+[here](docs/features/home_full_mobile.pdf).
 
 Upon scrolling down:
 1. About Section
@@ -311,10 +315,12 @@ Click [here](docs/features/search_result.png) to see it.
 
 **User is not signed-in or is signed-out**
 
-The navbar will prompt to Sign Up, Sign In or log in as Admin. The navigation menu will appear as shown below. 
+The navbar will prompt to Sign Up, Sign In or log in as Admin. The navigation menu as on the desktop will appear as shown below. 
 
-![here](docs/features/navbar_signed_out.png)
+![Navbar_signed_out](docs/features/navbar_signed_out.png)
 <br>
+
+On a mobile device, the Navbar will appear as a collapsable burger menu. If the toggle button is clicked, the nav menu items will appear as a column as shown [here](docs/features/navbar_mobile.png)
 
 **User is signed-in**
 
@@ -369,7 +375,9 @@ The section can be seen [here](docs/features/latest_entries.png).
 - This page will look similar to both signed-in and signed-out users. 
 - The purpose is to show the whole collections and give users the choice whether to sign in or not.
 - Each log post has a title followed by the authors name and date it was submitted. It shows the image, lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the log  post received. 
-The section can be seen [here](docs/features/lab_logs.png).
+The screenshot as it can be seen on a desktop can be seen [here](docs/features/lab_logs.png).
+
+The full as it can be seen on a mobile device can be seen [here](docs/features/lab_logs_mobile.pdf).
 
 ### Log Details
 - When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected log post. Here the user is shown a full description of the log post, its full description, items required, steps to perform. 
@@ -381,7 +389,7 @@ The features that would be accessible to the user is described below:
 - They can read the log post
 - They can read the comments, cannot post them
 - They can see the likes, cannot like them
-The way log post detail page  will appear to the user can be seen [here](docs/features/post_detail_not_signed_in.png)
+The way log post detail page  will appear to the user on a desktop can be seen [here](docs/features/post_detail_not_signed_in.png)
 
 **Log Details for the User who is signed in**
 - They can read the log post
@@ -413,7 +421,9 @@ If they click "Create Now" button, they will be taken to "Add Logs" page.
 - The input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor), image upload button and a Submit button.
 - User will be prompted to fill each input field. 
 - Upon submission, user will be prompted by an alert message that the post is being reviewed.
-The page appears as shown [here](docs/features/add_logs.png)
+On a desktop, the page appears as shown [here](docs/features/add_logs.png)
+
+On a mobile device, the page appears as shown [here](docs/features/add_logs_mobile.pdf)
 
 ### Edit Logs
 - If the user is signed-in and is a author to the log post, they only can edit it. 
@@ -422,7 +432,9 @@ The page appears as shown [here](docs/features/add_logs.png)
 - Image upload button will read "Change Image" and after making changes the can click "Update" button.
 - Upon clicking Update, user will be prompted by an alert message "Update Successful".
 - They can see their old input or write-up to compare the new edit and the old inputs.
-The page appears as shown [here](docs/features/edit_logs.png)
+On a desktop, page appears as shown [here](docs/features/edit_logs.png)
+
+On a mobile, page appears as shown [here](docs/features/edit_logs_mobile.pdf)
 
 ### Delete Logs
 - If the user is signed-in and is a author of the log post, they only can delete it. 
@@ -780,10 +792,12 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 - To restrict the log posts description to two lines in "Latest Entries" section and log posts on "Lab Logs" page -[Line Clamp CSS for posts](https://css-tricks.com/almanac/properties/l/line-clamp/)
 
 ### Learning Resources
+- Code Institutes Full Stack Framework Module, mainly the alkthrough projects.
 - Creation of GitHub projects to track issues - [Creating a project Resource](https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/creating-a-project)
 - How Django slugs work?- [Learn Django](https://learndjango.com/tutorials/django-slug-tutorial) 
 - Creation of Django commenting system - [Commenting system for a Django 2.X app](https://djangocentral.com/creating-comments-system-with-django/)
 - Setting up 404 page - [Django 404 page setting](https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317)
+
 - Different Projects of Code Institute students have been referred: 
 1. [John Breedon Bass Tuition](https://github.com/adamhatton/john-breedon-bass-tuition-pp4)
 2. [The Newsbox](https://github.com/rashdogg74/newsbox86)

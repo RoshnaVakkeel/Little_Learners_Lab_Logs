@@ -60,6 +60,10 @@ p {
     font-size: 2.2vh;
 }
 
+.nav-link {
+    color: white;
+}
+
 /*--------------------------------------------Hero Image Section*/
 
 .w-100 {
