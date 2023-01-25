@@ -2,7 +2,7 @@
 
 ## PERSPECTIVE
 The main inspiration behind creating this website is a little curious learner, my little boy. When he started missing his normal visits to playgrounds during the winter break, he was on a constant lookout for activities around the house. Being among the large percentage of parents who wish to keep their kids engaged throughout the day, I started the quest of finding simple small fun activities that can be performed with the items available in the house. To find those activities, the best source is kids websites. Then followed a thought, what if one can perform the fun experiments and also can log the observations for others to read and repeat.. <br>
-With this idea, I created "Little Learner's Lab Logs" which started for a little learner and after its creation, I see that it appeals to all the little scientists hidden within us. The user of this website could be a little kid referring to these logs for fun or a student who wishes to learn and create logs of their own. Not to mention it's a great place for parents, who can help their kids learn new concepts along with having fun. And for teachers, this could be a site where their students can enter their observations and understand the scientific methodology better. <br>
+With this idea, I created "Little Learner's Lab Logs" which started for a little learner and after its creation, I see that it appeals to all the little scientists hidden within us too. The user of this website could be a little kid referring to these logs for fun or a student who wishes to learn and create logs of their own. Not to mention it's a great place for parents, who can help their kids learn new concepts along with having fun. And for teachers, this could be a site where their students can enter their observations and understand the scientific methodology better. <br>
 The aim is to collect simple fun-filled small experiments for the Learners created by the Learners. 
 
 ## [Contents](#contents)
@@ -19,6 +19,12 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
     - [Acceptance Criteria](<#acceptance-criteria>)
 	- [Tasks](<#tasks>)
 	- [User Story Management](<#user-story-management>)
+- [Design](<#design>)
+	- [Colours](<#colours>)
+	- [Typography](<#typography>)
+	- [Imagery](<#imagery>)
+	- [Wireframes](<#wireframes>)
+    - [Database Schema](<#database-schema>)
 - [Features](<#features>)
 	- [Home Page](<#home-page>)
         - [Search Button](<#search-button>)
@@ -40,12 +46,6 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 		- [Sign Out](<#sign-out>)
 	- [Admin](<#admin>)
 	- [Alert Messages](<#alert-messages>)
-- [Design](<#design>)
-	- [Colours](<#colours>)
-	- [Typography](<#typography>)
-	- [Imagery](<#imagery>)
-	- [Wireframes](<#wireframes>)
-    - [Database Schema](<#database-schema>)
 - [Technologies](<#technologies>)
 	- [Languages Used](<#languages-used>)
 	- [Frameworks, Libraries and Programs](<#frameworks-libraries-and-programs>)
@@ -187,6 +187,47 @@ For all the User Stories, Acceptance Criteria was also mentioned. The purpose of
 The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project.
 The tasks during the development phase were carried out in this order.
 
+**Before Project Inception**
+
+- Design ERD and Data 
+- Create Repository in GitHub
+- Create Project, Epics, User Stories and prepare Kanban Board
+
+**Creation of Project in GitPod**
+
+- Install django - pip3 install 'django<4' gunicorn
+- Install supporting libraries - pip3 install dj_database_url psycopg2
+- Install Cloudinary Libraries - pip3 install dj3-cloudinary-storage
+- Create requirements file - pip3 freeze --local > requirements.txt
+- Create Project (little_learner_lab-logs) - django-admin startproject PROJ_NAME little_learner_lab-logs . 
+- Create App (logs) - python3 manage.py startapp logs
+- Update settings.py
+- Migrate Changes - python3 manage.py migrate
+
+- Deploying app to Heroku - Check [Heroku](<#heroku>) for details
+	- Create external database on elephantsql.com
+	- Create the Heroku app - little-learners-lab-logs
+	- Attach the database in Gitpod
+	- Prepare our environment and settings.py file
+	- Get static and media files stored on Cloudinary
+
+- Create Database Models
+	- Set up models.py file in "logs" directory
+- Build Admin site
+- Set up Templates
+	- Create base.html - Navbar and Footer content, which gets extended to all the other template files
+	- Add responsiveness to navigation and footer
+    - Create index.html, view and style
+	- Set up template file features with views.py and urls.py
+		- lab_logs.html (for all log post collections)
+		- my_page.html (for user's personal collections)
+		- log_details.html (for full log post view)
+		- add_logs.html (to allow user input for log posts)
+		- edit.html (to allow user to edit their input for log posts)
+		- delete_logs.html (to allow user to delete their own log posts)
+- Install Allauth for sign in, sign up and sign out tenplates with-  pip3 install django-allauth 
+	- Install crispy-forms to add styles to Django account templates with-  pip3 install crispy-bootstrap5
+- Final Deployment steps
 
 ## User Story Management
 To manage the User Stories for the project, Github Project was created with Kanban board, which can be seen [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1).
@@ -197,6 +238,42 @@ To manage the User Stories for the project, Github Project was created with Kanb
 The progress can be seen [here](docs/agile/agile_kanban_progress.pdf).
 
 [Back to top ⇧](#contents)
+
+## Design
+### Colours
+- The colour scheme has considered based on easy accessibility for all. 
+- Complimentarity was key feature in color selection, to give it a pleasant feel for all age groups.
+- The colors have been consistently maintained throughout the website.
+
+The palette was generated with inspiration from palettes provided by [Lilybug Graphic Design -Colour Wall](https://www.lilybugdesign.co.nz/colour-wall). The chosen palette of colors was generated from the graphic: [Tropical palette](docs/features/tropical-palette.jpg). The colours were modified using [Colorswall](https://colorswall.com/palette/227413). 
+The colors were generated referring to the Tropical palette in colorswall palette Generator. The generated palette was:![Color Palette](docs/features/color_palette.png)
+<br>
+These were the colors for the body (scented frill - #c9adb6) and (variant of deep pink - #851050) was chosen for navbar and footer.
+
+
+### Typography
+- Fonts were imported using Google Fonts. Roboto was used throughout with a backup of sans-serif. It was chosen for easy readability for users. 
+- UTF-8 Symbols 
+
+### Imagery
+The imagery on the website has been seleced according to young users. The images chosen depict children engaged in different activities. The pictures selected are with range of colors. Usually experiments are meant to be colorful. The carousel was chosen to show hero-image because one picture cannot represent the whole theme of the website.
+All images were taken from [Pexels](https://www.pexels.com/).
+
+### Wireframes
+The wireframes were generated at the start of the project suing Balsamiq. After referring to different bootstrap templates, pages were divided into the different relevant sections. 
+The finished website closely fololows wireframes as the designs were adapted during development but overall structure was kept constant. For eg. an additional 'About' section was introduced in order to guide the user. A search field and button was also introduced. 
+
+The wireframes can be found in these links:<br>
+[Wieframes for Desktop](docs/wireframes/PP4_project_wireframe_desktop.pdf)<br>
+[Wieframes for Tablet](docs/wireframes/PP4_project_wireframe_tablet.pdf)<br>
+[Wieframes for Mobile](docs/wireframes/PP4_project_wireframe_mobile.pdf)
+
+### Database Schema
+Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment are shown here. 
+![Entity Relationship Diagram](docs/wireframes/database_schema.png)
+
+[Back to top ⇧](#contents)
+
 
 # Features
 
@@ -233,12 +310,14 @@ Click [here](docs/features/search_result.png) to see it.
 - This feature is introduced for better user guidance. 
 
 **User is not signed-in or is signed-out**
+
 The navbar will prompt to Sign Up, Sign In or log in as Admin. The navigation menu will appear as shown below. 
 
 ![here](docs/features/navbar_signed_out.png)
 <br>
 
 **User is signed-in**
+
 If the user is signed in (username Rose is provided as an example here). The navigation menu will appear as shown below. The navbar will in this case feature "User's" Page and Sign Out options.
 
 ![here](docs/features/navbar_signed_in.png)
@@ -381,7 +460,7 @@ In order to properly interact with the website, the user needs to have an accoun
 
 
 ## Admin
-- If the signed in user adds contents to the "Add Logs" form and submits it, users will be prompted by a message "Your post is being reviewed". This is because the information will not be published until after it gets approved by the admin. 
+- If the signed in user adds contents to the "Add Logs" form and submits it, users will be prompted by a message "The post is being reviewed". This is because the information will not be published until after it gets approved by the admin. 
 - Admin accesses the project via logging into Django admin with a superuser id and password.
 - A superuser "learner" was created for this project to manage the backend admin section. 
 - Admin can access all the functionalities such as create, read, update and delete information like users, posts and comments.
@@ -422,40 +501,6 @@ The examples are as depicted in the picture:
 
 [Back to top ⇧](#contents)
 
-## Design
-### Colours
-- The colour scheme has considered based on easy accessibility for all. 
-- Complimentarity was key feature in color selection, to give it a pleasant feel for all age groups.
-- The colors have been consistently maintained throughout the website.
-
-The palette was generated with inspiration from palettes provided by [Lilybug Graphic Design -Colour Wall](https://www.lilybugdesign.co.nz/colour-wall). The chosen palette of colors was generated from the graphic: [Tropical palette](docs/features/tropical-palette.jpg). The colours were modified using [Colorswall](https://colorswall.com/palette/227413). 
-The colors were generated referring to the Tropical palette in colorswall palette Generator. The generated palette was:![Color Palette](docs/features/color_palette.png)
-<br>
-These were the colors for the body (scented frill - #c9adb6) and (variant of deep pink - #851050) was chosen for navbar and footer.
-
-
-### Typography
-- Fonts were imported using Google Fonts. Roboto was used throughout with a backup of sans-serif. It was chosen for easy readability for users. 
-- UTF-8 Symbols 
-
-### Imagery
-The imagery on the website has been seleced according to young users. The images chosen depict children engaged in different activities. The pictures selected are with range of colors. Usually experiments are meant to be colorful. The carousel was chosen to show hero-image because one picture cannot represent the whole theme of the website.
-All images were taken from [Pexels](https://www.pexels.com/).
-
-### Wireframes
-The wireframes were generated at the start of the project suing Balsamiq. After referring to different bootstrap templates, pages were divided into the different relevant sections. 
-The finished website closely fololows wireframes as the designs were adapted during development but overall structure was kept constant. For eg. an additional 'About' section was introduced in order to guide the user. A search field and button was also introduced. 
-
-The wireframes can be found in these links:<br>
-[Wieframes for Desktop](docs/wireframes/PP4_project_wireframe_desktop.pdf)<br>
-[Wieframes for Tablet](docs/wireframes/PP4_project_wireframe_tablet.pdf)<br>
-[Wieframes for Mobile](docs/wireframes/PP4_project_wireframe_mobile.pdf)
-
-### Database Schema
-Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment are shown here. 
-![Entity Relationship Diagram](docs/wireframes/database_schema.png)
-
-[Back to top ⇧](#contents)
 
 ## Technologies
 ### Languages Used]
@@ -476,6 +521,7 @@ Smart Draw was used to create a database schema to visualise the types of custom
 -	[Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to inspect page elements, debug, troubleshoot and test features and adjust property values. Using the Lighthouse extension installed in Chrome Browser, the performance report was generated.
 -   [Smartdraw](https://cloud.smartdraw.com/) was used to create the Entity Relationship diagrams for the data model
 -   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
+-	[Favicon](https://favicon.io/favicon-generator/) - used for creating a favicon for the site
 -   [Google Fonts:](https://fonts.google.com/) used for the Roboto font
 -   [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
 -   [Gunicorn](https://gunicorn.org/) was used as the Web Server to run Django on Heroku
@@ -483,15 +529,19 @@ Smart Draw was used to create a database schema to visualise the types of custom
 -   [Cloudinary](https://cloudinary.com/) used to store the images used by the application
 -   [Summernote](https://pypi.org/project/django-summernote/) used to provide WYSIWYG editing on the "Add Logs" page in order to add items_required and steps_to_perform input fields in the form.
 -   [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to simplify form rendering
+-	[Heroku](https://www.heroku.com/) - used to host and deploy the live website
+
 
 **Libraries**
-- [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html)  - was used to implement account authorisation and providing associated templates
+-	[Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html)  - was used to implement account authorisation and providing associated templates
 -   [dj_database_url](https://pypi.org/project/dj-database-url/) library used to allow database urls to connect to the postgres db
+-	[Crispy forms](https://github.com/django-crispy-forms/django-crispy-forms) and [Crispy bootstrap5](https://github.com/django-crispy-forms/crispy-bootstrap5) - used for styling forms in the Django templates
 -   [jquery library](https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js) used to fade out alert messages
 
 ## Production
 ### Django 
 **Installation and Set Up**
+
 This website is built on the Django framework. To set up a Django project, the necessary dependencies were installed. This project uses the old versions as mentioned in CI's Django wakthrough project "I think therefore I blog"
 This needs these steps to be followed:
 
@@ -543,8 +593,9 @@ git commit -m "initial commit
 git push
 ~~~
 
-
 ****
+
+
 [Back to top ⇧](#contents)
 
 ## Testing
@@ -553,16 +604,24 @@ git push
  - All the User Stories in the [User Experience (UX)](#user-experience-ux) enlisted had different Acceptance Criteria. 
  - Acceptance Criteria mentions the key features that needed to design and create the user experience as expected. 
  - User stories were matched with the features and were cross-checked whether all the features as per the mentioned criteria exists in the website.
- This excel document shows the list of Acceptance Criteria and the matching features:
-        
-    ![User Story Testing](docs/validation/user_story_testing.xlsx)
+ - All Criteria got a pass as result 
+ This excel document shows the list of Acceptance Criteria, the matching features and the links to the features: [User Story Testing](docs/validation/user_story_testing.xlsx)
 
 ### Testing Technologies 
 The testing is broken into categories: manual and validation. Details can be found below.
 
 ### Manual Testing
-The website was manually tested the website on 3 different browsers: Chrome, Firefox and Edge. In all the browsers the website unctions very well. Only exception is Firefox Mozilla, where the Corousel wasn't functioning properly. It is addressed in the Issues section.
-In addition, I also tested it on my own mobile with Safari search engine, and had a number of friends and family test it on their own devices. There are a number of accounts and lab log entries that already exist in the database which were created by diferent users. Their feedbacks were taken into account and improvements were made in the website.
+
+**Browser Compatibility**
+
+- The website was manually tested the website on 3 different browsers: Chrome, Firefox and Edge. In all the browsers the website unctions very well. Only exception is Firefox Mozilla, where the Corousel wasn't functioning properly. It is addressed in the Issues section.
+
+**Responsiveness in Mobile/Tablets**
+In addition, I also tested it on my own mobile with Safari search engine, and had a number of friends and family test it on their phones, tablets and laptops. 
+
+**User's Testing**
+
+There are a number of accounts and lab log entries that already exist in the database which were created by different users specifically for testing purposes. The yongest user was 13 year old student. 
 
 This testing consisted of checking:
 - The website functioned as expected
@@ -571,6 +630,18 @@ This testing consisted of checking:
 - JavaScript functioning
 - Comments and log posts addition
 - Editing and delete functions
+
+**User's Testing Feedback Implementation**
+ Almost 12 users have signed up for testing of the website other than me. All the feedbacks were taken into account and improvements were made in the website to boost UX.
+ The suggestions were:
+ - Better link contrast
+ - Back to Top button
+ - Add boxes to blockquotes and add a detailed About section
+ - Error 500 upon signing up - Few users reported about this error. 
+ It was fixed by adding this in settings.py file:
+ ****
+ ACCOUNT_EMAIL_VERIFICATION = "none"
+ ****
 
 #### Validation
 I used the following validation tools
@@ -600,152 +671,106 @@ All the Django templates html files hava been validated by manually copying the 
 
 [Back to top ⇧](#contents)
 
-- [Issues and Fixes](<#issues-and-fixes>)
+## Issues and Fixes
+
+**ISSUE 1: Error upon deployment on Heroku**
+
+“ERROR:  Could not build wheels for backports.zoneinfo, which is required to install pyproject.toml-based projects.”
+I installed the same old versions of Django as suggested in the Walkthrough project 'I think therefore I blog',  pip3 install 'django<4' gunicorn, pip3 install dj_database_url==0.5.0 psycopg2.
+My versions are Django-3.2.16 and psycopg2 2.9.5. First attempt to deploy gave an error message - "ERROR: Could not build wheels for backports.zoneinfo, which is required to install pyproject.toml-based projects"
+
+**FIX:**  
+
+Add python_version<"3.9"; to requirements.txt next to dj_database_url==0.5.0 psycopg2;
+Then push the codes to git.
+Reference-  https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta
+
+**ISSUE 2: Issue while connecting static files**
+
+Error upon setting base.url, the css stylesheets didn’t connect properly.
+Error in terminal: "GET /static/css/style.css HTTP/1.1" 404 1798
+**Fix:** These files were not added in settings.py. Error was solved after adding -
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
+
+**ISSUE 3: Summernote rendering in form with html tags**
+
+The “Add Logs” page form consists of two text input area using Summernote WYSIWYG editors. But on input, the text posted rendered with HTML tags in drafts. 
+Earlier my code only contained: 
+{% csrf_token %}
+{{ form.media }}
+{{ form.as_p}}
+
+**Fix:**  
+
+The issue was fixed by safe template tag while displaying in templates in this manner in add_logs.html page:
+{{ post.items_required |safe }}
+{{ post.steps_to_perform |safe }}
+Applying these changes, the text rendered normally.
+References used:
+https://github.com/summernote/django-summernote/blob/main/README.md
+https://stackoverflow.com/questions/61819183/django-why-does-the-text-that-i-placed-in-django-summernote-displays-html-tags
 
 
+**ISSUE 4: Uploaded image in the “Add Logs” page didn’t render properly**
+
+The image uploaded was not visible in Django admin page in posts section. 
+
+**Fix:** 
+
+According to https://docs.djangoproject.com/en/1.11/topics/http/file-uploads/, 
+in forms.py we need to add:
+class UploadFileForm(forms.Form):
+    title = forms.CharField(max_length=100)
+    file = forms.FileField()
+    class Meta:
+        model = Post
+        fields = ['image']
+
+Import class UploadFileForm into views.py file in Logs app directory. Then the image upload functioned correctly. 
+
+**ISSUE 4: Error in the Console due to setTimeout() in alert messages**
+
+Uncaught TypeError: Cannot read properties of null (reading 'defaultPrevented')
+    at R.close (alert.js:21:22)
+    at (index):429:15 in the codes in script.
+
+**Fix:** 
+
+It was fixed by introducing a try.. catch statement inside the setTimeout handler:
+Earlier the code snippet was: 
+<!-- Alert message settings -->
+<script>
+    setTimeout(function () {
+        let messages = document.getElementById("msg");
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 2000);
+</script>
+
+It was changed to:
+   <script>
+        setTimeout(function () {
+            try {
+                let messages = document.getElementById('msg');
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            } catch (e) {}
+        }, 2000);
+    </script>
+Reference: https://stackoverflow.com/questions/41431605/how-to-handle-errors-from-settimeout-in-javascript
+
+**Remaining Issue**
+
+Upon clicking the Previous and Next buttons, next page loading functions work correctly, but each time the page refreshes and the view the user gets is the "Hero-image" section of the homepage. The view must be "Latest Entries" section, after many attempts to fix it, the issue is still pending.
 
 [Back to top ⇧](#contents)
-
 
 ## Deployment
 ### Heroku
-(copied from [John-breedon-bass-tuition-pp4 project](https://github.com/adamhatton/john-breedon-bass-tuition-pp4/blob/main/README.md))
-
-Once a Django project has been set up and developed, it can be deployed to Heroku using the following steps (this is how this project was deployed):
-
-1.	Ensure that all dependencies are in the requirements.txt file within the project using the python command “pip3 freeze > requirements.txt”:
-2.	Navigate to https://www.heroku.com/ and login
-3.	In the top right corner, select ‘New’ then ‘Create new app’
-4.	From the ‘Create New App’ screen, enter a unique App name and select Europe, then select ‘Create app’
-5.	An app is created and the dashboard is shown, from here navigate to the 'Resources tab'
-6.	The Postgres database needs to be connected to the app using an add-on. Search the 'Add-ons' in the Resources tab for 'Heroku Postgres' and select this add-on
-7.	On the pop-up for Heroku Postgres select a plan type (for this site 'Hobby Dev - Free' was selected)
-8.	Navigate to the 'Settings' tab for the app and select to 'Reveal Config Vars', a variable called `DATABASE_URL` will have been created by connecting the database add-on. Copy the **value** of this variable
-9.	Within the development environment, create a file called `env.py` at the top level
-	- Ensure that this file is added to the .gitignore file. If your project does not have a .gitignore file then create one and add the `env.py` file to it
-10.	In the `env.py` file, import the `os` library and create a database variable using the value taken from Heroku:
-~~~
-os.environ ["DATABASE_URL"] = "<heroku database variable goes here>"
-~~~
-
-11.	Whilst in the `env.py` file, create a `SECRET_KEY` variable which will be used later. To generate a new Django secret key, do a google search for a Django secret key generator and use one of the results to create a key. The variable can be created using:
-~~~
-os.environ ["SECRET_KEY"] = "<secret key goes here>"
-~~~
-
-12.	Back in Heroku, add your secret key variable to the Config Vars by selecting 'Add' and entering 'SECRET_KEY' as the Key and your secret key value as the Value
-13.	Return to the development environment, and navigate to the `settings.py` file. Within this file, import the following:
-~~~
-from pathlib import Path
-import os
-import dj_database_url
-if os.path.isfile('env.py'):
-	import env
-~~~
-
-These imports will enable you to access the variables in your `env.py`
-
-14. Find the `SECRET_KEY` variable and replace the assignment as follows:
-~~~
-SECRET_KEY = os.environ.get('SECRET_KEY')
-~~~
-
-15. Find the `DATABASES` variable and comment out the existing code (this will be used in a later step), add in the following code:
-~~~
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-}
-~~~
-
-This will enable Heroku to connect to the database
-
-16.	As a new database is now being used, migrations need to be run again by using 
-~~~
-python3 manage.py migrate
-~~~
-
-17.	As this project uses Cloudinary for file storage, additional steps are needed to configure this. Start by creating another variable in the `env.py` file for your personal Cloudinary (which can be obtained from the Cloudinary dashboard):
-~~~
-os.environ["CLOUDINARY_URL"] = "<your cloudinary url>"
-~~~
-
-18.	Next, go back to Heroku and add another Config Var for your cloudinary url using `CLOUDINARY_URL` for the Key and your cloudinary url as the Value
-19.	If your project does not have any static files then add another Config Var to Heroku using `DISABLE_COLLECTSTATIC` as the Key and '1' as the Value. This will prevent the deployment from failing if there are no static files. This variable has been removed for this project as there are static files.
-20.	Return to the development environment, and in the `settings.py` file find the `INSTALLED_APPS` variable add in 'cloudinary_storage' before 'django.contrib.staticfiles' and then add 'cloudinary' underneath 'django.contrib.staticfiles'.
-21.	To configure Django to use Cloudinary, find the static files section towards the bottom of the `settings.py` file and add the following code:
-~~~
-STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-~~~
-
-22.	Next, create a `TEMPLATES_DIR` variable in `settings.py` and set it to:
-~~~
-os.path.join(BASE_DIR, 'templates')
-~~~
-so that Django knows where to find templates
-
-23.	Find the `TEMPLATES` variable and for the `DIRS` key, set the value to be the `TEMPLATES_DIR` we have just created:
-~~~
-'DIRS': [TEMPLATES_DIR],
-~~~
-
-24.	Find the `ALLOWED_HOSTS` variable in `settings.py` and add in the urls that should be able to access the project:
-~~~
-ALLOWED_HOSTS = ['<heroku-project-name>.herokuapp.com', 'localhost']
-~~~
-
-25.	Within your project folder structure, create three directories at the top level for storing files: media, static, and templates
-26.	At the top level of your project structure, create a file called Procfile and add the following code to it:
-~~~
-web: gunicorn codestar.wsgi
-~~~
-
-Heroku uses this file to determine how to run the app
-
-27.	To prevent sensitive information being revealed when running the app on Heroku, the `DEBUG` variable should be set to False, however this can be set conditionally depending on whether you are in the development environment or not. To do this, create an environment variable within your development environment called `DEVELOPMENT` and set its value to True (for this project this was done in GitPod > Settings > Variables)
-28.	Next, in the `settings.py` file, add the following variable and assignment:
-~~~
-development = os.environ.get('DEVELOPMENT', False)
-~~~
-
-29.	Set the `DEBUG` variable to be equal to development:
-~~~
-DEBUG = development
-~~~
-
-30.	Find the `DATABASES` variable that was previously commented out and amend the databases section to be conditional on whether you are in the development environment or not. It should look like this:
-~~~
-if development:
-    DATABASES = {
-	    'default': {
-		    'ENGINE': 'django.db.backends.sqlite3',
-		    'NAME': BASE_DIR / 'db.sqlite3',
-        }
-	}
-else:
-	DATABASES = {
-		'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-	}
-~~~
-These steps will mean that `DEBUG` will be set to True whilst in the development environment, but False when running the Heroku app. It will also mean that Heroku will use the Heroku Postgres database, whereas the development environment will use the SQLite database. Note that any changes to the database will need to be migrated to both if both are to be used.
-
-31.	Commit your changes and push these to GitHub
-32.	Back in Heroku add another Config Var using `PORT` as the Key and '8000' as the Value.
-33.	Navigate to the Deploy tab and from the ‘Deployment Method’ section, select ‘GitHub’
-34.	Allow Heroku to connect to GitHub by selecting ‘Connect to GitHub’
-35.	Search for the repository by entering the name of the GitHub repository to deploy and selecting search
-36.	From the results, choose the relevant repository and select ‘Connect’
-37.	To enable automatic deployment of the repository (which will automatically redeploy the project after every push to GitHub), select the ‘Enable Automatic Deploys’ option
-38.	To manually deploy the project, select ‘Deploy Branch’ from the Manual Deploy section
-39.	When the branch is manually deployed, Heroku will build and deploy the branch. Upon completion, a link to the deployed project will be generated
+The steps were followed step by step exactly as mentioned in the Django Walkthrough project "I think thereore I blog". The write up attached here was taken from a former CI student's Readme file. Please click [here](docs/deployment/heroku_deployment_steps.pdf) for full description.
 
 [Back to top ⇧](#contents)
-
 
 ## Credits and Resources
 ### Code
@@ -766,9 +791,20 @@ These steps will mean that `DEBUG` will be set to True whilst in the development
 4. [The Unconventional Programmer](https://github.com/Jbachtiger/ci-pp4-the-unconventional-programmer)
 5. [BANFF National Park Hike Booker](https://github.com/elainebroche-dev/pf4-wayfarers-guided-hikes)
 
-	- [Content](<#content>)
+## Content
+- All the content in the website has been written by Roshna Vakkeel (the developer), excluding the lab log posts.
+- The lab log posts are created by different user's a few were created by me - learner (Admin, Superuser), Elizabeth and Rose.
+- The other usernames and users who contributed log posts to the website as a part of testing are:
+	- srijith - Anshi (Age: 13, Student)
+	- coshione - Kristyna (Age: < 30, Full Stack Developer student)
+	- jyoti - Jyoti (Age: < 30, Full Stack Developer student, Mother of two kids)
+	- aleezafarrukh - Aleeza (Age: < 30, Scientist and Teacher)
+	- jjorly - Jorly (Age: > 20, Student)
+	- udayannair - Uday (Age: > 40, Chemist, Father of 1 kid)
 
-	- [Media](<#media>)
+
+## Media
+- All pictures were taken from [Pexels](https://www.pexels.com/). Specific URLs have been included within the HTML and CSS code where the files have been used.
 
 [Back to top ⇧](#contents)
 

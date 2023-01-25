@@ -116,6 +116,9 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
+# solution for the error 500 upon /accounts/signup/
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
