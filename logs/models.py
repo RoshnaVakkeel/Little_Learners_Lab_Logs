@@ -55,19 +55,17 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         """
-        copied from
-        https://learndjango.com/tutorials/django-slug-tutorial#slugs
-        so the slug field can be added to the database
+        reference: https://learndjango.com/tutorials/django-slug-tutorial#slugs
+        to add slug field can be added to the database
 
-        Redirects to log-details page on log post creation
+        Redirects to log-details page
         """
-        return reverse('lab-logs')
+        return reverse('log-details')
 
     def save(self, *args, **kwargs):
         """
-        copied from
-        https://learndjango.com/tutorials/django-slug-tutorial#slugs
-        use slugify to prepopulate the slug field from user input
+        reference: https://learndjango.com/tutorials/django-slug-tutorial#slugs
+        use slugify to prepopulate the slug field from user title input
         """
         if not self.slug:
             self.slug = slugify(self.title)

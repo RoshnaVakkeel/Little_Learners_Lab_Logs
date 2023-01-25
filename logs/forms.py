@@ -4,6 +4,9 @@ from .models import Post, Comment
 
 
 class UploadFileForm(forms.Form):
+    """
+    To upload images
+    """
     title = forms.CharField(max_length=100)
     file = forms.FileField()
 
@@ -13,9 +16,11 @@ class UploadFileForm(forms.Form):
 
 
 class PostForm(forms.ModelForm):
-    ''' Django form to add lab_log posts '''
+    """
+    Django form to add lab_log posts
+    """
     class Meta:
-        '''Get post model and choose which fields to display '''
+        # Get post model and choose which fields to display
         model = Post
         fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)  # noqa: E501
 
@@ -41,9 +46,11 @@ class PostForm(forms.ModelForm):
 
 
 class EditForm(forms.ModelForm):
-    ''' Django form that controls what fields can be edited '''
+    """
+    Django form that controls what fields can be edited
+    """
     class Meta:
-        ''' Get edit form model and choose which fields to display '''
+        # Get edit form model and choose which fields to display
         model = Post
         fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)  # noqa: E501
 
@@ -65,7 +72,9 @@ class EditForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
-    ''' Comment form '''
+    """
+    Comment form
+    """
     body = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'md-textarea form-control',
         'placeholder': 'Please enter your comment here..',

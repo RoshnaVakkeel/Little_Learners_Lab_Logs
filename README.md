@@ -784,7 +784,7 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 - How Django slugs work?- [Learn Django](https://learndjango.com/tutorials/django-slug-tutorial) 
 - Creation of Django commenting system - [Commenting system for a Django 2.X app](https://djangocentral.com/creating-comments-system-with-django/)
 - Setting up 404 page - [Django 404 page setting](https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317)
-- Different Projects of Code Institute student projects being referred: 
+- Different Projects of Code Institute students have been referred: 
 1. [John Breedon Bass Tuition](https://github.com/adamhatton/john-breedon-bass-tuition-pp4)
 2. [The Newsbox](https://github.com/rashdogg74/newsbox86)
 3. [Fungi News](https://github.com/Maya-Claveau/pp4-fungi-news)

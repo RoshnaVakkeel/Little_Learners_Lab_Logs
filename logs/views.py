@@ -12,7 +12,9 @@ from .forms import PostForm, CommentForm, UploadFileForm, EditForm
 
 
 class PostList(generic.ListView):
-    ''' Class to show list of posts'''
+    """
+    Class to show list of posts
+    """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
@@ -21,7 +23,7 @@ class PostList(generic.ListView):
 
 class AllPosts(generic.ListView):
     """
-    to get all the lab log posts, and display 12 posts per page
+    Class to get all the log posts, and display 12 posts per page
     """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('created_on')  # noqa: E501
@@ -30,7 +32,9 @@ class AllPosts(generic.ListView):
 
 
 class PostDetail(View):
-    ''' Class to show selected post in detail view '''
+    """
+    Class to show selected post in detail view
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -71,8 +75,7 @@ class PostDetail(View):
             else:
                 comment_form = CommentForm()
 
-            # User HttpResponseRedirect here instead of render to ensure
-            # comment is not re-submitted on page re-load
+            # User HttpResponseRedirect here and no comment reload
             return HttpResponseRedirect(reverse('log-details', args=[slug]))
 
 
@@ -93,7 +96,9 @@ class SharedPostsByUsers(LoginRequiredMixin, generic.ListView):
 
 @login_required()
 def CreatePost(request):
-    """ Add a post to the lab log post """
+    """
+    Add a lab log post
+    """
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -102,7 +107,7 @@ def CreatePost(request):
             post.slug = slugify(post.title)
             form.save()
             messages.success(request, 'The post is being reviewed')
-            return redirect(reverse('lab-logs'))
+            return redirect(reverse('my-page'))
         else:
             messages.error(request, 'Failed to Create a post. \
                            Please ensure the form is valid.')
@@ -119,7 +124,9 @@ def CreatePost(request):
 
 @login_required
 def EditPost(request, slug):
-    """ Edit a post to the lab log post """
+    """
+    Edit a lab log post
+    """
     post = get_object_or_404(Post, slug=slug)
     if request.user.id == post.author.id:
         if request.method == 'POST':
@@ -139,7 +146,7 @@ def EditPost(request, slug):
             form = PostForm(instance=post)
     else:
         messages.error(request, 'Sorry. \
-                    You are not authorised to perform that operaiton.')
+                    You are not authorised to perform that operation.')
 
     template = 'edit_logs.html'
     context = {
@@ -151,23 +158,27 @@ def EditPost(request, slug):
 
 
 class DeletePost(generic.DeleteView):
-    ''' Class to allow posts to be deleted '''
+    """
+    Class to allow posts to be deleted
+    """
     model = Post
     template_name = 'delete_logs.html'
     success_url = '/'
     success_message = "Post was deleted successfully"
-    '''
+    """
     Display delete message once a post is deleted
-    on the homepage blog post list. Solution implemented using
-    Stack Overflow answer and amended to work with my project
-    '''
+    on the homepage blog post list
+    Solution- Stack Overflow
+    """
     def delete(self, request, *args, **kwargs):
         messages.warning(self.request, self.success_message)
         return super(DeletePost, self).delete(request, *args, **kwargs)
 
 
 class PostLike(View):
-    """ To like a lab log post """
+    """
+    To like a lab log post
+    """
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -179,10 +190,13 @@ class PostLike(View):
 
 
 def PostSearch(request):
+    """
+    To search for a post containing keyword
+    """
     q = request.GET['q']
 
     if 'q' in request.GET:
-        results = Post.objects.filter(Q(title__icontains=q)).filter(status=1)
+        results = Post.objects.filter(Q(title__icontains=q) | Q(description__icontains=q)).filter(status=1)  # noqa: E501
 
     return render(request, 'search.html', {
         'q': q,
