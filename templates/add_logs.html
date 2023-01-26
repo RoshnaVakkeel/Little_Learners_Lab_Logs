@@ -7,7 +7,7 @@
 
 <div class="container create-form p-2">
     <h2 class="mt-2">Add a Lab Log Post..</h2>
-    <!-- Add a lab log form, visible when user signs in and can submit after completion -->
+    <!-- Add a lab log post, visible when user signs in and can submit after completion -->
     <div class="form-group">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -20,8 +20,7 @@
     </div>
 </div>
 
-
-<!-- If user is not signed in-->
+<!-- If user is not signed in/ however the page will not be seen to them-->
 {% else %}
 <div class="d-flex justify-content-center p-3">
     <h3>Access Denied. Please sign in!</h3>

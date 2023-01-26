@@ -184,8 +184,8 @@ Related User Stories:
 For all the User Stories, Acceptance Criteria was also mentioned. The purpose of this was to provide a reference point for the developmental steps. I made sure to cross-check that all the required steps intended was implemented. It also helped with Testing to make sure that all the necessary aspects and features were covered. The acceptance criteria is described on the column next to the user stories (column H) [here](docs/agile/epics_and_user_stories.xlsx).
 
 ## Tasks
-The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project.
-The tasks during the development phase were carried out in this order.
+The tasks for the website development process was closely followed as mentioned in CI's Django module "I Think Therefore I Blog" walkthrough project. The task is generally the developers step towards preparing the app.
+The tasks that I have followed during the development phase were carried out in this order.
 
 **Before Project Inception**
 
@@ -227,7 +227,13 @@ The tasks during the development phase were carried out in this order.
 		- delete_logs.html (to allow user to delete their own log posts)
 - Install Allauth for sign in, sign up and sign out tenplates with-  pip3 install django-allauth 
 	- Install crispy-forms to add styles to Django account templates with-  pip3 install crispy-bootstrap5
+- Intensive Manual Testing and Validation checks of each page and codes written
 - Final Deployment steps
+
+
+**Future Tasks**
+- Automated Testing (due to time restraint, I couldn't perform them)
+- Email verification and password recovery settings
 
 ## User Story Management
 To manage the User Stories for the project, Github Project was created with Kanban board, which can be seen [here](https://github.com/users/RoshnaVakkeel/projects/2/views/1).
@@ -304,7 +310,8 @@ Details to each section has been provided below in detail.
 ### Search Button 
 - On the top right corner, a search input field is provided along with a button to submit. 
 - Any user can search any query using keywords and a new search page will appear containing Search Results. 
-Click [here](docs/features/search_result.png) to see it.
+Click [here](docs/features/search_result.png) to see it the way it appears on desktop.
+Click [here](docs/features/search_results_mobile.pdf) to see it the way it appears on mobile phone.
 
 ### Navbar
 - The responsive navigation bar is featured on all pages. 
@@ -324,9 +331,12 @@ On a mobile device, the Navbar will appear as a collapsable burger menu. If the 
 
 **User is signed-in**
 
-If the user is signed in (username Rose is provided as an example here). The navigation menu will appear as shown below. The navbar will in this case feature "User's" Page and Sign Out options.
+If the user is signed in (username Rose is provided as an example here). The navbar will in this case feature "User's" Page and Sign Out options.
+On a desktop, the navigation menu will appear as shown below:
 
 ![here](docs/features/navbar_signed_in.png)
+
+On a mobile device, the Navbar will appear as a collapsable burger menu. If the toggle button is clicked, the nav menu items will appear as a column as shown [here](docs/features/navbar_signed_in_mobile.png)
 
 ### Hero-image
 - The Hero-image is introduced in a Carousel that enables a slideshow for cycling through elements. As the theme cannot be depicted in just a picture, my idea was to give three pictures with three captions. The captions would also prompt the user to sign in or sign up. 
@@ -453,7 +463,11 @@ In order to properly interact with the website, the user needs to have an accoun
 - User will be guided by validation messages if the username exists or password is too small.
 - This was created by modifying Django inbuilt templates
 
+On a desktop, Sign Up page appears as shown:
+
 ![Sign Up page](docs/features/sign_up.png)
+
+On a mobile phone, Sign Up page appears as shown [here](docs/features/sign_up_mobile.pdf)
 
 ### Sign In
 - User can enter username and password and sign in.
@@ -468,7 +482,11 @@ In order to properly interact with the website, the user needs to have an accoun
 - This was created by modifying Django inbuilt templates
 - When the user signs out, they are redirected to homepage
 
+On a desktop, Sign Up page appears as shown:
+
 ![Sign Out page](docs/features/sign_out.png)
+
+On a mobile phone, Sign Up page appears as shown [here](docs/features/sign_out_mobile.png)
 
 
 ## Admin
@@ -623,25 +641,33 @@ git push
 The testing is broken into categories: manual and validation. Details can be found below.
 
 ### Manual Testing
+An exhaustive list of features and functions were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render. The exhaustive list and the test results can be found [here](docs/validation/llll_manual_testing.xlsx).
 
 **Browser Compatibility**
 
-- The website was manually tested the website on 3 different browsers: Chrome, Firefox and Edge. In all the browsers the website unctions very well. Only exception is Firefox Mozilla, where the Corousel wasn't functioning properly. It is addressed in the Issues section.
+- The website was manually tested the website on 3 different browsers: Chrome, Mozilla Firefox and Microsoft Edge (Desktop) and Safari(mobile phone). In all the browsers the website functions very well and all the features work similarly. 
 
-**Responsiveness in Mobile/Tablets**
+**Responsiveness in different device sizes**
 In addition, I also tested it on my own mobile with Safari search engine, and had a number of friends and family test it on their phones, tablets and laptops. 
+The pages render well in all the devices in a responsive manner.
 
-**User's Testing**
+The homepage comparison in different devices is shown below:
+![responsiveness](docs/features/responsiveness.png)
 
-There are a number of accounts and lab log entries that already exist in the database which were created by different users specifically for testing purposes. The yongest user was 13 year old student. 
+The homepage with responsive features on a mobile device is shown 
+[here](docs/features/home_full_mobile.pdf).
+
+**User's Testing Experience**
+
+There are a number of accounts and lab log entries that already exist in the database, which were created by different users specifically for testing purposes. The yongest user was 13 year old student. 
 
 This testing consisted of checking:
 - The website functioned as expected
 - Working of all the links
-- Submission of forms
+- Submission of log posts and comments
 - JavaScript functioning
-- Comments and log posts addition
-- Editing and delete functions
+- Edit and delete functions
+- Sign Up, Sign in and Sign Out features Testing
 
 **User's Testing Feedback Implementation**
  Almost 12 users have signed up for testing of the website other than me. All the feedbacks were taken into account and improvements were made in the website to boost UX.
@@ -792,7 +818,7 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 - To restrict the log posts description to two lines in "Latest Entries" section and log posts on "Lab Logs" page -[Line Clamp CSS for posts](https://css-tricks.com/almanac/properties/l/line-clamp/)
 
 ### Learning Resources
-- Code Institutes Full Stack Framework Module, mainly the alkthrough projects.
+- Code Institutes Full Stack Framework Module, mainly the walkthrough projects.
 - Creation of GitHub projects to track issues - [Creating a project Resource](https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/creating-a-project)
 - How Django slugs work?- [Learn Django](https://learndjango.com/tutorials/django-slug-tutorial) 
 - Creation of Django commenting system - [Commenting system for a Django 2.X app](https://djangocentral.com/creating-comments-system-with-django/)
@@ -819,6 +845,7 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 
 ## Media
 - All pictures were taken from [Pexels](https://www.pexels.com/). Specific URLs have been included within the HTML and CSS code where the files have been used.
+- Log posts have images from various sources. Users are encouraged to mention sources.
 
 [Back to top ⇧](#contents)
 
@@ -826,7 +853,7 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 I would like to acknowledge the following people who have helped me along the way in completing my fourth milestone project:
 - My Mentor Elaine B Roche for her guidance, advice and constant encouragement. Her suggestions helped me improve my website well. 
 - My fellow students for their company and encouragement. Special thanks to Kristyna Maulerova, Tony Albania, Jtoyi Yadav for their encouragement, support and for testing my website, adding posts and comments.
-- My friends and family who tested the website and gave valuable feedback.
+- My friends and family members, especially my niece Anshi who tested the website and gave valuable feedback.
 - My tutors who helped me solve issues when I had them.
 
 [Back to top ⇧](#contents)
