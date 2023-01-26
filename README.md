@@ -823,6 +823,8 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 - How Django slugs work?- [Learn Django](https://learndjango.com/tutorials/django-slug-tutorial) 
 - Creation of Django commenting system - [Commenting system for a Django 2.X app](https://djangocentral.com/creating-comments-system-with-django/)
 - Setting up 404 page - [Django 404 page setting](https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317)
+- Youtube videos - [Programming with Harry](https://www.youtube.com/watch?v=MxF8YOJI0nU&list=PLK8cqdr55Tsv-D2HMdrnD32oOVBNvmxjr)
+- Youtube videos by [Codemy](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
 
 - Different Projects of Code Institute students have been referred: 
 1. [John Breedon Bass Tuition](https://github.com/adamhatton/john-breedon-bass-tuition-pp4)
@@ -841,6 +843,7 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 	- aleezafarrukh - Aleeza (Age: < 30, Scientist and Teacher)
 	- jjorly - Jorly (Age: > 20, Student)
 	- udayannair - Uday (Age: > 40, Chemist, Father of 1 kid)
+	- learner - Me (Age: < 40, Developer, Mother of 1 kid)
 
 
 ## Media
@@ -853,7 +856,7 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 I would like to acknowledge the following people who have helped me along the way in completing my fourth milestone project:
 - My Mentor Elaine B Roche for her guidance, advice and constant encouragement. Her suggestions helped me improve my website well. 
 - My fellow students for their company and encouragement. Special thanks to Kristyna Maulerova, Tony Albania, Jtoyi Yadav for their encouragement, support and for testing my website, adding posts and comments.
-- My friends and family members, especially my niece Anshi who tested the website and gave valuable feedback.
+- My dear friends and family members, especially my Angel niece Anshi, who tested the website and gave valuable feedback.
 - My tutors who helped me solve issues when I had them.
 
 [Back to top ⇧](#contents)

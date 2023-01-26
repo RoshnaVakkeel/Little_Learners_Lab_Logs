@@ -71,13 +71,13 @@
             </ul>
         </div>
 
-
+        <!-- Only visible to the author of the post-->
         {% if user.id == post.author.id  %}
         <div class="d-flex justify-content-center">
             <a href="{% url 'edit-logs' post.slug  %}" role="button"
                 class="btn btn-info btn-block mx-2 btn-m gradient-custom-4 text-dark"><strong>Edit</strong> </a>
             <a href="{% url 'delete-logs' post.slug  %}" role="button"
-                    class="btn btn-secondary btn-block mx-2 btn-m gradient-custom-4 text-dark"><strong>Delete</strong></a>
+                class="btn btn-secondary btn-block mx-2 btn-m gradient-custom-4 text-dark"><strong>Delete</strong></a>
         </div>
         {% endif %}
         <hr>
@@ -86,7 +86,7 @@
 </div>
 
 <br>
-<!-- Comments section-->
+<!-- Comments section visible to all-->
 <div>
     {% if comments %}
     <div class="card w-75 mx-auto mt-3">
@@ -110,12 +110,14 @@
     </div>
     {% endif %}
     <br>
-
+    <!-- Comment Alert-->
     {% if new_comment %}
     <div class="alert alert-success" role="alert">
         Your comment is awaiting approval
     </div>
     {% else %}
+
+    <!-- Comments input section to all signed in users-->
     {% if user.is_authenticated %}
     <div class="card w-75 mx-auto mt-3">
         <h5 class="card-header">Please enter your comments</h5>
@@ -132,6 +134,6 @@
         </div>
     </div>
 </div>
-    <br>
+<br>
 
-    {%endblock content%}
+{%endblock content%}

@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h3 class="text-center text-white">Lab Log Posts</h3>
+            <h3 class="text-center text-white">Lab Logs</h3>
             <hr>
         </div>
     </div>
@@ -35,9 +35,11 @@
                             <div class="image-container text-center">
                                 <div class="col-12 col-lg-12 mx-auto">
                                     {% if "placeholder" in post.image.url %}
-                                    <img class="card-img-top img-fluid w-100 " src="..." alt="image uploaded by the user">
+                                    <img class="card-img-top img-fluid w-100 " src="..."
+                                        alt="image uploaded by the user">
                                     {% else %}
-                                    <img class="card-img-top img-fluid w-100 " src=" {{ post.image.url }}" alt="image uploaded by the user">
+                                    <img class="card-img-top img-fluid w-100 " src=" {{ post.image.url }}"
+                                        alt="image uploaded by the user">
                                     {% endif %}
                                 </div>
                                 <div>
@@ -65,13 +67,13 @@
     </div>
     {% if is_paginated %}
     <nav aria-label="Page navigation">
+        <!-- Previous and Next buttons -->
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>
