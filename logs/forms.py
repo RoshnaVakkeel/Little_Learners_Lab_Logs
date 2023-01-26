@@ -17,7 +17,7 @@ class UploadFileForm(forms.Form):
 
 class PostForm(forms.ModelForm):
     """
-    Django form to add lab_log posts
+    Django form to add lab log posts
     """
     class Meta:
         # Get post model and choose which fields to display

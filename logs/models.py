@@ -37,7 +37,7 @@ class Post(models.Model):
 
     class Meta:
         """
-        To arrange the post on the created_on field in the decending order
+        To arrange the log post on the created_on field in the decending order
         """
         ordering = ["-created_on"]
 
