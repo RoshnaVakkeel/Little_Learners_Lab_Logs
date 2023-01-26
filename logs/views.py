@@ -191,7 +191,7 @@ class PostLike(View):
 
 def PostSearch(request):
     """
-    To search for a post containing keyword
+    To search for a log post containing keyword
     """
     q = request.GET['q']
 
