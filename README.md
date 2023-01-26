@@ -860,3 +860,9 @@ I would like to acknowledge the following people who have helped me along the wa
 - My tutors who helped me solve issues when I had them.
 
 [Back to top ⇧](#contents)
+
+
+**Info on README**
+
+- All the picture files used here are saved in docs folder.
+- All feature files are in Features folder, testing related files are in Validation folder, Agile related files are in Agile folder, wireframes in wireframes folder and deployment related documnent in deployment folder.
