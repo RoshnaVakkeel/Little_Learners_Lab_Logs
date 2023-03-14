@@ -7,10 +7,26 @@
 
 <br>
 <div>
-    <div class="container">
+    <div class="container text-center mt-4">
         <div class="row">
             <div class="col-8 offset-2">
-                <h2 class="text-center display-6 fw-bold text-dark" id="user-page"> {{user.username}}'s Page</h2>
+                <h2 class="text-center  fw-bold text-dark" id="user-page"> {{user.username}}'s Profile</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="mt-4 mb-5">
+            <a href="{% url 'add-logs' %}" role="button" type="submit"
+                class="btn btn-success btn-block btn-m gradient-custom-4 text-white">
+                Update Profile
+            </a>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h2 class="text-center fw-bold text-dark" id="user-page"> {{user.username}}'s Lab Logs</h2>
                 <hr>
             </div>
         </div>
@@ -36,21 +52,23 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Lab Log Posts Columns -->
-            <div class="col-12 mt-2 left">
+            <div class="col-11 mx-auto mt-2">
                 <div class="row">
                     <!-- if the user have added post-->
                     {% if post_list|length > 0 %}
                     <!-- loops through the posts have been posted by the logged in user -->
                     {% for post in post_list %}
-                    <div class="col-md-4 my-4 ">
+                    <div class="col-xs-10 col-md-6 col-lg-6  m-4 mx-auto">
                         <div class="card h-100">
                             <div class="card-body">
                                 <div class="image-container text-center">
                                     <div class="col-12 col-lg-12">
                                         {% if "placeholder" in post.image.url %}
-                                        <img class="card-img-top img-fluid w-100 " src="..." alt="image uploaded by the user">
+                                        <img class="card-img-top img-fluid w-100 " src="..."
+                                            alt="image uploaded by the user">
                                         {% else %}
-                                        <img class="card-img-top img-fluid w-100 " src=" {{ post.image.url }}" alt="image uploaded by the user">
+                                        <img class="card-img-top img-fluid w-100 " src=" {{ post.image.url }}"
+                                            alt="image uploaded by the user">
                                         {% endif %}
                                     </div>
                                     <div>
@@ -58,7 +76,7 @@
                                     </div>
                                 </div>
                                 <a href="{% url 'log-details' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{  post.title }}</h2>
+                                    <h2 class="card-title">{{ post.title }}</h2>
                                 </a>
                                 <p class="card-text">{{ post.description }}</p>
                                 <hr>

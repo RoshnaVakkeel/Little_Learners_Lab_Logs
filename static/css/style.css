@@ -91,7 +91,7 @@ p {
 @media only screen and (max-width: 800px) {
     .navbar-brand {
         margin-left: 10px;
-        font-size: 120%;
+        font-size: 100%;
         font-weight: 600;
     }
 
@@ -100,7 +100,7 @@ p {
 @media only screen and (max-width: 500px) {
     .navbar-brand {
         margin-left: 10px;
-        font-size: large;
+        font-size: 1em;
         font-weight: 600;
     }
 
@@ -110,11 +110,3 @@ p {
 
 }
 
-
-@media only screen and (max-width: 300px) {
-    .navbar-brand {
-        margin-left: 10px;
-        font-size: 100%;
-        font-weight: 600;
-    }
-}

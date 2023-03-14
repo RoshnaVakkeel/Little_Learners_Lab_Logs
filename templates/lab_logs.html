@@ -17,21 +17,21 @@
 {% block content %}
 <br>
 <div>
-    <h3 class="display-6 fw-bolder mb-4 pb-3 border-bottom text-center p-3 w-75 mx-auto">
+    <h2 class="fw-bolder mb-4 pb-3 border-bottom text-center p-3 w-75 mx-auto">
         <i><strong>All Our Collections</strong></i>
-    </h3>
+    </h2>
 </div>
 
 <!-- page lab log posts section -->
 <div class="container-fluid">
     <div class="row">
         <!-- Lab Log Entries Columns -->
-        <div class="col-12 mt-2 left">
+        <div class="col-11 mx-auto mt-2">
             <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-4 my-4 ">
-                    <div class="card h-100">
-                        <div class="card-body">
+                <div class="col-xs-10 col-md-6 col-lg-6  m-4 mx-auto">
+                    <div class="card h-100 ">
+                        <div class="card-body p-4">
                             <div class="image-container text-center">
                                 <div class="col-12 col-lg-12 mx-auto">
                                     {% if "placeholder" in post.image.url %}
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <a href="{% url 'log-details' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{  post.title }}</h2>
+                                <h3 class="card-title">{{  post.title }}</h3>
                             </a>
                             <p class="card-text description-text">{{ post.description }}</p>
                             <hr>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:2 %}
             </div>
             <div class="row">
                 {% endif %}
