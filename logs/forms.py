@@ -22,7 +22,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         # Get post model and choose which fields to display
         model = Post
-        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)  # noqa: E501
+        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'category', 'image',)  # noqa: E501
 
         widgets = {
             'title': forms.TextInput(attrs={
@@ -42,6 +42,9 @@ class PostForm(forms.ModelForm):
             'steps_to_perform': SummernoteWidget(attrs={
                 'class': 'form-control',
                 'placeholder': 'Please enter step by step procedure'}),
+            'category': forms.Select(attrs={
+                'class': 'form-control',
+                'placeholder': 'Select from the category provided'}),
         }
 
 
@@ -52,7 +55,7 @@ class EditForm(forms.ModelForm):
     class Meta:
         # Get edit form model and choose which fields to display
         model = Post
-        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'image',)  # noqa: E501
+        fields = ('title', 'author', 'description', 'items_required', 'steps_to_perform', 'category', 'image',)  # noqa: E501
 
         widgets = {
             'title': forms.TextInput(attrs={
@@ -68,6 +71,9 @@ class EditForm(forms.ModelForm):
                 'class': 'form-control', }),
             'steps_to_perform': SummernoteWidget(attrs={
                 'class': 'form-control', }),
+            'category': forms.Select(attrs={
+                'class': 'form-control',
+                'placeholder': 'Select from the category provided'}),
         }
 
 
