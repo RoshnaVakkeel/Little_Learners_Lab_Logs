@@ -8,11 +8,25 @@ from django.template.defaultfilters import slugify
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+class Category(models.Model):
+    """
+    Category Model linked to each post
+    """
+    category_title = models.CharField(max_length=80, blank=False)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    class Meta:
+        verbose_name = "category"
+        verbose_name_plural = "categories"
+
+    def __str__(self):
+        return self.category_title
+
+
 class Post(models.Model):
     """
     Model for lab log posts
     """
-
     title = models.CharField(max_length=200, unique=True)
     author = models.ForeignKey(
         User,
@@ -25,6 +39,9 @@ class Post(models.Model):
     items_required = models.TextField()
     steps_to_perform = models.TextField()
     image = CloudinaryField('image', default='placeholder')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,
+                                 related_name="categories",
+                                 null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
