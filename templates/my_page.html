@@ -13,13 +13,17 @@
                 <h2 class="text-center  fw-bold text-dark" id="user-page"> {{user.username}}'s Profile</h2>
                 <hr>
             </div>
+            <div class="text-dark">
+                <img class="rounded-circle article-img" src="{{ user.profile.profile_image.url }}">
+                <p class="fw-bold">{{user.profile.brief_bio}}
+                </p>
+            </div>
         </div>
 
         <div class="mt-4 mb-5">
-            <a href="{% url 'add-logs' %}" role="button" type="submit"
-                class="btn btn-success btn-block btn-m gradient-custom-4 text-white">
-                Update Profile
-            </a>
+            <a aria-current="page" href="{% url 'profile' %}" role="button" type="submit"
+                class="btn btn-success btn-block btn-m gradient-custom-4 w-25 text-white {% if url_name == 'profile' %}active {% endif %}">
+                Update Profile</a>
         </div>
     </div>
 
