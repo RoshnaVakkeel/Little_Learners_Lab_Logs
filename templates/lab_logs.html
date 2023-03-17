@@ -27,10 +27,24 @@
     <div class="nav-item dropdown btn btn-success fw-bolder mb-4 border-bottom text-center p-3 w-25 mx-auto">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            Posts List
+            Posts List (Quick look)
         </a>
         <div class="dropdown-menu">
             {% for posts in post_list %}
+            <a class="dropdown-item"
+                href="/log_details/{{ posts.slug }}">
+                {{ posts.title|title }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="nav-item dropdown btn btn-success fw-bolder mb-4 border-bottom text-center p-3 w-25 mx-auto">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Posts List (in alphabetical order)
+        </a>
+        <div class="dropdown-menu">
+            {% for posts in post_list|dictsort:'title' %}
             <a class="dropdown-item"
                 href="/log_details/{{ posts.slug }}">
                 {{ posts.title|title }}
@@ -63,7 +77,7 @@
                                 <div>
                                     <!-- Need to be updated with profile link -->
                                     <h5 class="author">Submitted by: 
-                                    <a href="{% url 'my-page' %}" class="post-link">  
+                                    <a href="{% url 'profile' %}" class="post-link">  
                                         {{ post.author }}
                                     </a>
                                 </h5>                               
@@ -75,7 +89,7 @@
                             <p class="card-text description-text">{{ post.description }}</p>
                             <hr>
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+                                {{ post.number_of_likes }} | Category: {{ post.category|title }}</p>
                         </div>
                     </div>
                 </div>
