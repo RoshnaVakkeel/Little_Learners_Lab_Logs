@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}User's Profile{% endblock title %}
+{% block content %}
+
+<section class="container">
+
+    <div class="card mb-3 mt-3 shadow p-4 mb-5 rounded profile-form">
+        <div class="row g-0">
+            <div class="col-md-3">
+                {%  if user.profile.profile_image.url  %}
+                <!-- Profile Image -->
+                <img class="profile-img rounded border border-secondary border-3 shadow mt-5 w-75 rounded mx-auto d-block mt-3" src="{{ user.profile.profile_image.url  }}" width="100" alt="Profile Image">
+                {%  else  %}
+                <!-- Default Image -->
+                <img class="profile-img rounded border border-secondary border-3 shadow w-75 mt-5 rounded mx-auto d-block mt-3" src="https://res.cloudinary.com/dpoobzizv/image/upload/v1658586270/default-image_pf4dda.png" width="100" alt="Default Image">
+                {%  endif  %}
+            </div>
+            <div class="col-md-8 text-md-start text-center">
+                <div class="card-body">
+                    <h2 class="mt-2 p-2 text-center">Update your profile page..</h2>
+                    <!-- Update Profile form, user can submit after completion -->
+                    <div class="form-group">
+                        <form class="signup mt-3" id="signup_form" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ user_form }}
+                            {{ profile_form }}
+                            {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            {% endif %}
+                            <br>
+                            <button type="submit" class="btn btn-success mt-3">Update</button>
+                        </form>             
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
