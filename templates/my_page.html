@@ -14,15 +14,15 @@
                 <hr>
             </div>
             <div class="text-dark">
-                <img class="rounded-circle article-img" src="{{ user.profile.profile_image.url }}">
-                <p class="fw-bold">{{user.profile.brief_bio}}
+                <img class="profile-img rounded border border-secondary border-3 shadow mt-2 w-25 rounded mx-auto d-block mt-3" src="{{ user.profile.profile_image.url }}">
+                <p class=" mt-4"><strong>{{user.profile.brief_bio}}</strong> 
                 </p>
             </div>
         </div>
 
         <div class="mt-4 mb-5">
-            <a aria-current="page" href="{% url 'profile' %}" role="button" type="submit"
-                class="btn btn-success btn-block btn-m gradient-custom-4 w-25 text-white {% if url_name == 'profile' %}active {% endif %}">
+            <a aria-current="page" href="{% url 'edit_profile' %}" role="button" type="submit"
+                class="btn btn-success btn-block btn-m gradient-custom-4 w-25 text-white {% if url_name == 'edit-profile' %}active {% endif %}">
                 Update Profile</a>
         </div>
     </div>
