@@ -17,17 +17,17 @@
 {% block content %}
 <br>
 <div class="fw-bolder mb-4 pb-3 border-bottom text-center p-3 w-75 mx-auto">
-    <h2 >
+    <h4 >
         <i><strong>All Our Collections</strong></i>
-    </h2>
-    <hr> 
-    <h4>
-        <i><strong>Sort and find your desired Lab Logs</strong></i>
     </h4>
-    <div class="nav-item dropdown btn btn-success fw-bolder mb-4 border-bottom text-center p-3 w-25 mx-auto">
+    <hr> 
+    <p>
+        <i><strong>Have a quick look at the titles of lab logs and choose what you wish to read..</i>
+        </p>
+    <div class="nav-item dropdown btn btn-success fw-bolder mb-4 border-bottom text-center p-3 mx-auto">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            Posts List (Quick look)
+            Posts List Search<br> (created date)
         </a>
         <div class="dropdown-menu">
             {% for posts in post_list %}
@@ -38,10 +38,11 @@
             {% endfor %}
         </div>
     </div>
-    <div class="nav-item dropdown btn btn-success fw-bolder mb-4 border-bottom text-center p-3 w-25 mx-auto">
+    <br>
+    <div class="nav-item dropdown btn btn-success fw-bolder mb-4 border-bottom text-center p-3 mx-auto">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            Posts List (in alphabetical order)
+            Posts list Search <br>(alphabetically)
         </a>
         <div class="dropdown-menu">
             {% for posts in post_list|dictsort:'title' %}
