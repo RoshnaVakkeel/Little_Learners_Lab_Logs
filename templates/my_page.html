@@ -22,7 +22,7 @@
 
         <div class="mt-4 mb-5">
             <a aria-current="page" href="{% url 'edit_profile' %}" role="button" type="submit"
-                class="btn btn-success btn-block btn-m gradient-custom-4 w-25 text-white {% if url_name == 'edit-profile' %}active {% endif %}">
+                class="btn btn-success btn-block btn-m gradient-custom-4 text-white {% if url_name == 'edit-profile' %}active {% endif %}">
                 Update Profile</a>
         </div>
     </div>
@@ -80,16 +80,16 @@
                                     </div>
                                 </div>
                                 <a href="{% url 'log-details' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ post.title }}</h2>
+                                    <h4 class="card-title">{{ post.title }}</h4>
                                 </a>
                                 <p class="card-text">{{ post.description }}</p>
                                 <hr>
-                                <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                <p class="card-text text-muted">{{ post.created_on}} <i class="far fa-heart"></i>
                                     {{ post.number_of_likes }}| Category: {{ post.category|title }}</p>
                             </div>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:3 %}
+                    {% if forloop.counter|divisibleby:2 %}
                 </div>
                 <div class="row">
                     {% endif %}

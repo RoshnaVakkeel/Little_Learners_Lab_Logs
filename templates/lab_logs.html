@@ -77,17 +77,17 @@
                                 </div>
                                 <div>
                                     <!-- Need to be updated with profile link -->
-                                    <h5 class="author">Submitted by:  
+                                    <h6 class="author">Submitted by:  
                                         {{ post.author }}
-                                </h5>                               
+                                </h6>                               
                                 </div>
                             </div>
                             <a href="{% url 'log-details' post.slug %}" class="post-link">
-                                <h3 class="card-title">{{  post.title }}</h3>
+                                <h4 class="card-title">{{  post.title }}</h4>
                             </a>
                             <p class="card-text description-text">{{ post.description }}</p>
                             <hr>
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                            <p class="card-text text-muted">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }} | Category: {{ post.category|title }}</p>
                         </div>
                     </div>
