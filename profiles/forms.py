@@ -29,10 +29,7 @@ class ProfileForm(ModelForm):
             # Approach to using a HTML helper class to display an image from
             # the data base in the form from
             # https://stackoverflow.com/questions/21076248/imagefield-preview-in-crispy-forms-layout
-            Div(
-                Div('Username: '),
-                Div('Brief-Bio'),
-            ),
+
             HTML('</div>'),
             FormActions(
                 Submit('profile-form-cancel', 'Cancel',
