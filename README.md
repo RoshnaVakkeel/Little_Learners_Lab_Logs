@@ -35,8 +35,12 @@ The aim is to collect simple fun-filled small experiments for the Learners creat
 		- [Latest Entries](<#latest-entries>)
 		- [Footer](<#footer>)
 	- [Lab Logs](<#lab-logs>)
+		- [Sort and search](<#sort-and-search>)
+		- [All Lab logs](<#all-lab-logs>)
 	- [Log Details](<#log-details>)
 	- [My Page](<#my-page>)
+		- [Profile Update](<#profile-update>)
+		- [User's Lab Logs](<#user's-lab-logs>)
 		- [Add Logs](<#add-logs>)
 		- [Edit Logs](<#edit-logs>)
 		- [Delete Logs](<#delete-logs>)
@@ -119,6 +123,7 @@ Epic Goals for End User:
 2. A means of viewing the full list o blogs including likes
 3. functionality to allow users to register, sign in and sign out
 4. Upon signing in, the user should be able to like, comment on the log posts
+5. User can easily sort lab log posts based on the titles
 
 Related User Stories:
 1. [USER STORY US01: Intuitive User Interface #2](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/2):
@@ -129,6 +134,7 @@ Related User Stories:
 	As a Site user I can see the collection of log posts at a glance so that I can find the lab log posts of my choice.
 4. [USER STORY US04: User Registration/Sign Up Link#5](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/5):
 	As a Site user I can easily see a registration button and sign up option so that I can register to access all create, edit and delete functions offered by the website.
+5. [USER STORY US16: Sorting and Searching #20](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/20):As a Site user I can see distinct search criteria so that I can sort and find the log posts easily
 
 ### Registration and Account Management
 [EPIC 02: Registration and Account Management #6](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/6)
@@ -149,6 +155,8 @@ As a Site user I can I get a message upon signing up so that I can know that my 
 3. [USER STORY US07: Sign In and Sign Out Features #9](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/9): As a registered Site user I can easily Sign in or Sign Out so that I can access my personal log posts and comments.
 4. [USER STORY US 08: User Personal Page Features#10](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/10):
 As a registered Site user I can see my personal page so that I can create my own lab log posts and edit or delete them.
+5. [USER STORY US 17: Profile#22](https://github.com/RoshnaVakkeel/Little_Learners_Lab_Logs/issues/22)
+As a signed in user, I can see profile update option, so that I can update my profile info
 
 
 ### Lab Log Post Management
@@ -276,7 +284,7 @@ The wireframes can be found in these links:<br>
 
 ### Database Schema
 Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment are shown here. 
-![Entity Relationship Diagram](docs/wireframes/database_schema.png)
+![Entity Relationship Diagram](docs/wireframes/erd_little_learners_lab_logs.png)
 
 [Back to top ⇧](#contents)
 
@@ -380,14 +388,29 @@ The section can be seen [here](docs/features/latest_entries.png).
 
 ## Lab Logs
 
-- This page enlists all the log posts added so far to the website. 
+### Sort and Search
+
+- This page also consists of two search buttons. User's can see the titles of the lab-logs in the dropdown menu according to their creation date and also in alphabetical order. This is to facilitate the user to select a post quickly without scrolling down the entire page. 
+- Clicking on the selected log post in the dropdown menu, user will be taken to the respected log-detail page.
+
+It can be used as shown here:
+
+[Sorting lab-logs in order of their creation (oldest-new)](docs/features/sorting_created_on.gif)
+
+[Sorting lab-logs in alphabetical order](docs/features/sorting_alphabetical.gif)
+
+### All Lab Logs
+
+- This page enlists all the lab log posts added so far to the website. 
 - The oldest post will be visible on top. The lab log posts is paginated in a way that 12 posts are displayed. Further post can be accessed by clicking next button that would appear as more than 12 log posts will created. 
 - This page will look similar to both signed-in and signed-out users. 
-- The purpose is to show the whole collections and give users the choice whether to sign in or not.
-- Each log post has a title followed by the authors name and date it was submitted. It shows the image, lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the log  post received. 
+- The purpose is to show the whole collection and give users the choice whether to sign in or not.
+- Each log post has a title followed by the authors name and date it was submitted. It shows the image, lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of likes the log  post received, and the category of the post to which it belongs. 
+
 The screenshot as it can be seen on a desktop can be seen [here](docs/features/lab_logs.png).
 
-The full as it can be seen on a mobile device can be seen [here](docs/features/lab_logs_mobile.pdf).
+The full as it can be seen on a mobile device can be seen [here](docs/features/lab_logs_page_mobile.pdf).
+
 
 ### Log Details
 - When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected log post. Here the user is shown a full description of the log post, its full description, items required, steps to perform. 
@@ -420,6 +443,26 @@ If the author is learner and learner is signed in. The way log post detail page 
 ## My Page
 - This page will be only visible to signed-in users.
 - Navbar will show this page with their username on it. For eg. For user: learner, it will appear as Learner's Page.
+- It contains two sections: User's profile update section and User's Lab Logs section
+
+### Profile Update
+- The User's personal page (my-page) features an 'update profile' button.
+- Clicking on this button shows 'edit-profile' page containing 'Update Profile' form and a 'delete account' form. 
+- The update profile form enables the user to update their profile with: Brief-Bio and Profile image upload option.
+An image.
+- The form has 'Cancel' and 'submit' buttons. The Cancel button reloads the form with the previous data, while submit commits the form to the database.
+- User recieves a modal message upon form sumission.
+- The updated changes will appear on user's personal 'my-page'.
+- Details are shown [here](docs/features/profile_update.gif) in the link.
+
+- At the bottom of the 'edit-profile' page is the delete account form, enabling the user to close their account. 
+- Selecting the 'delete my account' button opens a modal dialog, with a choice to the user to confirm the deletion.
+- Upon confirming deletion, their profile is deleted from the database and their user account made inactive.
+- After deletion, user cannot login using these credentials nor can they create the same username.
+- However, the user details will be still available in the admin panel, and if the admin chooses to make the profile active, it can be done.
+- Details are shown [here](docs/features/profile_delete.gif) in the link.
+
+### Lab-Log-Posts
 - If the user had no posted anything earlier, user will be shown that there are no posts and they can create. 
 It will appear as shown [here](docs/features/my_page_no_posts.png)
 
@@ -521,6 +564,7 @@ When the admin selects a user's comments, the page opens with all its details th
 - Upon admin disapproval, the comment can be easily removed or deleted.
 The selected log post in admin site appears as shown [here](docs/features/admin_comment_management.png)
 
+
 ## Alert Messages
 - Alert messages have been implemented to provide users with more feedback after they take certain actions. 
 - This helps users know their desired actions have occurred.
@@ -533,7 +577,7 @@ The examples are as depicted in the picture:
 
 
 ## Technologies
-### Languages Used]
+### Languages Used
 - [CSS](https://en.wikipedia.org/wiki/CSS)
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
@@ -641,7 +685,7 @@ git push
 The testing is broken into categories: manual and validation. Details can be found below.
 
 ### Manual Testing
-An exhaustive list of features and functions were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render. The exhaustive list and the test results can be found [here](docs/validation/llll_manual_testing.xlsx).
+An exhaustive list of features and functions were checked on different devices and browsers. They were performed and their scrrenshots can be found in the features section on how the distinct features render. The exhaustive list and the test results can be found [here](docs/validation/manual_testing_all_features.xlsx).
 
 **Browser Compatibility**
 
@@ -693,10 +737,10 @@ I used the following validation tools
 Results obtained are as follows:
 
 ##### HTML Validation 
-All the Django templates html files hava been validated by manually copying the source of the rendered pages and then validating using the W3C Validator (link shown above). Each test result shows the source url. The results can be seen [here](docs/validation/w3c_validation_results_html.pdf).
+All the Django templates html files hava been validated by manually copying the source of the rendered pages and then validating using the W3C Validator (link shown above). Each test result shows the source url. The results can be seen [here](docs/validation/w3c_validator_results.pdf).
 
 ##### CSS Validation 
-[Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/) was used for validating the CSS stylesheet. CSS file was tested by manually copying the CSS codes into the manual input option. The result can be seen [here](docs/validation/w3c_validation_CSS.png).
+[Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/) was used for validating the CSS stylesheet. CSS file was tested by manually copying the CSS codes into the manual input option. The result can be seen here:[here](docs/validation/w3c_validation_CSS.png).
 
 ##### Lighthouse Test
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) tool was used for analysing the performance, accessibility, best practices and SEO of the website. The results are summarised [here](docs/validation/lighthouse_report.pdf).
@@ -705,7 +749,7 @@ All the Django templates html files hava been validated by manually copying the 
 [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) was used to check web accessibility. Only the certain contrast errors were reported. It was due to link contrast with the background. I used primary link color blue in hero-image caption for better guidance for the user, so that they identify that it is a link rather than using black color as suggested by the tool. This error was deliberately ignored. No other errors were reported. The results can be found [here](docs/validation/wave_accessibility_test.pdf). 
 
 ##### PEP8 Python Linter Test
-- [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) was used to check that the Python code meets PEP8 standards. All the errors were also checked periodically before git push to the repository. The tests results can be seen [here](docs/validation/pep8_validation.pdf). 
+- [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) was used to check that the Python code meets PEP8 standards. All the errors were also checked periodically before git push to the repository. The tests results can be seen [here](docs/validation/pep8_linter_results.pdf). 
 
 [Back to top ⇧](#contents)
 
@@ -832,6 +876,7 @@ The steps were followed step by step exactly as mentioned in the Django Walkthro
 3. [Fungi News](https://github.com/Maya-Claveau/pp4-fungi-news)
 4. [The Unconventional Programmer](https://github.com/Jbachtiger/ci-pp4-the-unconventional-programmer)
 5. [BANFF National Park Hike Booker](https://github.com/elainebroche-dev/pf4-wayfarers-guided-hikes)
+6. [Song Mates](https://github.com/Code-Institute-Submissions/andy-guttridge-song-mates) - References for Profile update and delete account
 
 ## Content
 - All the content in the website has been written by Roshna Vakkeel (the developer), excluding the lab log posts.
@@ -865,4 +910,4 @@ I would like to acknowledge the following people who have helped me along the wa
 **Info on README**
 
 - All the picture files used here are saved in docs folder.
-- All feature files are in Features folder, testing related files are in Validation folder, Agile related files are in Agile folder, wireframes in wireframes folder and deployment related documnent in deployment folder.
+- All feature files are in Features folder, testing related files are in Validation folder, Agile related files are in Agile folder, wireframes in wireframes folder and deployment related document in deployment folder.
