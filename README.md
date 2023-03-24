@@ -283,7 +283,7 @@ The wireframes can be found in these links:<br>
 [Wieframes for Mobile](docs/wireframes/pp4_wireframe_mobile.pdf)
 
 ### Database Schema
-Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment are shown here. 
+Lucidchart was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment; User and Profile, and Post and Category are shown here. 
 ![Entity Relationship Diagram](docs/wireframes/erd_little_learners_lab_logs.png)
 
 [Back to top ⇧](#contents)
@@ -595,7 +595,7 @@ The examples are as depicted in the picture:
 -   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
 -   [GitHub:](https://github.com/) is used as the respository for the project code after being pushed from Git. In addition, for this project GitHub was used for the agile development aspect through the use of User Stories (GitHub Issues) and tracking them on a Kanban board.
 -	[Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) was used to inspect page elements, debug, troubleshoot and test features and adjust property values. Using the Lighthouse extension installed in Chrome Browser, the performance report was generated.
--   [Smartdraw](https://cloud.smartdraw.com/) was used to create the Entity Relationship diagrams for the data model
+-   [Lucidchart](https://lucid.app/lucidchart/) - to create a diagram of the Database Schema
 -   [Balsamiq:](https://balsamiq.com/) was used to create the wireframes during the design process.
 -	[Favicon](https://favicon.io/favicon-generator/) - used for creating a favicon for the site
 -   [Google Fonts:](https://fonts.google.com/) used for the Roboto font
