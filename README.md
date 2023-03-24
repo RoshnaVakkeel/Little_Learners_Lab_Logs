@@ -278,9 +278,9 @@ The wireframes were generated at the start of the project suing Balsamiq. After 
 The finished website closely fololows wireframes as the designs were adapted during development but overall structure was kept constant. For eg. an additional 'About' section was introduced in order to guide the user. A search field and button was also introduced. 
 
 The wireframes can be found in these links:<br>
-[Wieframes for Desktop](docs/wireframes/PP4_project_wireframe_desktop.pdf)<br>
-[Wieframes for Tablet](docs/wireframes/PP4_project_wireframe_tablet.pdf)<br>
-[Wieframes for Mobile](docs/wireframes/PP4_project_wireframe_mobile.pdf)
+[Wieframes for Desktop](docs/wireframes/pp4_wireframe_desktop.pdf)<br>
+[Wieframes for Tablet](docs/wireframes/pp4_wireframe_tablet.pdf)<br>
+[Wieframes for Mobile](docs/wireframes/pp4_wireframe_mobile.pdf)
 
 ### Database Schema
 Smart Draw was used to create a database schema to visualise the types of custom models the project requires. This schema was used as a guide to what needed to be added to each model. Below is the Database structure that this project is based on. The relationship between Entities User, Post and Comment are shown here. 
@@ -372,10 +372,10 @@ This section describes how each user can use the functionalities available in th
 The section can be seen [here](docs/features/getting_started.png).
 
 ### Latest Entries
-- The lab log posts is paginated in a way that only the latest 3 log posts are displayed on Home page. 
+- The lab log posts is paginated in a way that only the latest 2 log posts are displayed on Home page. 
 - This has been implemented so as not to overwhelm the user with the whole list.
 - It is set in descending order by the date of creation, meaning the latest will be the first post visible.
-- It shows the lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the log post received. 
+- It shows the lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of like the log post received, and the category to which it belongs. If no category is defined, none will appear.
 The section can be seen [here](docs/features/latest_entries.png).
 
 ### Footer
@@ -402,10 +402,10 @@ It can be used as shown here:
 ### All Lab Logs
 
 - This page enlists all the lab log posts added so far to the website. 
-- The oldest post will be visible on top. The lab log posts is paginated in a way that 12 posts are displayed. Further post can be accessed by clicking next button that would appear as more than 12 log posts will created. 
+- The oldest post will be visible on top. The lab log posts is paginated in a way that 12 posts are displayed. Further post can be accessed by clicking next button that would appear as more than 12 log posts are created. 
 - This page will look similar to both signed-in and signed-out users. 
 - The purpose is to show the whole collection and give users the choice whether to sign in or not.
-- Each log post has a title followed by the authors name and date it was submitted. It shows the image, lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of likes the log  post received, and the category of the post to which it belongs. 
+- Each log post has a title followed by the authors name and date it was submitted. It shows the image, lab log post title (clicking on which, the log post details can be seen), image uploaded by the user, author name, two lines of description followed by the date and time of creation along with the number of likes the log  post received, and the category of the post to which it belongs. If no category is defined, none will appear.
 
 The screenshot as it can be seen on a desktop can be seen [here](docs/features/lab_logs.png).
 
@@ -413,7 +413,7 @@ The full as it can be seen on a mobile device can be seen [here](docs/features/l
 
 
 ### Log Details
-- When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected log post. Here the user is shown a full description of the log post, its full description, items required, steps to perform. 
+- When a user clicks on the title of the lab log post, they are brought to the Log Details page for the selected log post. Here the user is shown a full description of the log post, its full description, items required, steps to perform and the category to which it belongs. If no category is defined, none will appear.
 - This page will be show also the number of likes and all the comments the log post has received irrespective of the user being signed-in or signed-out. 
 - But the Edit and Delete button and comments input boxes will be visible to different users differently. 
 The features that would be accessible to the user is described below:
@@ -449,16 +449,17 @@ If the author is learner and learner is signed in. The way log post detail page 
 - The User's personal page (my-page) features an 'update profile' button.
 - Clicking on this button shows 'edit-profile' page containing 'Update Profile' form and a 'delete account' form. 
 - The update profile form enables the user to update their profile with: Brief-Bio and Profile image upload option.
-An image.
 - The form has 'Cancel' and 'submit' buttons. The Cancel button reloads the form with the previous data, while submit commits the form to the database.
-- User recieves a modal message upon form sumission.
-- The updated changes will appear on user's personal 'my-page'.
+- User recieves a modal message upon form subbmission and can see the image uploaded in the place of defualt  image.
+- The updated changes will appear as well on user's personal 'my-page'.
 - Details are shown [here](docs/features/profile_update.gif) in the link.
 
+**Delete Account Button**
 - At the bottom of the 'edit-profile' page is the delete account form, enabling the user to close their account. 
 - Selecting the 'delete my account' button opens a modal dialog, with a choice to the user to confirm the deletion.
 - Upon confirming deletion, their profile is deleted from the database and their user account made inactive.
 - After deletion, user cannot login using these credentials nor can they create the same username.
+- Their posts will be still available for the other user's to read.
 - However, the user details will be still available in the admin panel, and if the admin chooses to make the profile active, it can be done.
 - Details are shown [here](docs/features/profile_delete.gif) in the link.
 
@@ -471,7 +472,8 @@ If they click "Create Now" button, they will be taken to "Add Logs" page.
 ### Add Logs
 - If the user is signed-in, they can create a lab log post. 
 - If they click "Create Now" button in user's personal page, they will be taken to "Add Logs" page.
-- The input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor), image upload button and a Submit button.
+- The input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor), the category to which it belongs (in a dropdown menu with options that can be created by the admin), image upload button and a Submit button.
+- Categories are created by the admin. The choices created so far are Easy, Intermediate, hard and supervision required. It will help guide the user/ website visitor about which kind of lab log to prefer based on the category.
 - User will be prompted to fill each input field. 
 - Upon submission, user will be prompted by an alert message that the post is being reviewed.
 On a desktop, the page appears as shown [here](docs/features/add_logs.png)
@@ -481,7 +483,7 @@ On a mobile device, the page appears as shown [here](docs/features/add_logs_mobi
 ### Edit Logs
 - If the user is signed-in and is a author to the log post, they only can edit it. 
 - If they click Edit button visible in "Log Details" page, they will be taken to "Edit Logs" page.
-- The filled input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor).
+- The filled input fields include title (needs to be unique), description, items required (using the summernote editor), steps to perform (using the summernote editor) and the category to which it belongs in a dropdown menu.
 - Image upload button will read "Change Image" and after making changes the can click "Update" button.
 - Upon clicking Update, user will be prompted by an alert message "Update Successful".
 - They can see their old input or write-up to compare the new edit and the old inputs.
